@@ -506,6 +506,10 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
       <button type="button" data-view="anim">핸즈온 애니메이션</button>
       <button type="button" data-view="anatomy">해부학 2회차</button>
     </div>
+    <div class="grp">
+      <p class="grp-h">아사나 큐잉 <span>교재 120~121쪽</span></p>
+      <button type="button" data-view="cue2">전사 2 묶음 큐잉</button>
+    </div>
     <div class="side-foot">
       <b>Breathing Whale Yoga TTC</b>Teacher Training Class Notes
       <p>교재 사진이 들어 있어 과정 밖으로는 공유하지 말아 주세요.</p>
@@ -687,6 +691,25 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
     <figure class="hb-cue">
       <figcaption><b>왼쪽</b><span>오른쪽 마치고 견상에서 이어서</span><a class="dl" href="img/cue-left.png" download="런지묶음_큐잉_왼쪽.png"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.8 7.6 8 10.8l3.2-3.2M3 13.5h10"/></svg>이미지 받기</a></figcaption>
       <img src="img/cue-left.png" width="1080" height="2340" alt="런지 묶음 왼쪽 큐잉: 세 다리 견상부터 하이런지까지 14단계" data-zoom>
+    </figure>
+  </div>
+  <p class="hb-hint">이미지를 누르면 크게 볼 수 있어요. 폰에서는 이미지를 길게 눌러도 저장할 수 있어요.</p>
+</section>
+
+<section class="hb-view" id="v-cue2" data-view-id="cue2" hidden>
+  <div class="hb-vhead">
+    <span class="ey">빈야사 티칭 · 아사나 안내 큐잉</span>
+    <h2>전사 2 묶음 큐잉</h2>
+    <p>다리가 양 옆으로 열린 전사 2 묶음의 오른쪽 큐잉이에요. 하이런지에서 홀드 없이 바로 이어서 견상까지, 두 장으로 나눴어요. 교재 120~121쪽</p>
+  </div>
+  <div class="hb-cue-grid">
+    <figure class="hb-cue">
+      <figcaption><b>오른쪽 1/2</b><span>전사 2 ~ 파르스보타나</span><a class="dl" href="img/cue2-right-1.png" download="전사2묶음_큐잉_오른쪽_1.png"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.8 7.6 8 10.8l3.2-3.2M3 13.5h10"/></svg>이미지 받기</a></figcaption>
+      <img src="img/cue2-right-1.png" width="1080" height="2308" alt="전사 2 묶음 오른쪽 큐잉 1: 전사 2, 역전사, 삼각, 파르스보타나" data-zoom>
+    </figure>
+    <figure class="hb-cue">
+      <figcaption><b>오른쪽 2/2</b><span>웃타나 ~ 견상</span><a class="dl" href="img/cue2-right-2.png" download="전사2묶음_큐잉_오른쪽_2.png"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.8 7.6 8 10.8l3.2-3.2M3 13.5h10"/></svg>이미지 받기</a></figcaption>
+      <img src="img/cue2-right-2.png" width="1080" height="2098" alt="전사 2 묶음 오른쪽 큐잉 2: 웃타나, 의자, 한 다리 균형, 전사 3, 견상, 플랭크, 차투랑가, 업독, 견상" data-zoom>
     </figure>
   </div>
   <p class="hb-hint">이미지를 누르면 크게 볼 수 있어요. 폰에서는 이미지를 길게 눌러도 저장할 수 있어요.</p>
@@ -2033,7 +2056,7 @@ requestAnimationFrame(frame);
   });
 
   /* 보기 전환 */
-  var ORDER=['d1024','cue','centering','handson','anim','anatomy'];
+  var ORDER=['d1024','cue','centering','handson','anim','anatomy','cue2'];
   var LABEL={d1024:'수업 정리',cue:'런지 묶음 큐잉',centering:'일반 센터링',handson:'핸즈온 정리',anim:'핸즈온 애니메이션',anatomy:'해부학 2회차'};
   var views={};[].forEach.call(document.querySelectorAll('.hb-view'),function(v){views[v.getAttribute('data-view-id')]=v;});
   var navBtns=[].slice.call(document.querySelectorAll('.side button[data-view]'));

@@ -514,6 +514,7 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
     <div class="grp">
       <p class="grp-h">11월 1일 일 <span>TTC 오프라인</span></p>
       <button type="button" data-view="d1101">수업 정리</button>
+      <button type="button" data-view="d1101h">핸즈온 애니메이션</button>
       <button type="button" data-view="d1101p">프라나야마</button>
       <button type="button" data-view="cue2">전사 2 묶음 큐잉</button>
     </div>
@@ -782,6 +783,15 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
       </div>
     </div>
   </div>
+</section>
+
+<section class="hb-view" id="v-d1101h" data-view-id="d1101h" hidden>
+  <div class="hb-vhead">
+    <span class="ey">11월 1일 일 · TTC 오프라인 · 오전 아사나</span>
+    <h2>핸즈온 애니메이션</h2>
+    <p>삼각, 피라미드, 비튼 삼각, 비튼 측각도, 사마코나, 우파비스타코나, 하누만 7개 자세예요. 수업 필기를 바탕으로 큐잉, 도구, 핸즈온 순서로 정리했어요. 직접 필기한 내용과 세부 내용은 다시 확인해 보세요.</p>
+  </div>
+  <div id="hb-anim-stage-1101"></div>
 </section>
 
 <section class="hb-view" id="v-d1101p" data-view-id="d1101p" hidden>
@@ -2073,6 +2083,198 @@ var POSES=[
  {n:'2',k:'h',lab:'맞추며 확인',t:'② 골반을 맞춰 주면서 같이 확인해요',d:'골반을 살짝 당겨 맞추면서 아래 세 가지를 함께 확인해요. 점선은 당기기 전 자세예요.',S:sPulled,T:tHorse(TX,[156,92],[182,92],3),to:1,cam:[44,30,208],mk:'w',arrow:[152,82,176,58],ghost:sBent,check:['척추가 제대로 쭉 펴졌나','고개는 발등 쪽을 보고 있나','꼬리뼈부터 목까지 쭉 이어졌나'],dur:2},
  {n:'3',k:'h',lab:'빠져나오기',t:'③ 손을 떼고 자리에서 빠져나와요',d:'핸즈온은 여기서 마쳐요. 몸 이곳저곳을 살피며 계속 잡아 주지 않아요.',S:sPulled,T:tS,to:0,cam:FULL,dur:1.6}]}
 ];
+// ================= 11월 1일 세트 =================
+function NOV1(){
+function bolsterR(x,y,w,h){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+(h/2)+'" fill="#C9B48E" stroke="#8C7651" stroke-width="1.6"/>';}
+var EXIT='핸즈온을 마치면 손을 떼고 바로 빠져나와요.';
+
+// ---------- 1 삼각 (정면, 오른다리 앞) : 앞다리를 그림 오른쪽에 그린 뒤 좌우 반전 ----------
+var trLegs=[[[130,128],[108,160],[86,191],[97,197],'near'],[[150,124],[177,157],[203,190],[219,196],'near']];
+var trFinal=B({front:true,fr:1,t:[[190,111],[140,125]],h:[212,105],up:[.966,-.259],fw:[0,0],hf:1,
+ a:[[[192,119],[190,145],[188,170],'near'],[[188,104],[187,78],[186,52],'near']],l:trLegs});
+var trBefore=B({front:true,fr:.35,t:[[192,129],[140,125]],h:[215,131],up:[.996,.087],fw:[0,0],hf:1,
+ a:[[[191,137],[196,162],[200,186],'near'],[[192,121],[200,97],[206,73],'near']],l:trLegs});
+var trLow=clone(trBefore);trLow.fr=1;trLow.front=true;
+var trBlockS=clone(trFinal);trBlockS.arms[0]=[[192,119],[196,142],[193,163],'near'];
+function tTr(X){return {front:true,torso:[[X,62],[X,116]],head:{c:[X,40],up:[0,-1],fwd:[0,0],front:true},
+ arms:[[[X-13,64],[X-17,88],[X-18,110],'near'],[[X+13,64],[X+17,88],[X+18,110],'near']],
+ legs:[[[X-7,118],[X-8,156],[X-9,192],[X-23,197],'near'],[[X+7,118],[X+9,156],[X+11,192],[X-3,197],'near']]};}
+var tTrHold={front:true,torso:[[118,78],[118,130]],head:{c:[118,56],up:[0,-1],fwd:[0,0],front:true},
+ arms:[[[105,80],[104,103],[124,124],'near'],[[131,80],[150,96],[152,118],'near']],
+ legs:[[[111,132],[100,162],[104,192],[90,197],'near'],[[125,132],[136,162],[132,192],[146,197],'near']]};
+var trBlock=blockR(182,164,18,33);
+var M=function(F){return mir(F,130);};
+trFinal=M(trFinal);trBefore=M(trBefore);trLow=M(trLow);trBlockS=M(trBlockS);tTrHold=M(tTrHold);
+var trBlockM=blockR(60,164,18,33);
+
+// ---------- 2 피라미드 (옆면, 오른쪽을 봄, 오른다리 앞) ----------
+var pyLegs=[[[120,114],[100,151],[82,189],[93,196],'far'],[[124,114],[142,152],[158,190],[174,196],'near']];
+var pyUp=B({t:[[124,62],[122,112]],h:[126,40],up:[.05,-1],fw:[1,0],
+ a:[[[122,64],[108,78],[113,92],'far'],[[124,64],[110,80],[115,94],'near']],l:pyLegs});
+var pyHalf=B({t:[[174,106],[122,112]],h:[196,104],up:[1,-.09],fw:[.09,1],
+ a:[[[172,106],[164,86],[148,92],'far'],[[174,108],[166,88],[150,94],'near']],l:pyLegs});
+var pyFold=B({t:[[167,138],[122,112]],h:[186,149],up:[.866,.5],fw:[-.5,.866],
+ a:[[[165,136],[158,111],[143,114],'far'],[[167,138],[160,113],[146,116],'near']],l:pyLegs});
+var pyHands=B({t:[[167,138],[122,112]],h:[186,149],up:[.866,.5],fw:[-.5,.866],
+ a:[[[165,138],[168,163],[170,188],'far'],[[167,140],[170,165],[172,189],'near']],l:pyLegs});
+var pyRound=B({t:[[159,149],[122,112]],h:[172,167],up:[.6,.8],fw:[-.8,.6],
+ a:[[[157,149],[163,173],[168,194],'far'],[[159,151],[165,175],[170,196],'near']],l:pyLegs});
+var pyBlockS=B({t:[[174,106],[122,112]],h:[196,104],up:[1,-.09],fw:[.09,1],
+ a:[[[172,108],[171,134],[170,158],'far'],[[174,110],[173,136],[172,160],'near']],l:pyLegs});
+var pyBlock=blockR(160,162,22,35);
+var tPy={torso:[[80,72],[68,118]],head:{c:[88,52],up:[.37,-.93],fwd:[.93,.37]},
+ arms:[[[79,73],[97,89],[115,104],'far'],[[80,74],[98,92],[116,108],'near']],
+ legs:[[[68,120],[58,156],[50,192],[64,196],'far'],[[68,120],[70,156],[72,192],[86,196],'near']]};
+var tPyArmsDown={torso:[[78,70],[68,118]],head:{c:[86,50],up:[.37,-.93],fwd:[.93,.37]},
+ arms:[[[77,72],[80,98],[82,122],'far'],[[78,72],[82,98],[84,122],'near']],legs:tPy.legs};
+
+// ---------- 3 비튼 삼각 (옆면, 오른다리 앞, 왼손 아래·오른손 위) ----------
+var prtFinal=B({front:true,fr:1,t:[[172,125],[122,112]],h:[194,131],up:[.966,.259],fw:[0,0],hf:1,
+ a:[[[170,133],[168,159],[167,186],'near'],[[174,118],[175,92],[176,66],'near']],l:pyLegs});
+var prtBefore=B({fr:.2,t:[[172,125],[122,112]],h:[194,131],up:[.966,.259],fw:[-.259,.966],
+ a:[[[170,133],[168,159],[167,186],'far'],[[174,120],[176,145],[178,170],'near']],l:pyLegs});
+var prtBlockS=clone(prtFinal);prtBlockS.arms[0]=[[170,133],[169,155],[168,176],'near'];
+var prtBlock=blockR(157,178,24,19);
+var tPrt0={torso:[[126,74],[104,118]],head:{c:[134,54],up:[.45,-.89],fwd:[.89,.45]},
+ arms:[[[124,76],[118,100],[114,122],'far'],[[126,76],[120,100],[116,124],'near']],
+ legs:[[[104,120],[118,156],[124,192],[138,196],'far'],[[104,120],[86,158],[82,194],[96,197],'near']]};
+var tPrtPel=clone(tPrt0);tPrtPel.arms=[[[124,76],[108,92],[117,110],'far'],[[126,76],[110,94],[119,112],'near']];
+var tPrtRot=clone(tPrt0);tPrtRot.arms=[[[124,75],[134,102],[148,126],'far'],[[126,76],[146,90],[166,110],'near']];
+
+// ---------- 4 비튼 측각도 (옆면, 오른다리 앞) ----------
+var ppLegs=[[[118,144],[82,165],[46,186],[58,196],'far'],[[122,144],[160,150],[162,190],[178,196],'near']];
+var ppFinal=B({front:true,fr:1,t:[[169,124],[120,142]],h:[190,116],up:[.94,-.34],fw:[0,0],hf:1,
+ a:[[[172,131],[171,158],[170,184],'near'],[[166,116],[165,90],[164,64],'near']],l:ppLegs});
+var ppBefore=B({fr:.25,t:[[169,124],[120,142]],h:[190,116],up:[.94,-.34],fw:[.34,.94],
+ a:[[[172,131],[171,158],[170,184],'far'],[[169,126],[172,152],[174,176],'near']],l:ppLegs});
+var ppBlock=blockR(158,186,26,11);
+var ppBlockS=clone(ppFinal);ppBlockS.arms[0]=[[172,131],[171,156],[170,182],'near'];
+var tPp0={torso:[[92,80],[73,124]],head:{c:[100,59],up:[.38,-.92],fwd:[.92,.38]},
+ arms:[[[90,82],[92,108],[94,132],'far'],[[92,82],[94,108],[96,132],'near']],
+ legs:[[[72,126],[52,158],[40,192],[52,196],'far'],[[74,126],[100,150],[96,190],[110,196],'near']]};
+var tPpHold={torso:[[102,84],[73,124]],head:{c:[110,64],up:[.48,-.88],fwd:[.88,.48]},
+ arms:[[[100,86],[104,110],[112,130],'far'],[[102,86],[106,110],[114,134],'near']],legs:tPp0.legs};
+
+// ---------- 5 사마코나 (정면, 앉은 자세) ----------
+function smk(o){var y=o.y||0,lean=o.lean||0;
+ return B({front:true,fr:1,t:[[130,128+y+lean],[130,180+y]],h:[130,106+y+lean*1.05],up:[0,-1],fw:[0,0],hf:1,
+ a:[[[117,130+y+lean],[106,150+y+lean],[126,140+y+lean],'near'],[[143,130+y+lean],[154,150+y+lean],[134,140+y+lean],'near']],
+ l:o.l||[[[122,184],[84,188],[46,191],[46,178],'near'],[[138,184],[176,188],[214,191],[214,178],'near']]});}
+var smFinal=smk({}),smLean=smk({lean:12});
+var tSmBack={front:true,torso:[[136,104],[136,156]],head:{c:[136,82],up:[0,-1],fwd:[0,0],front:true},
+ arms:[[[123,106],[119,130],[118,152],'near'],[[149,106],[153,130],[154,152],'near']],
+ legs:[[[129,158],[124,186],[140,192],[146,195],'near'],[[143,158],[148,186],[160,192],[166,195],'near']]};
+var smBlockS=smk({y:-10,l:[[[122,174],[84,183],[46,191],[46,178],'near'],[[138,174],[176,183],[214,191],[214,178],'near']]});
+var smBlock=blockR(110,182,40,15);
+function tFr(X,y){y=y||0;return {front:true,torso:[[X,62+y],[X,116+y]],head:{c:[X,40+y],up:[0,-1],fwd:[0,0],front:true},
+ arms:[[[X-13,64+y],[X-17,88+y],[X-18,110+y],'near'],[[X+13,64+y],[X+17,88+y],[X+18,110+y],'near']],
+ legs:[[[X-7,118+y],[X-8,156+y],[X-9,192],[X-23,197],'near'],[[X+7,118+y],[X+9,156+y],[X+11,192],[X-3,197],'near']]};}
+var tSmHold={front:true,torso:[[136,104],[136,156]],head:{c:[136,82],up:[0,-1],fwd:[0,0],front:true},
+ arms:[[[123,106],[100,110],[110,126],'near'],[[149,106],[166,116],[150,126],'near']],
+ legs:[[[129,158],[124,186],[140,192],[146,195],'near'],[[143,158],[148,186],[160,192],[166,195],'near']]};
+
+// ---------- 6 우파비스타코나 (정면) ----------
+var upLegs=[[[122,184],[84,188],[46,191],[46,178],'near'],[[138,184],[176,188],[214,191],[214,178],'near']];
+var upFold=B({front:true,fr:1,t:[[130,168],[130,184]],h:[130,182],up:[0,-1],fw:[0,0],hf:1,
+ a:[[[117,170],[96,184],[72,192],'near'],[[143,170],[164,184],[188,192],'near']],l:upLegs});
+var tUpThigh={front:true,torso:[[130,132],[130,178]],head:{c:[130,110],up:[0,-1],fwd:[0,0],front:true},
+ arms:[[[117,134],[106,159],[104,184],'near'],[[143,134],[154,159],[156,184],'near']],
+ legs:[[[124,180],[120,190],[136,193],[142,195],'near'],[[136,180],[140,190],[124,193],[118,195],'near']]};
+var tUpSac=clone(tUpThigh);tUpSac.arms=[[[117,134],[100,150],[124,158],'near'],[[143,134],[160,150],[136,158],'near']];
+
+// ---------- 7 하누만 (옆면, 오른다리 앞) ----------
+function hn(y,arms){return B({t:[[122,122+y],[122,174+y]],h:[126,100+y],up:[.05,-1],fw:[1,0],a:arms,
+ l:[[[120,176+y],[80,183+y*.6],[40,190],[27,195],'far'],[[124,176+y],[164,183+y*.6],[204,190],[208,178],'near']]});}
+var armsUp=function(y){return [[[121,124+y],[116,97+y],[112,70+y],'far'],[[123,124+y],[118,97+y],[114,70+y],'near']];};
+var hnFull=hn(0,armsUp(0));
+var hnBlockS=hn(-14,armsUp(-14));
+var hnBolS=hn(-10,[[[121,114],[116,138],[112,162],'far'],[[123,114],[119,138],[115,162],'near']]);
+var hnBlocks=blockR(106,178,32,19)+blockR(106,160,32,18);
+var hnBolster=bolsterR(96,168,80,29)+blockR(100,164,22,33);
+
+var FL=[0,0,260];
+return [
+{id:'n1',num:'1',short:'삼각',title:'우티타 트리코나아사나 · 삼각 자세',sub:'Utthita Trikoṇāsana · 오른다리가 앞에 있는 기준 · 교재 22~23쪽',
+ a1:'큐잉: 골반은 정면, 뒷다리 오금 펴기, 팔은 수평, 안 허벅지 외회전',a2:'핸즈온: 뒷다리 쪽에서 골반을 잡아 정렬, 꼬리뼈를 살짝 말게, 아래 손은 가동범위에 맞게',
+ warns:[['red','핸즈온 주의','너무 틀어져 있는 사람은 핸즈온에 적합하지 않아요. 핸즈온을 하려 하지 말고 블럭을 받쳐서 자세를 잡을 수 있게 도와요.'],
+        ['green','옵션','손을 바로 내려놓기 어려우면 처음에는 정강이, 그다음 발날 안쪽, 잘 쓰면 발날 바깥쪽에 손을 내려놓아요.']],
+ pre:{S:trBefore,T:tTr(234),to:0,cam:FL},
+ steps:[
+ {cues:['골반은 정면','뒷다리 오금 펴기','팔은 수평으로','안 허벅지 외회전'],n:'말',k:'s',lab:'큐잉',t:'말로 교정할 수 있는 부분은 핸즈온 전에 큐잉으로',d:'좁아지는 느낌이 아니라 신전해서 펼쳐지는 느낌으로. 점선은 교정 전 자세예요.',S:trFinal,T:tTr(234),to:1,cam:FL,say:'골반을 정면으로\n열어 주세요',ghost:trBefore,dur:1.5},
+ {tag:'도구',n:'도구',k:'t',lab:'블럭',t:'초심자는 앞발 발날 안쪽 앞에 블럭을 둬요',d:'블럭에 몸을 기대면 안 돼요. 블럭을 손으로 미는 힘을 써요.',S:trBlockS,T:tTr(234),to:1,cam:FL,prop:trBlockM,say:'블럭을 손으로\n밀어 주세요',mk:[[67,163]]},
+ {n:'1',k:'h',lab:'뒷다리 쪽에',t:'① 뒷다리 쪽에서 잡아 줘요',d:'블럭 없이 진행하는 경우예요.',S:trFinal,T:M(tTr(116)),to:1,cam:FL,dur:1.5},
+ {n:'2',k:'h',lab:'골반 잡기',t:'② 골반을 손으로 잡고 정렬을 잡아요',d:'꼬리뼈를 살짝 말 수 있게 해요. 점선은 교정 전 자세예요.',S:trFinal,T:tTrHold,to:1,cam:[30,40,200],mk:'w',ghost:trBefore,dur:1.5},
+ {n:'3',k:'h',lab:'아래 손 위치',t:'③ 아래 손 위치는 가동범위에 맞게 잡아 줘요',d:'점선은 바뀌기 전 자세예요.',S:trFinal,T:tTrHold,to:1,cam:[20,30,220],arrow:[60,190,70,176],ghost:trLow,dur:1.5},
+ {n:'끝',k:'x',lab:'빠져나오기',t:'손을 떼고 빠져나와요',d:EXIT,S:trFinal,T:tTr(234),to:0,cam:FL,dur:1.6}]},
+
+{id:'n2',num:'2',short:'피라미드',title:'파르스보타나아사나 · 피라미드 자세',sub:'Pārśvottānāsana · 오른다리가 앞에 있는 기준 · 교재 22쪽',
+ a1:'큐잉: 골반 위치부터 잡고 척추 세우기, 상체 90도에서 골반 수평, "척추 펴시고"를 명확하게',a2:'핸즈온: 손바닥 면으로 양 골반을 감싸 뒤로·위로 위치 조정',
+ warns:[['green','옵션','앞 무릎만 살짝 구부려도 돼요.']],
+ pre:{S:pyUp,T:tStand2R(30),to:0,cam:FL},
+ steps:[
+ {tag:'동작 순서',cues:['골반 너비만큼 다리 벌리기','손 뒤로 합장, 가슴 열기','좌우 골반 수평 유지','복부·허벅지·이마가 닿게 내려가기'],n:'말',k:'s',lab:'동작 순서',t:'어깨를 뒤로·아래로 열고, 등 뒤로 손을 합장한 채 내려가요',d:'엉덩이가 열리는 느낌을 받으며 복부, 허벅지, 이마가 닿을 수 있게 내려가요.',S:pyFold,T:tStand2R(30),to:1,cam:FL,ghost:pyUp,dur:1.8},
+ {cues:['골반 위치부터 잡기','척추 세우고 시작','상체 90도에서 골반 수평'],n:'말',k:'s',lab:'큐잉',t:'전굴은 골반 위치부터 잡고, 척추를 세운 뒤 시작해요',d:'상체를 90도로 일으킨 상태에서 움직여야 좌우 골반 높이를 맞추기 편해요.',S:pyHalf,T:tStand2R(30),to:1,cam:FL,say:'상체를 90도로\n일으켜 주세요',check:['좌우 골반 높이가 같은가'],dur:1.5},
+ {n:'말',k:'s',lab:'척추 펴기',t:'손끝을 밀어 등허리를 펴게 하고, "척추 펴시고"를 명확하게 알려 줘요',d:'말로 되지 않는 것만 핸즈온해요. 점선은 등이 굽은 상태예요.',S:pyHands,T:tStand2R(30),to:1,cam:FL,say:'척추 펴시고',ghost:pyRound,dur:1.5},
+ {tag:'도구',n:'도구',k:'t',lab:'블럭',t:'블럭을 양손 아래에 짚게 해요',d:'',S:pyBlockS,T:tStand2R(30),to:1,cam:FL,prop:pyBlock,mk:[[171,162]]},
+ {n:'1',k:'h',lab:'골반 감싸기',t:'손바닥 면으로 양 골반을 안정적으로 감싸 잡아요',d:'골반을 뒤로, 위로 위치를 조정해요.',S:pyFold,T:tPy,to:1,cam:[30,40,200],mk:'w',arrow:[110,100,94,86],dur:1.5},
+  {n:'끝',k:'x',lab:'빠져나오기',t:'손을 떼고 빠져나와요',d:EXIT,S:pyFold,T:tStand2R(30),to:0,cam:FL,dur:1.6}]},
+
+{id:'n3',num:'3',short:'비튼 삼각',title:'파리브리타 트리코나아사나 · 비튼 삼각 자세',sub:'Parivṛtta Trikoṇāsana · 오른다리가 앞에 있는 기준 · 교재 23쪽',
+ a1:'큐잉: 골반 위 어깨 나란히, 골반이 빠지지 않게 하체 힘 유지, 안 허벅지 외회전',a2:'핸즈온: 강사 허벅지로 뒷다리 고정, 골반 위치 조정, 상체는 손바닥으로 약하게 방향성만',
+ pre:{S:prtBefore,T:tStand2R(30),to:0,cam:FL},
+ steps:[
+ {cues:['골반 위 어깨가 나란한지 확인하고 시작','골반이 빠지지 않게, 하체 힘 유지','안 허벅지를 외회전시킨다는 느낌'],n:'말',k:'s',lab:'큐잉',t:'골반 위에 어깨가 나란히 세워져 있는지 확인하고 시작해요',d:'점선은 교정 전 자세예요.',S:prtFinal,T:tStand2R(30),to:1,cam:FL,ghost:prtBefore,dur:1.6},
+ {tag:'도구',n:'도구',k:'t',lab:'블럭',t:'자세가 어려운 사람은 블럭을 발 안쪽에 두고 짚게 해요',d:'',S:prtBlockS,T:tStand2R(30),to:1,cam:FL,prop:prtBlock,mk:[[168,178]]},
+ {n:'1',k:'h',lab:'뒷다리 고정',t:'① 뻗어 있는 뒷다리를 내 허벅지로 흔들리지 않게 잡아 줘요',d:'블럭 없이 진행하는 경우예요.',S:prtBefore,T:tPrt0,to:1,cam:[30,30,210],mk:[[92,168]],dur:1.5},
+ {n:'2',k:'h',lab:'골반 위치',t:'② 그 자세에서 손바닥으로 골반 위치를 잡아 줘요',d:'골반이 빠지지 않게 해요.',S:prtBefore,T:tPrtPel,to:1,cam:[30,30,210],mk:'w'},
+ {n:'3',k:'h',lab:'회전 돕기',t:'③ 가슴이 바닥 쪽을 향해 있으면, 한 손은 등 뒤쪽에 두고 다른 손바닥으로 갈비뼈 쪽을 밀어 줘요',d:'약간 더 회전하듯이. 상체는 손바닥으로 약하게 방향성만 줘요. 점선은 회전 전 자세예요.',S:prtFinal,T:tPrtRot,to:1,cam:[30,30,210],mk:'w',ghost:prtBefore,rot:[150,146,7,14,60,-150,20],dur:1.8},
+ {n:'끝',k:'x',lab:'빠져나오기',t:'손을 떼고 빠져나와요',d:EXIT,S:prtFinal,T:tStand2R(30),to:0,cam:FL,dur:1.6}]},
+
+{id:'n4',num:'4',short:'비튼 측각도',title:'파리브리타 파르스바코나아사나 · 비튼 측각도 자세',sub:'Parivṛtta Pārśvakoṇāsana · 오른다리가 앞에 있는 기준 · 교재 24쪽',
+ a1:'큐잉: 회전은 가슴에서, 왼 골반을 들어 올리고 척추를 펴서 몸통 회전',a2:'핸즈온: 뒤 허벅지 쪽을 지지한 채로 골반을 잡아 주기',
+ warns:[['red','핸즈온 주의','골반이 바닥으로 떨어지는 분 중 무너질 것 같으면 핸즈온이 적합하지 않아요.']],
+ pre:{S:ppBefore,T:tStand2R(24),to:0,cam:FL},
+ steps:[
+ {tag:'동작 순서',cues:['① 타다아사나에서 골반 너비','② 왼 다리 뒤로, 골반 너비 유지','③ 양발 단단히, 왼손가락 바닥'],n:'말',k:'s',lab:'동작 순서',t:'①~③ 순서로 자세를 잡아요',d:'오른손은 다음 장면에서 상체 위치를 확인한 뒤 뻗어요.',S:ppBefore,T:tStand2R(24),to:1,cam:FL,dur:1.2},
+ {cues:['회전은 가슴에서','왼 골반 들어 올리고 척추 펴서 회전','④ 상체 위치 확인 후 오른손 위로, 그 후에 시선'],n:'말',k:'s',lab:'큐잉',t:'회전은 상체 \'가슴\'에서 일어나요',d:'점선은 회전 전 자세예요.',S:ppFinal,T:tStand2R(24),to:1,cam:FL,ghost:ppBefore,rot:[150,128,8,18,60,-150,-20],say:'가슴에서\n회전해 주세요',dur:1.6},
+ {tag:'도구',n:'도구',k:'t',lab:'블럭',t:'손 아래에 블럭을 두고 짚을 수 있게 해요',d:'',S:ppBlockS,T:tStand2R(24),to:1,cam:FL,prop:ppBlock,mk:[[171,184]]},
+ {n:'1',k:'h',lab:'뒤 허벅지 쪽',t:'① 뒤 허벅지 쪽에서 지지할 수 있게 붙어요',d:'블럭 없이 진행하는 경우예요. 균형 잡기가 힘든 자세라 잡아 준 상태에서 핸즈온해요.',S:ppFinal,T:tPp0,to:1,cam:[20,40,210],mk:[[98,152]],dur:1.5},
+ {n:'2',k:'h',lab:'골반 잡기',t:'② 골반을 잡아 줘요 (오른쪽 골반은 뒤로)',d:'뒤 허벅지 쪽을 지지한 채로 잡아요.',S:ppFinal,T:tPpHold,to:1,cam:[20,40,210],mk:'w'},
+ {n:'끝',k:'x',lab:'빠져나오기',t:'손을 떼고 빠져나와요',d:EXIT,S:ppFinal,T:tStand2R(24),to:0,cam:FL,dur:1.6}]},
+
+{id:'n5',num:'5',short:'사마코나',title:'사마코나아사나',sub:'Samakoṇāsana · 교재 34쪽',
+ a1:'큐잉: 척추를 세워 중립부터, 발등 당기고 무릎·발끝은 천장, 가동범위만큼만',a2:'핸즈온: 등 뒤에서 허벅지로 등을 받치고, 어깨를 뒤로 밀며 가슴을 당겨 오기',
+ warns:[['green','옵션','무릎은 접어도 돼요.']],
+ pre:{S:smLean,T:tFr(236),to:0,cam:FL},
+ steps:[
+ {cues:['좌우 엉덩뼈에서 중립, 합장','발등은 몸 쪽으로, 무릎·발끝은 천장','가동범위만큼만 벌리기','발바닥 세 지점을 고르게'],n:'말',k:'s',lab:'큐잉',t:'먼저 척추를 세워서 중립부터 찾게 해요',d:'중립이 맞지 않으면 골반을 일으켜 세워서 중립을 잡아요. 발 안쪽 날만 안으로 들어오면 안 돼요. 점선은 교정 전 자세예요.',S:smFinal,T:tFr(236),to:1,cam:FL,ghost:smLean,dur:1.5},
+ {tag:'도구',n:'도구',k:'t',lab:'블럭',t:'블럭으로 좌골을 받쳐 세워서 중립을 찾게 해요',d:'',S:smBlockS,T:tFr(236),to:1,cam:FL,prop:smBlock},
+ {tag:'관찰',n:'봄',k:'o',lab:'관찰',t:'상체 무게중심이 앞으로 쏠리는 경우가 많아요',d:'블럭 없이 진행하는 경우예요.',S:smLean,T:tFr(236),to:1,cam:FL,dur:1.3},
+ {n:'1',k:'h',lab:'등 받치기',t:'① 등 쪽에서 허벅지로 등을 끌어올리듯 지지해요',d:'선생님은 수련생 등 뒤에 붙어요.',S:smLean,T:tSmBack,to:1,cam:[20,30,220],dur:1.5},
+ {n:'2',k:'h',lab:'가슴 당기기',t:'② 양 손바닥으로 어깨 쪽을 뒤로 밀며 가슴을 뒤로 당겨 와요',d:'상체 중심을 맞춰요. 점선은 교정 전 자세예요.',S:smFinal,T:tSmHold,to:1,cam:[20,30,220],mk:'w',ghost:smLean,dur:1.6},
+ {n:'끝',k:'x',lab:'빠져나오기',t:'손을 떼고 빠져나와요',d:EXIT,S:smFinal,T:tFr(236),to:0,cam:FL,dur:1.6}]},
+
+{id:'n6',num:'6',short:'우파비스타',title:'우파비스타코나아사나',sub:'Upaviṣṭa Koṇāsana · 교재 35쪽',
+ a1:'큐잉: 꼬리뼈가 들리지 않게 중심 잡기, 복부는 바닥·무릎은 천장, 꼬리뼈를 말아 내렸다 들었다 하며 중립 찾기',a2:'핸즈온: 무릎관절은 잡지 않기, 안쪽 허벅지를 살짝 회전, 뒤에서 천골을 밀며 잡아 주기',
+ warns:[['green','옵션','손은 무조건 뻗지 않아도 돼요. 타이트한 사람은 오리엉덩이(소자세)까지만 해요.']],
+ pre:{S:smFinal,T:tFr(236),to:0,cam:FL},
+ steps:[
+ {cues:['꼬리뼈가 들리지 않게 중심 잡기','복부는 바닥, 무릎은 천장','꼬리뼈를 말아 내렸다 들었다 하며 중립 찾기'],n:'말',k:'s',lab:'큐잉',t:'사마코나아사나에서 낮춘 상태로 이어 가요',d:'꼬리뼈를 말아 내렸다 들었다 하면서 스스로 중립을 찾아가게 해요. 대부분 감각을 잘못 찾아요.',S:upFold,T:tFr(236),to:1,cam:FL,dur:1.8},
+ {n:'1',k:'h',lab:'안쪽 허벅지',t:'① 안쪽 허벅지를 꺼내듯이 살짝 안정감 있게 회전시켜요',d:'무릎관절은 잡지 않아요.',S:upFold,T:tUpThigh,to:1,cam:[20,20,220],mk:'w',rot:[92,176,12,6,200,-20,0],dur:1.5},
+ {n:'2',k:'h',lab:'천골 밀기',t:'② 뒤에서 천골을 밀면서 잡아 줘요',d:'',S:upFold,T:tUpSac,to:1,cam:[20,20,220],mk:'w',arrow:[130,138,130,154]},
+ {n:'끝',k:'x',lab:'빠져나오기',t:'손을 떼고 빠져나와요',d:EXIT,S:upFold,T:tFr(236),to:0,cam:FL,dur:1.6}]},
+
+{id:'n7',num:'7',short:'하누만',title:'하누만아사나 · 원숭이 자세',sub:'Hanumānāsana · 오른다리가 앞에 있는 기준 · 교재 35쪽',
+ a1:'큐잉: 힘을 준 채 안쪽 허벅지 팽팽하게, 가슴도 골반도 정면, 가능한 범위만큼',a2:'필기에 핸즈온은 없어요. 블럭과 볼스터로 도와요.',
+ warns:[['red','주의','골반 가동범위에 따라 정면을 완벽히 못 볼 수도 있어요. 가능한 범위만큼만, 다치지 않게 주의해요.']],
+ pre:{S:hnBlockS,T:tStand2R(24),to:0,cam:FL},
+ steps:[
+ {cues:['힘을 준 채 안쪽 허벅지 팽팽하게','가슴도 골반도 정면','발바닥 세 지점을 앞으로 밀어내며 당기기','가능하면 허벅지가 정면 바닥을 보게'],n:'말',k:'s',lab:'큐잉',t:'다리를 힘 뺀 채 늘어뜨리는 것이 아니에요',d:'다리와 골반은 일직선, 오른발이 앞. 골반 정렬이 잘되게 해요.',S:hnFull,T:tStand2R(24),to:0,cam:FL,dur:1.8},
+ {tag:'도구',n:'도구',k:'t',lab:'블럭',t:'허벅지가 처음부터 바닥에 닿을 수는 없어요. 블럭을 최대한 활용해요',d:'1개로 안 되면 2~3개를 써요.',S:hnBlockS,T:tStand2R(24),to:0,cam:FL,prop:hnBlocks,dur:1.5},
+ {tag:'도구',n:'도구',k:'t',lab:'볼스터',t:'유연성이 낮은 남성은 볼스터도 활용해요',d:'손 짚을 곳이 필요하면 손 아래에도 블럭을 두고 짚게 해요.',S:hnBolS,T:tStand2R(24),to:0,cam:FL,prop:hnBolster,mk:[[113,164]],dur:1.5}]}
+];
+}
+if(window.__set==='nov1')POSES=NOV1();
 POSES.forEach(function(p){p.steps.forEach(function(s){s.KS=toK(s.S);s.KT=toK(s.T);});p.pre.KS=toK(p.pre.S);p.pre.KT=toK(p.pre.T);});
 
 // ---- 그리기 ----
@@ -2110,6 +2312,7 @@ function render(st){
  scene.setAttribute('viewBox',f1(cam[0])+' '+f1(cam[1])+' '+f1(cam[2])+' '+f1(h));
  var S=fromK(st.KS),T=fromK(st.KT),o='<rect x="6" y="198" width="248" height="7" rx="3.5" fill="#CFE0D7"/>';
  if(POSE.props)o+=POSE.props;
+ if(st.propAl>0.01)o+='<g opacity="'+st.propAl.toFixed(2)+'">'+st.prop+'</g>';
  var tg=st.to>0.01?'<g opacity="'+st.to.toFixed(2)+'">'+fig(T,'t')+'</g>':'';if(!st.tf)o+=tg;
  if(st.ghostAl>0.01)o+='<g stroke="#4C5955" stroke-width=".9" stroke-dasharray="2.5 2" opacity="'+(st.ghostAl*.75).toFixed(2)+'">'+fig(st.ghost,'g')+'</g>';
  o+=fig(S,'s');if(st.tf)o+=tg;
@@ -2149,6 +2352,7 @@ function state(now){var A=from<0?POSE.pre:POSE.steps[from],Bs=POSE.steps[cur],d=
   arrow:Bs.arrow||A.arrow,arAl:fade('arrow'),rot:Bs.rot||A.rot,rotAl:Bs.rot?Math.max(0,(e-.3)/.7):(A.rot&&!same?1-q:0),
   ckAl:Bs.check?Math.max(0,(e-.45)/.55):(A.check&&!same?1-q:0),
   ghost:Bs.ghost||A.ghost,ghostAl:Bs.ghost?Math.min(1,q*1.5):(A.ghost&&!same?1-q:0),
+  prop:Bs.prop||A.prop,propAl:Bs.prop?(A.prop===Bs.prop&&!same?1:q):(A.prop&&!same?1-q:0),
   say:Bs.say||A.say,sayAl:Bs.say?Math.max(0,(e-.4)/.6):(A.say&&!same?1-q:0),ph:reduce?0:((now/1100)%1),done:e>=1};}
 function jump(i,anim){from=anim?cur:(i===0?-1:i);cur=i;t0=performance.now();setText(i);}
 function stopPlay(){playing=false;playBtn.textContent='▶ 재생';}
@@ -2161,7 +2365,7 @@ function loadPose(id,auto){var p=POSES.filter(function(x){return x.id===id;})[0]
  document.getElementById('pNum').textContent=p.num;document.getElementById('pTitle').textContent=p.title;document.getElementById('pSub').textContent=p.sub;
  document.title=p.short+' 핸즈온 움직임';scene.setAttribute('aria-label',p.short+' 핸즈온 장면');
  document.getElementById('a1').textContent=p.a1;document.getElementById('a2').textContent=p.a2;
- var wn=document.getElementById('warn');wn.innerHTML='';if(p.warn){var dv=document.createElement('div');dv.className='warn '+p.warn[0];var b=document.createElement('b');b.textContent=p.warn[1];var sp=document.createElement('span');sp.textContent=p.warn[2];dv.appendChild(b);dv.appendChild(sp);wn.appendChild(dv);}
+ var wn=document.getElementById('warn');wn.innerHTML='';(p.warns||(p.warn?[p.warn]:[])).forEach(function(w,wi){var dv=document.createElement('div');dv.className='warn '+w[0];if(wi)dv.style.marginTop='8px';var b=document.createElement('b');b.textContent=w[1];var sp=document.createElement('span');sp.textContent=w[2];dv.appendChild(b);dv.appendChild(sp);wn.appendChild(dv);});
  document.getElementById('note').textContent='필기 내용을 바탕으로 만든 단순화 애니메이션입니다. 아래 장면 버튼을 눌러 멈춰 볼 수 있어요.'+(p.note?' '+p.note:'');
  chs.innerHTML='';p.steps.forEach(function(s,i){var bt=document.createElement('button');bt.type='button';bt.textContent=s.lab;bt.onclick=function(){stopPlay();jump(i);};chs.appendChild(bt);});
  [].forEach.call(tabs.children,function(b){var on=b.getAttribute('data-id')===p.id;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false');});
@@ -2172,43 +2376,50 @@ playBtn.onclick=function(){if(playing){stopPlay();return;}startPlay();if(cur>=PO
 document.getElementById('next').onclick=function(){stopPlay();if(cur<POSE.steps.length-1)jump(cur+1,true);};
 document.getElementById('prev').onclick=function(){stopPlay();if(cur>0)jump(cur-1,true);};
 speedBtn.onclick=function(){speed=speed===1?0.6:(speed===0.6?1.5:1);speedBtn.textContent='속도 '+(speed===0.6?'0.6':speed)+'×';};
-var h0=(location.hash||'').replace('#','');loadPose(h0||'p02',true);
+var h0=(location.hash||'').replace('#','');loadPose(h0||POSES[0].id,true);
 window.addEventListener('hashchange',function(){var h=(location.hash||'').replace('#','');if(h&&h!==POSE.id)loadPose(h,true);});
 window.__dbg={POSES:POSES,load:loadPose,jump:jump,stop:stopPlay,render:render,state:state};
 requestAnimationFrame(frame);
 })();
 
 }}];
-(function(){
-  var stage=document.getElementById('hb-anim-stage'),tabs=document.querySelector('.hb-anim-tabs'),hosts={},wins={},cur=null;
+function hbAnimLoader(stageId,tabsSel,anims){
+  var stage=document.getElementById(stageId),tabs=document.querySelector(tabsSel),hosts={},wins={},cur=null;
   function vis(el){return el.offsetParent!==null;}
   function mount(a){
     if(hosts[a.key])return hosts[a.key];
     var host=document.createElement('div');host.className='hb-anim-host';stage.appendChild(host);
     var root=host.attachShadow({mode:'open'});
-    root.appendChild(document.getElementById('tpl-anim-'+a.key).content.cloneNode(true));
+    root.appendChild(document.getElementById('tpl-anim-'+(a.tpl||a.key)).content.cloneNode(true));
     var doc={getElementById:function(i){return root.getElementById(i);},querySelector:function(s){return root.querySelector(s);},
       querySelectorAll:function(s){return root.querySelectorAll(s);},createElement:function(t){return document.createElement(t);},
       createElementNS:function(n,t){return document.createElementNS(n,t);},documentElement:document.documentElement,body:document.body};
     function raf(cb){return window.requestAnimationFrame(function(t){if(vis(host))cb(t);else setTimeout(function(){raf(cb);},250);});}
-    var w={matchMedia:function(q){return window.matchMedia(q);},addEventListener:function(){},removeEventListener:function(){}};
+    var w={matchMedia:function(q){return window.matchMedia(q);},addEventListener:function(){},removeEventListener:function(){},__set:a.set};
     hosts[a.key]=host;wins[a.key]=w;
     try{a.run(doc,raf,w,{hash:''},{replaceState:function(){},pushState:function(){}});}catch(e){host.textContent='애니메이션을 불러오지 못했어요.';}
     return host;
   }
   function select(key){
-    var a=HB_ANIMS.filter(function(x){return x.key===key;})[0]||HB_ANIMS[0];
+    var a=anims.filter(function(x){return x.key===key;})[0]||anims[0];
     Object.keys(hosts).forEach(function(k){hosts[k].hidden=k!==a.key;});
     mount(a).hidden=false;cur=a.key;
-    [].forEach.call(tabs.children,function(b){b.setAttribute('aria-selected',b.getAttribute('data-anim')===a.key?'true':'false');});
+    if(tabs)[].forEach.call(tabs.children,function(b){b.setAttribute('aria-selected',b.getAttribute('data-anim')===a.key?'true':'false');});
   }
-  if(HB_ANIMS.length>1){
+  if(tabs&&anims.length>1){
     tabs.hidden=false;
-    HB_ANIMS.forEach(function(a){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.setAttribute('data-anim',a.key);
+    anims.forEach(function(a){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.setAttribute('data-anim',a.key);
       b.innerHTML='<b>'+a.n+'</b>'+a.label;b.addEventListener('click',function(){select(a.key);});tabs.appendChild(b);});
   }
-  window.__hbAnimOpen=function(){select(cur||HB_ANIMS[0].key);};
-  window.__hbAnimPose=function(pid){select(HB_ANIMS[0].key);var w=wins[HB_ANIMS[0].key];if(w&&w.__dbg&&w.__dbg.load){try{w.__dbg.load(pid,true);}catch(e){}}};
+  return {open:function(){select(cur||anims[0].key);},
+    pose:function(pid){select(anims[0].key);var w=wins[anims[0].key];if(w&&w.__dbg&&w.__dbg.load){try{w.__dbg.load(pid,true);}catch(e){}}},
+    wins:wins};
+}
+(function(){
+  var A=hbAnimLoader('hb-anim-stage','.hb-anim-tabs',HB_ANIMS);
+  window.__hbAnimOpen=A.open;window.__hbAnimPose=A.pose;
+  var B2=hbAnimLoader('hb-anim-stage-1101',null,[{key:'nov1',tpl:'handson',set:'nov1',n:'',label:'핸즈온',run:HB_ANIMS[0].run}]);
+  window.__hbAnimOpen1101=B2.open;window.__hbAnimWins1101=B2.wins;
 })();
 </script>
 <script>
@@ -2230,8 +2441,8 @@ requestAnimationFrame(frame);
   });
 
   /* 보기 전환 */
-  var ORDER=['d1024','cue','centering','handson','anim','anatomy','d1101','d1101p','cue2'];
-  var LABEL={d1024:'10월 24일 수업 정리',d1101:'11월 1일 수업 정리',d1101p:'프라나야마',cue2:'전사 2 묶음 큐잉',cue:'런지 묶음 큐잉',centering:'일반 센터링',handson:'핸즈온 정리',anim:'핸즈온 애니메이션',anatomy:'해부학 2회차'};
+  var ORDER=['d1024','cue','centering','handson','anim','anatomy','d1101','d1101h','d1101p','cue2'];
+  var LABEL={d1024:'10월 24일 수업 정리',d1101:'11월 1일 수업 정리',d1101h:'핸즈온 애니메이션',d1101p:'프라나야마',cue2:'전사 2 묶음 큐잉',cue:'런지 묶음 큐잉',centering:'일반 센터링',handson:'핸즈온 정리',anim:'핸즈온 애니메이션',anatomy:'해부학 2회차'};
   var views={};[].forEach.call(document.querySelectorAll('.hb-view'),function(v){views[v.getAttribute('data-view-id')]=v;});
   var navBtns=[].slice.call(document.querySelectorAll('.side button[data-view]'));
   var side=document.getElementById('side'),scrim=document.getElementById('scrim'),menu=document.getElementById('menu');
@@ -2287,6 +2498,7 @@ requestAnimationFrame(frame);
     document.title=LABEL[id]+' · 요가 TTC 수업 노트';
     buildToc(id);buildPager(id);
     if(id==='anim'&&window.__hbAnimOpen)window.__hbAnimOpen();
+    if(id==='d1101h'&&window.__hbAnimOpen1101)window.__hbAnimOpen1101();
   }
   navBtns.forEach(function(b){b.addEventListener('click',function(){show(b.getAttribute('data-view'));});});
   menu.addEventListener('click',function(){var o=!side.classList.contains('open');side.classList.toggle('open',o);scrim.hidden=!o;menu.setAttribute('aria-expanded',o?'true':'false');});

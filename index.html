@@ -182,6 +182,24 @@ p,li{text-wrap:pretty}
 .hb-tw .pg{font-size:12.5px;color:var(--muted);margin-left:2px}
 .hb-sub h4 .an-s{font-weight:400;margin-left:4px}
 .hb-tw.nw td:first-child{white-space:nowrap}
+.hb-pill{display:inline-block;font-size:12px;font-weight:600;line-height:1.5;padding:1px 8px;border-radius:999px;background:var(--surface-2);color:var(--muted);margin-left:6px;vertical-align:1px;white-space:nowrap}
+.hb-pill.hw{background:#FBE9DF;color:#B4541F}
+.hb-pill.no{background:transparent;box-shadow:inset 0 0 0 1px var(--line-2)}
+.hb-steps{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.hb-steps span{background:var(--surface);border-radius:8px;padding:5px 11px;font-weight:600;color:var(--ink);font-size:14.5px}
+.hb-steps span.on{background:var(--mark-y)}
+.hb-steps i{font-style:normal;color:var(--faint)}
+.hb-steps.tight{gap:4px}.hb-steps.tight span{padding:4px 8px;font-size:13.5px}
+@media (max-width:600px){.hb-steps.tight{display:grid;grid-template-columns:repeat(3,max-content)}.hb-steps.tight span{font-size:13px;padding:4px 7px}}
+.hb-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.hb-card{border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.hb-card h4{margin:0}
+.hb-card ol.circ{gap:4px}.hb-card ol.circ li{padding-left:1.3em;text-indent:-1.3em}
+.hb-card .t{font-size:12.5px;font-weight:600;color:var(--muted)}
+.hb-big{font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.hb-doc .hb-note{font-size:13.5px;color:var(--muted)}
+@media (prefers-color-scheme: dark){.hb-pill.hw{background:#3A2A20;color:#F0A97C}}
+:root[data-theme="dark"] .hb-pill.hw{background:#3A2A20;color:#F0A97C}
 
 /* 표 */
 .hb-tw{overflow-x:auto;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line)}
@@ -689,59 +707,63 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
   <div class="hb-vhead">
     <span class="ey">11월 1일 일 · TTC 오프라인</span>
     <h2>11월 1일 수업 정리</h2>
-    <p>아사나, 어저스트먼트 재강조, 티칭 실습, 전사&nbsp;2&nbsp;묶음 빈야사 티칭, 프라나야마, 11월&nbsp;1주차 과제</p>
+    <p>아사나와 어저스트먼트, 티칭 실습, 전사&nbsp;2&nbsp;묶음 빈야사 티칭, 프라나야마, 11월&nbsp;1주차 과제를 정리했어요.</p>
   </div>
   <div class="hb-doc">
     <div class="hb-sec">
       <h3>오늘 수업 순서</h3>
-      <div class="hb-sub">
-        <h4>오전: 아사나</h4>
-        <ol>
-          <li>아사나 (22~35p)</li>
-          <li>어저스트먼트 재강조 (10p)</li>
-        </ol>
+      <div class="hb-two">
+        <div class="hb-card"><span class="t">오전</span><h4>아사나</h4>
+          <ol><li>아사나 7가지 <span class="hb-note">22~35p</span></li><li>어저스트먼트 재강조 <span class="hb-note">10p</span></li></ol></div>
+        <div class="hb-card"><span class="t">오후</span><h4>티칭</h4>
+          <ol start="3"><li>티칭 실습</li><li>빈야사 티칭 <span class="hb-note">120~121p</span></li><li>프라나야마 <span class="hb-note">78~85p</span></li></ol></div>
       </div>
-      <div class="hb-sub">
-        <h4>오후: 티칭</h4>
-        <ol start="3">
-          <li>티칭 실습</li>
-          <li>빈야사 티칭 (120~121p)</li>
-          <li>프라나야마 (78~85p)</li>
-        </ol>
+    </div>
+
+    <div class="hb-sec">
+      <h3>오늘의 핵심</h3>
+      <div class="hb-key">
+        <strong>핸즈온은 어저스트먼트의 <mark class="y">마지막 단계</mark>. 자세 교정이 목적이 아니라, 수련생이 몸의 감각을 알아차릴 수 있게 잡아 주는 정도로 진행.</strong>
+        <ul>
+          <li>언어 → 데모 → 도구 사용 → 핸즈온 순서</li>
+          <li>숨쉬는고래 수련의 목적: 이 공간에서 나를 경험하고, 배우고, 스스로 느끼는 것</li>
+        </ul>
       </div>
     </div>
 
     <div class="hb-sec">
       <h3>1. 아사나 (22~35p)</h3>
+      <p class="hb-note"><span class="hb-pill hw" style="margin-left:0">과제</span> 표시는 11월 1주차 동영상 과제에 들어간 자세예요.</p>
       <div class="hb-tw nw">
         <table>
           <thead><tr><th scope="col" style="width:4.5em">교재</th><th scope="col">자세</th></tr></thead>
           <tbody>
-            <tr><td>22p</td><td><b>우티타 트리코나아사나</b><small>삼각 자세</small></td></tr>
-            <tr><td>22p</td><td><b>파르스보타나아사나</b><small>피라미드 자세</small></td></tr>
-            <tr><td>23p</td><td><b>파리브리타 트리코나아사나</b><small>비튼 삼각 자세</small></td></tr>
+            <tr><td>22p</td><td><b>우티타 트리코나아사나</b><span class="hb-pill hw">과제</span><small>삼각 자세</small></td></tr>
+            <tr><td>22p</td><td><b>파르스보타나아사나</b><span class="hb-pill hw">과제</span><small>피라미드 자세</small></td></tr>
+            <tr><td>23p</td><td><b>파리브리타 트리코나아사나</b><span class="hb-pill hw">과제</span><small>비튼 삼각 자세</small></td></tr>
             <tr><td>24p</td><td><b>파리브리타 파르스바코나아사나</b><small>비튼 측각도 자세</small></td></tr>
-            <tr><td>34p</td><td><b>사마코나아사나</b></td></tr>
-            <tr><td>35p</td><td><b>우파비스타코나아사나</b></td></tr>
-            <tr><td>35p</td><td><b>하누만아사나</b><small>원숭이 자세</small></td></tr>
+            <tr><td>34p</td><td><b>사마코나아사나</b><span class="hb-pill hw">과제</span></td></tr>
+            <tr><td>35p</td><td><b>우파비스타코나아사나</b><span class="hb-pill hw">과제</span></td></tr>
+            <tr><td>35p</td><td><b>하누만아사나</b><span class="hb-pill no">과제 제외</span><small>원숭이 자세</small></td></tr>
           </tbody>
         </table>
       </div>
+      <p><button type="button" class="hb-link" data-goto="d1101h">7개 자세 핸즈온 애니메이션 보기</button></p>
     </div>
 
     <div class="hb-sec">
       <h3>2. 어저스트먼트 재강조 (10p)</h3>
       <div class="hb-sub">
         <h4>어저스트먼트의 단계</h4>
-        <div class="hb-flow"><span>언어</span><i>→</i><span>데모</span><i>→</i><span>도구 사용</span><i>→</i><span>핸즈온</span></div>
-        <p><b>핸즈온은 마지막 단계임을 꼭 기억할 것</b></p>
+        <div class="hb-steps"><span>① 언어</span><i>→</i><span>② 데모</span><i>→</i><span>③ 도구 사용</span><i>→</i><span class="on">④ 핸즈온</span></div>
+        <p><mark class="y"><b>핸즈온은 마지막 단계</b></mark>임을 꼭 기억할 것</p>
       </div>
       <div class="hb-sub">
         <h4>핸즈온의 목적</h4>
         <ul>
-          <li>자세 교정이 목적이 아님. 수련생이 몸의 감각을 알아차릴 수 있게 잡아 주는 정도로 진행</li>
-          <li>숨쉬는고래 수련의 목적: 이 공간에서 나를 경험하고, 배우고, 스스로 느끼는 것</li>
-          <li>핸즈온 대상은 '핸즈온으로 자세 수정이 가능한 사람'. 완전히 틀어진 수련생의 모든 자세를 잡아 주는 것이 아님</li>
+          <li><b>자세 교정이 목적이 아님.</b> 수련생이 <mark class="g">몸의 감각을 알아차릴 수 있게</mark> 잡아 주는 정도로 진행</li>
+          <li>숨쉬는고래 수련의 목적: 이 공간에서 <mark class="g">나를 경험하고, 배우고, 스스로 느끼는 것</mark></li>
+          <li>핸즈온 대상은 <b>'핸즈온으로 자세 수정이 가능한 사람'</b>. 완전히 틀어진 수련생의 모든 자세를 잡아 주는 것이 아님</li>
         </ul>
       </div>
       <p><button type="button" class="hb-link" data-goto="handson">10월 25일 핸즈온 정리 보기</button></p>
@@ -749,14 +771,16 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
 
     <div class="hb-sec">
       <h3>3. 티칭 실습</h3>
-      <div class="hb-flow"><span>일반 센터링 (97p)</span><i>+</i><span>수리야&nbsp;나마스카라&nbsp;A (117p)</span><i>+</i><span>런지 묶음 (118~119p)</span></div>
+      <p>세 가지를 이어서 티칭했어요.</p>
+      <div class="hb-steps"><span>일반 센터링</span><i>+</i><span>수리야&nbsp;나마스카라&nbsp;A</span><i>+</i><span>런지 묶음</span></div>
+      <p class="hb-note">교재 97p, 117p, 118~119p</p>
       <p><button type="button" class="hb-link" data-goto="centering">일반 센터링 스크립트 보기</button></p>
       <p><button type="button" class="hb-link" data-goto="cue">런지 묶음 큐잉 이미지 보기</button></p>
     </div>
 
     <div class="hb-sec">
       <h3>4. 빈야사 티칭 (120~121p)</h3>
-      <p>다리가 양옆으로 열린 전사&nbsp;2&nbsp;묶음</p>
+      <p><b>다리가 양옆으로 열린 전사&nbsp;2&nbsp;묶음</b></p>
       <p><button type="button" class="hb-link" data-goto="cue2">전사&nbsp;2&nbsp;묶음 큐잉 이미지 보기 (오른쪽·왼쪽)</button></p>
     </div>
 
@@ -764,22 +788,32 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
       <h3>5. 프라나야마 (78~85p)</h3>
       <ul>
         <li>프라나야마의 정의와 종류</li>
-        <li>호흡법 연습: 카팔라박티, 우짜이 호흡, 아눌롬 빌롬</li>
+        <li>호흡법 연습: <b>카팔라박티</b>, <b>우짜이 호흡</b>, <b>아눌롬 빌롬</b></li>
       </ul>
       <p><button type="button" class="hb-link" data-goto="d1101p">프라나야마 정리 보기</button></p>
     </div>
 
     <div class="hb-sec">
       <h3>6. 11월&nbsp;1주차 과제</h3>
-      <div class="hb-tw nw">
-        <table>
-          <thead><tr><th scope="col">과제</th><th scope="col">내용</th></tr></thead>
-          <tbody>
-            <tr><td>1. 아사나<small>동영상</small></td><td><ol class="circ"><li>① 시바난다 수리야 나마스카라 3세트 <span class="pg">17p</span></li><li>② 파르스보타나아사나 <span class="pg">22p</span></li><li>③ 우티타 트리코나아사나 <span class="pg">22p</span></li><li>④ 우티타 파르스바코나아사나 <span class="pg">23p</span></li><li>⑤ 파리브리타 트리코나아사나 <span class="pg">23p</span></li><li>⑥ 사마코나아사나 <span class="pg">34p</span></li><li>⑦ 우파비스타코나아사나 <span class="pg">35p</span></li></ol></td></tr>
-            <tr><td>2. 명상<small>동영상</small></td><td>8분</td></tr>
-            <tr><td>3. 큐잉<small>녹음</small></td><td><ol class="circ"><li>① 센터링</li><li>② 수리야 나마스카라 A</li><li>③ 오른쪽: 런지 묶음 → 다리가 양옆으로 열린 전사&nbsp;2&nbsp;묶음</li><li>④ 왼쪽: 런지 묶음 → 다리가 양옆으로 열린 전사&nbsp;2&nbsp;묶음</li></ol></td></tr>
-          </tbody>
-        </table>
+      <div class="hb-two">
+        <div class="hb-card"><span class="t">동영상</span><h4>1. 아사나</h4>
+          <ol class="circ" style="list-style:none;padding-left:0">
+            <li>① 시바난다 수리야 나마스카라 <mark class="y">3세트</mark> <span class="hb-note">17p</span></li>
+            <li>② 파르스보타나아사나 <span class="hb-note">22p</span></li>
+            <li>③ 우티타 트리코나아사나 <span class="hb-note">22p</span></li>
+            <li>④ 우티타 파르스바코나아사나 <span class="hb-note">23p</span></li>
+            <li>⑤ 파리브리타 트리코나아사나 <span class="hb-note">23p</span></li>
+            <li>⑥ 사마코나아사나 <span class="hb-note">34p</span></li>
+            <li>⑦ 우파비스타코나아사나 <span class="hb-note">35p</span></li>
+          </ol></div>
+        <div class="hb-card"><span class="t">동영상</span><h4>2. 명상</h4><p><mark class="y">8분</mark></p>
+          <span class="t" style="margin-top:10px">녹음</span><h4>3. 큐잉</h4>
+          <ol class="circ" style="list-style:none;padding-left:0">
+            <li>① 센터링</li>
+            <li>② 수리야 나마스카라 A</li>
+            <li>③ <b>오른쪽</b>: 런지 묶음 → 다리가 양옆으로 열린 전사&nbsp;2&nbsp;묶음</li>
+            <li>④ <b>왼쪽</b>: 런지 묶음 → 다리가 양옆으로 열린 전사&nbsp;2&nbsp;묶음</li>
+          </ol></div>
       </div>
     </div>
   </div>
@@ -803,52 +837,103 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
   <div class="hb-doc">
     <div class="hb-sec">
       <h3>칠판 정리</h3>
-      <div class="hb-flow"><span>① 야마</span><i>→</i><span>② 니야마</span><i>→</i><span>③ 아사나</span><i>→</i><span><b>★ ④ 프라나야마</b></span><i>→</i><span>⑤ 프라티야하라</span><i>→</i><span>⑥ 다라나</span><i>→</i><span>⑦ 디야나</span><i>→</i><span>⑧ 사마디</span></div>
-      <ul><li>요가 8단계 (파탄잘리 〈요가수트라〉)</li><li>Pranayama ┄→ Kriya &amp; 준비수련 (예: 카팔라박티)</li><li>호흡법: (카팔라박티), (완전호흡), 우짜이, (아눌롬 빌롬), 브라마리</li></ul>
+      <div class="hb-sub">
+        <h4>요가 8단계 <span class="an-s">파탄잘리 〈요가수트라〉</span></h4>
+        <div class="hb-steps tight"><span>① 야마</span><span>② 니야마</span><span>③ 아사나</span><span class="on">★ ④ 프라나야마</span><span>⑤ 프라티야하라</span><span>⑥ 다라나</span><span>⑦ 디야나</span><span>⑧ 사마디</span></div>
+      </div>
+      <div class="hb-tw nw">
+        <table>
+          <thead><tr><th scope="col">호흡</th><th scope="col">✓</th><th scope="col">한 줄 정리</th></tr></thead>
+          <tbody>
+            <tr><td>카팔라박티<small>교재에 없음</small></td><td>✓</td><td>Kriya(정화 수련). 아랫배로 숨을 강하게 내뱉기</td></tr>
+            <tr><td>완전호흡<small>디르가 · 79~80p</small></td><td>✓</td><td>세 단계 호흡법. Lv0 수업에 적합</td></tr>
+            <tr><td>우짜이 호흡<small>81~82p</small></td><td></td><td>1:2 비율로 연습</td></tr>
+            <tr><td>아눌롬 빌롬<small>82~84p</small></td><td>✓</td><td>1:2 비율, 좌우 코 번갈아, 왼코로 시작해 왼코로 끝</td></tr>
+            <tr><td>브라마리<small>84~85p</small></td><td></td><td>필기 없음</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="hb-note">✓ 표시: 전통적 분류의 프라나야마가 아님 (긴 호흡 수련이라고도 함)</p>
     </div>
 
     <div class="hb-sec">
       <h3>1. 프라나야마란 (78~80p)</h3>
-      <ul><li>파탄잘리 〈요가수트라〉의 요가 8단계 중 하나. 아사나(이때의 아사나는 '자세')가 완성되면 그다음이 프라나야마</li><li>숨참기(쿰바카)를 포함한 요가적 호흡 수련법</li><li>현대의 호흡 수련법이 모두 프라나야마인 것은 아님</li><li>프라나와 마음의 관계: 다라나, 디야나, 사마디로 들어갈 수 있게 해 줌</li><li><b>매 호흡을 의식적으로 하는 것이 중요함</b></li><li>호흡을 새로 만드는 것이 아니라, 이미 일어나고 있는 호흡을 점검하는 것. 수련생이 호흡을 애써 만들려 할&nbsp;때 꼭 이야기해 주기</li></ul>
+      <div class="hb-key">
+        <strong>숨참기(쿰바카)를 포함한 요가적 호흡 수련법. <mark class="y">매 호흡을 의식적으로 하는 것</mark>이 중요함.</strong>
+      </div>
+      <ul>
+        <li>〈요가수트라〉의 요가 8단계 중 하나. <b>아사나가 완성되면 그다음이 프라나야마</b> (이때의 아사나는 '자세')</li>
+        <li>현대의 호흡 수련법이 모두 프라나야마인 것은 아님</li>
+        <li>프라나와 마음의 관계: <mark class="g">다라나, 디야나, 사마디로 들어갈 수 있게</mark> 해 줌</li>
+        <li>호흡을 새로 만드는 것이 아니라, <b>이미 일어나고 있는 호흡을 점검</b>하는 것. 수련생이 호흡을 애써 만들려 할&nbsp;때 꼭 이야기해 주기</li>
+      </ul>
     </div>
 
     <div class="hb-sec">
       <h3>2. Kriya와 준비수련 (79p)</h3>
-      <ul><li>Kriya는 정화의 수련으로, 고급 요가 수련을 위한 준비 과정</li><li>현대 요가 수련에서는 Kriya를 그대로 하기 어려워 준비수련도 있음</li></ul>
+      <ul>
+        <li><b>Kriya</b>: 정화의 수련 (고급 요가 수련을 위한 준비 과정)</li>
+        <li>현대 요가 수련에서는 Kriya를 그대로 하기 어려워 <b>준비수련</b>도 있음</li>
+      </ul>
     </div>
 
     <div class="hb-sec">
-      <h3>3. 수업에서 다룬 호흡 (80p)</h3>
-      <ul><li>카팔라박티 ✓, 완전호흡 ✓, 우짜이 호흡, 아눌롬 빌롬 ✓, 브라마리</li><li>✓ 표시한 호흡은 전통적 분류의 프라나야마가 아님 (긴 호흡 수련이라고도 함)</li><li>긴 호흡은 대부분 처음에 우짜이 방식으로 호흡을 조절함</li></ul>
+      <h3>3. 긴 호흡 수련 (80p)</h3>
+      <ul>
+        <li>✓ 표시한 호흡(카팔라박티, 완전호흡, 아눌롬 빌롬)은 <b>전통적 분류의 프라나야마가 아님</b></li>
+        <li>긴 호흡은 대부분 처음에 <mark class="y">우짜이 방식</mark>으로 호흡을 조절함</li>
+      </ul>
     </div>
 
     <div class="hb-sec">
       <h3>4. 카팔라박티 (교재에 없음)</h3>
-      <ul><li>정확히는 프라나야마가 아니라 Kriya(정화 수련)에 해당함</li><li>입술에 붙은 파리를 떼어 내듯, 아랫배에 힘을 줘서 숨을 강하게 내뱉는 방식</li><li>한 번의 스트로크는 배가 저절로 당겨져 들어오는 데까지. 목구멍에 힘을 주거나 소리를 내는 것이 아님</li><li>목표: 1년 안에 120회 × 3분</li></ul>
+      <ul>
+        <li>정확히는 프라나야마가 아니라 <b>Kriya(정화 수련)</b>에 해당함</li>
+        <li>입술에 붙은 파리를 떼어 내듯, <mark class="g">아랫배에 힘을 줘서 숨을 강하게 내뱉는</mark> 방식</li>
+        <li>한 번의 스트로크는 배가 저절로 당겨져 들어오는 데까지. <b>목구멍에 힘을 주거나 소리를 내는 것이 아님</b></li>
+        <li>목표: <mark class="y">1년 안에 120회 × 3분</mark></li>
+      </ul>
     </div>
 
     <div class="hb-sec">
       <h3>5. 완전호흡, 디르가 프라나야마 (79~80p)</h3>
-      <ul><li>모든 수련을 편안하게 하기 위한 호흡. 세 단계 호흡법이라고도 함</li><li>Lv0 수업에 적합한 호흡</li></ul>
+      <ul>
+        <li>모든 수련을 편안하게 하기 위한 호흡. <b>세 단계 호흡법</b>이라고도 함</li>
+        <li><mark class="y">Lv0 수업에 적합한 호흡</mark></li>
+      </ul>
     </div>
 
     <div class="hb-sec">
       <h3>6. 1:2 호흡 비율 (81p)</h3>
       <p class="an-s">우짜이 호흡과 아눌롬 빌롬에 공통으로 적용</p>
-      <ul><li>복부를 잡은 채 마시는 숨을 1, 내쉬는 숨을 2로 하기</li><li>1:2 비율로 호흡하면 교감신경은 낮아지고 부교감신경이 활성화되어 안정됨</li><li>초보자는 1:2로 시작하고, 1년 이상 수련하면 8:16을 목표로 함</li><li>숙련자는 숨참기를 더해도 됨</li><li>의견이 갈리는 부분. '요가할 때는 자연스러운 호흡이 좋다'는 의견도 있음</li></ul>
+      <div class="hb-two">
+        <div class="hb-card"><span class="t">마시는 숨 : 내쉬는 숨</span><span class="hb-big">1 : 2</span><span class="hb-note">복부를 잡은 채로</span></div>
+        <div class="hb-card"><span class="t">목표</span><span class="hb-big">1:2 → 8:16</span><span class="hb-note">초보자는 1:2로 시작, 1년 이상 수련하면 8:16</span></div>
+      </div>
+      <ul>
+        <li>1:2 비율로 호흡하면 <mark class="g">교감신경은 낮아지고 부교감신경이 활성화</mark>되어 안정됨</li>
+        <li>숙련자는 숨참기를 더해도 됨</li>
+        <li>의견이 갈리는 부분. '요가할 때는 자연스러운 호흡이 좋다'는 의견도 있음</li>
+      </ul>
     </div>
 
     <div class="hb-sec">
       <h3>7. 우짜이 호흡 (81~82p)</h3>
-      <ul><li>1:2 비율로 연습하기</li></ul>
+      <ul><li><b>1:2 비율</b>로 연습하기</li></ul>
     </div>
 
     <div class="hb-sec">
       <h3>8. 아눌롬 빌롬 (82~84p)</h3>
       <p class="an-s">교재 표기: 아눌로마 빌로마 (Anuloma Viloma), 교호호흡</p>
-      <ul><li>1:2 비율로 연습하기</li><li>손가락으로 한쪽 코를 막고 좌우를 번갈아 호흡하기</li><li>왼코로 마시기 → 오른코로 내쉬기 → 오른코로 마시기 → 왼코로 내쉬기 → 다시 왼코로 마시기… 마신&nbsp;쪽의 반대쪽으로 넘어가며 이어 가기</li><li>반드시 왼코로 시작해서 왼코로 끝내기</li><li>두 코가 동시에 열리는 순간이 없게 하기</li><li>소리가 있는 우짜이 호흡으로 진행하기</li></ul>
+      <div class="hb-steps"><span class="on">왼코 마시기</span><i>→</i><span>오른코 내쉬기</span><i>→</i><span>오른코 마시기</span><i>→</i><span>왼코 내쉬기</span><i>→</i><span>다시 왼코 마시기…</span></div>
+      <ul>
+        <li><b>1:2 비율</b>로 연습하기</li>
+        <li>손가락으로 한쪽 코를 막고 좌우를 번갈아 호흡하기. <b>마신 쪽의 반대쪽으로</b> 넘어가며 이어 가기</li>
+        <li><mark class="y">반드시 왼코로 시작해서 왼코로 끝내기</mark></li>
+        <li>두 코가 동시에 열리는 순간이 없게 하기</li>
+        <li>소리가 있는 우짜이 호흡으로 진행하기</li>
+      </ul>
     </div>
-
   </div>
 </section>
 

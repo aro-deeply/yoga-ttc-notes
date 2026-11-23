@@ -17,8 +17,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="TTC 노트">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#191817" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 /* 핸즈온 원본 토큰 (아래에서 다시 덮음) */
@@ -32,11 +32,6 @@
   --stage:#E9EFEB; --mat:#B9D3C7;
   --sans:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
   --latin:"Manrope","Pretendard","Noto Sans KR",system-ui,sans-serif;}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121816; --paper:#1A2220; --ink:#E5ECE9; --muted:#9FAEA8; --line:#2E3A36;
-  --deep:#0E2421; --deep-ink:#EAF2EF; --deep-muted:#8FB0A7;
-  --teal:#66C2AE; --teal-soft:#183631; --orange:#F2884F; --orange-soft:#3E2618;
-  --blue:#82B2E8; --blue-soft:#1A2B40; --red:#F07A70; --red-soft:#40201E;
-  --amber:#F0C25A; --amber-soft:#3A2F12; --stage:#DDE5E0; --mat:#A9C6B9; color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#121816; --paper:#1A2220; --ink:#E5ECE9; --muted:#9FAEA8; --line:#2E3A36;
   --deep:#0E2421; --deep-ink:#EAF2EF; --deep-muted:#8FB0A7;
   --teal:#66C2AE; --teal-soft:#183631; --orange:#F2884F; --orange-soft:#3E2618;
@@ -59,17 +54,6 @@
   --mark-y:#FDEB9C; --mark-g:#D5ECD9;
   --top-h:56px;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  color-scheme:dark;
-  --bg:#191817; --surface:#22201F; --surface-2:#2A2826;
-  --ink:#ECE9E4; --ink-2:#D2CEC8; --muted:#A39E97; --faint:#7D7871;
-  --line:#2F2C2A; --line-2:#3D3A37; --hand:#EE9461; --hand-soft:#3B2A1F;
-  --paper:#191817; --deep:#ECE9E4; --deep-ink:#191817; --deep-muted:#7D7871;
-  --teal:#D2CEC8; --teal-soft:#2A2826; --orange:#EE9461; --orange-soft:#3B2A1F;
-  --blue:#93B2DA; --blue-soft:#1F2733; --red:#F08B7B; --red-soft:#3A2320;
-  --amber:#EBC468; --amber-soft:#352C14; --stage:#E9E6E1; --mat:#CFC7BC; --chip:#22201F;
-  --mark-y:#5A4C16; --mark-g:#21452D;
-}}
 :root[data-theme="dark"]{
   color-scheme:dark;
   --bg:#191817; --surface:#22201F; --surface-2:#2A2826;
@@ -93,7 +77,6 @@ a{color:inherit}
 h1,h2,h3,h4,h5{text-wrap:balance}
 p,li{text-wrap:pretty}
 .logo{width:24px;height:24px;display:block;flex:none}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .logo{filter:invert(1)}}
 :root[data-theme="dark"] .logo{filter:invert(1)}
 
 /* 비밀번호 화면 */
@@ -255,7 +238,6 @@ p,li{text-wrap:pretty}
 .hb-check{gap:6px}
 .hb-big{font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
 .hb-doc .hb-note{font-size:13.5px;color:var(--muted)}
-@media (prefers-color-scheme: dark){.hb-pill.hw{background:#3A2A20;color:#F0A97C}}
 :root[data-theme="dark"] .hb-pill.hw{background:#3A2A20;color:#F0A97C}
 
 /* 표 */
@@ -3502,7 +3484,6 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
   --deep:#1F3B36; --onDeep:#FFFFFF; --teal:#2D7A6B; --stage:#E6EEE9; --chip:#F3F6F4;
   --sans:"IBM Plex Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
 }
-@media (prefers-color-scheme: dark){:host{--bg:#121816;--paper:#1A2220;--ink:#E5ECE9;--muted:#A3B1AB;--line:#2E3A36;--deep:#66C2AE;--onDeep:#0F1A17;--teal:#66C2AE;--stage:#DCE5E0;--chip:#222C29;color-scheme:dark}}
 :host-context([data-theme="dark"]){--bg:#121816;--paper:#1A2220;--ink:#E5ECE9;--muted:#A3B1AB;--line:#2E3A36;--deep:#66C2AE;--onDeep:#0F1A17;--teal:#66C2AE;--stage:#DCE5E0;--chip:#222C29;color-scheme:dark}
 *{box-sizing:border-box}:host{display:block;margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);word-break:keep-all;-webkit-font-smoothing:antialiased}
 .wrap{max-width:720px;margin:0 auto;padding-block:18px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:12px}
@@ -3553,7 +3534,6 @@ button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 .warn b{flex:none;font-weight:700}
 .warn.red{background:#FBE5E3;color:#5A3A37}.warn.red b{color:#C9392F}
 .warn.green{background:#E1F0EC;color:#3E5650}.warn.green b{color:#1F3B36}
-@media (prefers-color-scheme: dark){:host .warn.red{background:#3A2422;color:#F0D2CE}:host .warn.red b{color:#FF8C80}:host .warn.green{background:#1E312C;color:#CFE5DE}:host .warn.green b{color:#66C2AE}}
 :host-context([data-theme="dark"]) .warn.red{background:#3A2422;color:#F0D2CE}:host-context([data-theme="dark"]) .warn.red b{color:#FF8C80}:host-context([data-theme="dark"]) .warn.green{background:#1E312C;color:#CFE5DE}:host-context([data-theme="dark"]) .warn.green b{color:#66C2AE}
 .after{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
 .after h2{margin:0;font-size:16px;font-weight:700}
@@ -3567,7 +3547,6 @@ button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){.cues li{animation:none;opacity:1;transform:none}}
 
 :host{--bg:#FFFFFF;--paper:#FFFFFF;--ink:#292827;--muted:#6E6A64;--line:#E9E5DF;--deep:#292827;--onDeep:#FFFFFF;--teal:#47443F;--stage:#F3F1ED;--chip:#F7F5F2;--sans:"Pretendard Variable","Pretendard","Apple SD Gothic Neo",system-ui,sans-serif;}
-@media (prefers-color-scheme: dark){:host{--bg:#191817;--paper:#191817;--ink:#ECE9E4;--muted:#A39E97;--line:#2F2C2A;--deep:#ECE9E4;--onDeep:#191817;--teal:#D2CEC8;--stage:#E9E6E1;--chip:#22201F;color-scheme:dark;}}
 :host-context([data-theme="dark"]){--bg:#191817;--paper:#191817;--ink:#ECE9E4;--muted:#A39E97;--line:#2F2C2A;--deep:#ECE9E4;--onDeep:#191817;--teal:#D2CEC8;--stage:#E9E6E1;--chip:#22201F;color-scheme:dark;}
 .wrap{max-width:none;padding-block:0;padding-left:0;padding-right:0}
 .tabs{margin:0;padding:0 0 4px}

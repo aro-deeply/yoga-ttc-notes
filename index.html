@@ -188,6 +188,12 @@ p,li{text-wrap:pretty}
 .sk-tb td.sk-p,.sk-tb th:last-child{width:2.6em;text-align:right;padding-right:0;color:var(--muted);font-size:13px}
 .sk-tb td.sk-s,.sk-tb td.sk-k{cursor:default}
 .sk-tb td.hid{background:var(--surface-2);color:transparent!important;border-radius:6px;cursor:pointer}
+.wd-tb .wd-r{font-weight:700}
+.wd-tb .wd-h{font-weight:500;color:var(--muted);font-size:.88em;margin-left:4px}
+.wd-tb td.sk-k{color:var(--ink)}
+.wd-tb td.hid span{color:transparent!important}
+@media (min-width:601px){.wd-tb table{table-layout:fixed;width:100%}.wd-tb th:first-child{width:3.2em}.wd-tb th:nth-child(2){width:50%}.wd-tb th:last-child{width:auto;text-align:left;padding-right:0}.wd-tb th:last-child,.wd-tb td.sk-k{padding-left:14px}}
+button.dl{font:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
 .sk-tools{display:flex;flex-wrap:wrap;gap:8px}
 .sk-tools button{height:34px;padding:0 14px;border:1px solid var(--line-2);border-radius:999px;background:var(--bg);color:var(--ink);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
 .sk-tools button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
@@ -616,6 +622,10 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
 
 <div class="layout">
   <nav class="side" id="side" aria-label="자료 목록">
+    <div class="grp">
+      <p class="grp-h">10월 11일 일</p>
+      <button type="button" data-view="d1011">아사나 단어장</button>
+    </div>
     <div class="grp">
       <p class="grp-h">10월 24일 토 <span>TTC 온라인</span></p>
       <button type="button" data-view="d1024">수업 정리</button>
@@ -1708,6 +1718,52 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
 </section>
 
 
+<section class="hb-view" id="v-d1011" data-view-id="d1011" hidden>
+  <div class="hb-vhead">
+    <span class="ey">10월 11일 일 · 단어장</span>
+    <h2>아사나 산스크리트어 단어장</h2>
+    <p>교재 52쪽 "요가 아사나에 자주 등장하는 산스크리트어" 41개 단어를 교재의 여섯 묶음대로 정리했어요. 단어를 알면 처음 보는 아사나 이름도 뜻을 짐작할 수&nbsp;있어요.</p>
+    <div class="hb-actions"><a class="dl" href="file/asana-words.html" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2.5h4v4M13.5 2.5 7.5 8.5M12 9.5v3a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3"/></svg>카드·퀴즈 앱 열기</a><button type="button" class="dl" data-goto="d1122d">동작·뜻 사전 보기</button></div>
+  </div>
+  <div class="hb-doc">
+    <div class="hb-sec"><h3>외우는 방법</h3>
+      <div class="hb-key">
+        <strong>산스크리트어 <mark class="y">↔</mark> 뜻, 양쪽으로 답하기</strong>
+        <ul>
+          <li>아래 버튼으로 한쪽을 가리고, 가린 칸을 눌러 정답 확인</li>
+          <li>카드·퀴즈 앱: 묶음별 카드, 10문제 퀴즈, 헷갈린 단어 다시 보기, 발음 듣기</li>
+        </ul>
+      </div>
+      <div class="sk-tools"><button type="button" data-skhide="s">산스크리트어 가리기</button><button type="button" data-skhide="k">뜻 가리기</button></div>
+    </div>
+
+    <div class="hb-sec"><h3>방향</h3>
+      <div class="hb-tw sk-tb wd-tb"><table><thead><tr><th>번호</th><th>산스크리트어</th><th>뜻</th></tr></thead><tbody><tr><td class="sk-n">1</td><td class="sk-s"><span class="wd-r">adho</span> <span class="wd-h">아도</span></td><td class="sk-k">아래</td></tr><tr><td class="sk-n">2</td><td class="sk-s"><span class="wd-r">ūrdhva</span> <span class="wd-h">우르드바</span></td><td class="sk-k">위</td></tr><tr><td class="sk-n">3</td><td class="sk-s"><span class="wd-r">ardha</span> <span class="wd-h">아르다</span></td><td class="sk-k">반</td></tr><tr><td class="sk-n">4</td><td class="sk-s"><span class="wd-r">pārśva</span> <span class="wd-h">파르슈바</span></td><td class="sk-k">측면</td></tr><tr><td class="sk-n">5</td><td class="sk-s"><span class="wd-r">parivṛtta</span> <span class="wd-h">파리브리타</span></td><td class="sk-k">회전된</td></tr><tr><td class="sk-n">6</td><td class="sk-s"><span class="wd-r">supta</span> <span class="wd-h">수프타</span></td><td class="sk-k">누운</td></tr><tr><td class="sk-n">7</td><td class="sk-s"><span class="wd-r">utthita</span> <span class="wd-h">우티타</span></td><td class="sk-k">뻗은</td></tr><tr><td class="sk-n">8</td><td class="sk-s"><span class="wd-r">prasārita</span> <span class="wd-h">프라사리타</span></td><td class="sk-k">넓게 펼친</td></tr></tbody></table></div>
+    </div>
+
+    <div class="hb-sec"><h3>신체 부위</h3>
+      <div class="hb-tw sk-tb wd-tb"><table><thead><tr><th>번호</th><th>산스크리트어</th><th>뜻</th></tr></thead><tbody><tr><td class="sk-n">9</td><td class="sk-s"><span class="wd-r">hasta</span> <span class="wd-h">하스타</span></td><td class="sk-k">손</td></tr><tr><td class="sk-n">10</td><td class="sk-s"><span class="wd-r">pāda</span> <span class="wd-h">파다</span></td><td class="sk-k">발</td></tr><tr><td class="sk-n">11</td><td class="sk-s"><span class="wd-r">mukha</span> <span class="wd-h">무카</span></td><td class="sk-k">얼굴</td></tr><tr><td class="sk-n">12</td><td class="sk-s"><span class="wd-r">śīrṣa</span> <span class="wd-h">시르샤</span></td><td class="sk-k">머리</td></tr><tr><td class="sk-n">13</td><td class="sk-s"><span class="wd-r">jānu</span> <span class="wd-h">자누</span></td><td class="sk-k">무릎</td></tr></tbody></table></div>
+    </div>
+
+    <div class="hb-sec"><h3>상태/동작</h3>
+      <div class="hb-tw sk-tb wd-tb"><table><thead><tr><th>번호</th><th>산스크리트어</th><th>뜻</th></tr></thead><tbody><tr><td class="sk-n">14</td><td class="sk-s"><span class="wd-r">uttāna</span> <span class="wd-h">욷타나</span></td><td class="sk-k">깊게 펼친</td></tr><tr><td class="sk-n">15</td><td class="sk-s"><span class="wd-r">utkaṭa</span> <span class="wd-h">웃카타</span></td><td class="sk-k">강렬한</td></tr><tr><td class="sk-n">16</td><td class="sk-s"><span class="wd-r">daṇḍa</span> <span class="wd-h">단다</span></td><td class="sk-k">막대기</td></tr><tr><td class="sk-n">17</td><td class="sk-s"><span class="wd-r">namaskāra</span> <span class="wd-h">나마스카라</span></td><td class="sk-k">경배</td></tr><tr><td class="sk-n">18</td><td class="sk-s"><span class="wd-r">bandha</span> <span class="wd-h">반다</span></td><td class="sk-k">잠금</td></tr></tbody></table></div>
+    </div>
+
+    <div class="hb-sec"><h3>형상/상징</h3>
+      <div class="hb-tw sk-tb wd-tb"><table><thead><tr><th>번호</th><th>산스크리트어</th><th>뜻</th></tr></thead><tbody><tr><td class="sk-n">19</td><td class="sk-s"><span class="wd-r">trikoṇa</span> <span class="wd-h">트리코나</span></td><td class="sk-k">삼각형</td></tr><tr><td class="sk-n">20</td><td class="sk-s"><span class="wd-r">padma</span> <span class="wd-h">파드마</span></td><td class="sk-k">연꽃</td></tr><tr><td class="sk-n">21</td><td class="sk-s"><span class="wd-r">vajra</span> <span class="wd-h">바즈라</span></td><td class="sk-k">금강</td></tr><tr><td class="sk-n">22</td><td class="sk-s"><span class="wd-r">hala</span> <span class="wd-h">할라</span></td><td class="sk-k">쟁기</td></tr><tr><td class="sk-n">23</td><td class="sk-s"><span class="wd-r">dhanus</span> <span class="wd-h">다누스</span></td><td class="sk-k">활</td></tr><tr><td class="sk-n">24</td><td class="sk-s"><span class="wd-r">cakra</span> <span class="wd-h">차크라</span></td><td class="sk-k">바퀴</td></tr><tr><td class="sk-n">25</td><td class="sk-s"><span class="wd-r">setu</span> <span class="wd-h">세투</span></td><td class="sk-k">다리</td></tr></tbody></table></div>
+    </div>
+
+    <div class="hb-sec"><h3>동물</h3>
+      <div class="hb-tw sk-tb wd-tb"><table><thead><tr><th>번호</th><th>산스크리트어</th><th>뜻</th></tr></thead><tbody><tr><td class="sk-n">26</td><td class="sk-s"><span class="wd-r">śvāna</span> <span class="wd-h">슈바나</span></td><td class="sk-k">개</td></tr><tr><td class="sk-n">27</td><td class="sk-s"><span class="wd-r">bhujaṅga</span> <span class="wd-h">부장가</span></td><td class="sk-k">코브라</td></tr><tr><td class="sk-n">28</td><td class="sk-s"><span class="wd-r">bitila</span> <span class="wd-h">비틸라</span></td><td class="sk-k">소</td></tr><tr><td class="sk-n">29</td><td class="sk-s"><span class="wd-r">mayūra</span> <span class="wd-h">마유라</span></td><td class="sk-k">공작</td></tr><tr><td class="sk-n">30</td><td class="sk-s"><span class="wd-r">baka</span> <span class="wd-h">바카</span></td><td class="sk-k">두루미</td></tr><tr><td class="sk-n">31</td><td class="sk-s"><span class="wd-r">śalabha</span> <span class="wd-h">살라바</span></td><td class="sk-k">메뚜기</td></tr><tr><td class="sk-n">32</td><td class="sk-s"><span class="wd-r">makara</span> <span class="wd-h">마카라</span></td><td class="sk-k">악어</td></tr><tr><td class="sk-n">33</td><td class="sk-s"><span class="wd-r">kūrma</span> <span class="wd-h">쿠르마</span></td><td class="sk-k">거북</td></tr><tr><td class="sk-n">34</td><td class="sk-s"><span class="wd-r">kapota</span> <span class="wd-h">카포타</span></td><td class="sk-k">비둘기</td></tr><tr><td class="sk-n">35</td><td class="sk-s"><span class="wd-r">uṣṭra</span> <span class="wd-h">우슈트라</span></td><td class="sk-k">낙타</td></tr></tbody></table></div>
+    </div>
+
+    <div class="hb-sec"><h3>인물/신화</h3>
+      <div class="hb-tw sk-tb wd-tb"><table><thead><tr><th>번호</th><th>산스크리트어</th><th>뜻</th></tr></thead><tbody><tr><td class="sk-n">36</td><td class="sk-s"><span class="wd-r">vīra</span> <span class="wd-h">비라</span></td><td class="sk-k">전사</td></tr><tr><td class="sk-n">37</td><td class="sk-s"><span class="wd-r">vīrabhadra</span> <span class="wd-h">비라바드라</span></td><td class="sk-k">비라바드라</td></tr><tr><td class="sk-n">38</td><td class="sk-s"><span class="wd-r">hanumān</span> <span class="wd-h">하누만</span></td><td class="sk-k">원숭이</td></tr><tr><td class="sk-n">39</td><td class="sk-s"><span class="wd-r">matsyendra</span> <span class="wd-h">맛시엔드라</span></td><td class="sk-k">물고기</td></tr><tr><td class="sk-n">40</td><td class="sk-s"><span class="wd-r">bharadvāja</span> <span class="wd-h">바라드바자</span></td><td class="sk-k">베다 현자</td></tr><tr><td class="sk-n">41</td><td class="sk-s"><span class="wd-r">marīci</span> <span class="wd-h">마리치</span></td><td class="sk-k">고대 인도의 현자, 빛의 한줄기</td></tr></tbody></table></div>
+    </div>
+
+    <p class="hb-note">단어, 읽기, 뜻은 교재 52쪽 그대로예요. 카드·퀴즈 앱의 연관 자세 설명과 발음은 교재 밖 참고예요.</p>
+  </div>
+</section>
 <section class="hb-view" id="v-d1122d" data-view-id="d1122d" hidden>
   <div class="hb-vhead">
     <span class="ey">교재 18~50쪽 · 아사나 전체</span>
@@ -4204,8 +4260,8 @@ function hbAnimLoader(stageId,tabsSel,anims){
   });
 
   /* 보기 전환 */
-  var ORDER=['d1024','cue','centering','handson','anim','anatomy','d1031','d1101','d1101hn','d1101h','d1101p','cue2','d1107','d1108','d1114','anatomy3','d1122','d1122a','d1122d'];
-  var LABEL={d1024:'10월 24일 수업 정리',d1122:'11월 22일 수업 정리',d1122a:'11월 22일 아사나 수업 정리',d1122s:'11월 22일 산스크리트어 암기',d1122d:'동작·뜻 사전',d1114:'11월 14일 수업 정리',d1107:'11월 7일 수업 정리',d1108:'11월 8일 수업 정리',d1031:'10월 31일 수업 정리',d1101:'11월 1일 수업 정리',d1101hn:'11월 1일 핸즈온 정리',d1101h:'핸즈온 애니메이션',d1101p:'프라나야마',cue2:'전사 2 묶음 큐잉',cue:'런지 묶음 큐잉',centering:'일반 센터링',handson:'핸즈온 정리',anim:'핸즈온 애니메이션',anatomy:'해부학 2회차',anatomy3:'해부학 3회차'};
+  var ORDER=['d1011','d1024','cue','centering','handson','anim','anatomy','d1031','d1101','d1101hn','d1101h','d1101p','cue2','d1107','d1108','d1114','anatomy3','d1122','d1122a','d1122d'];
+  var LABEL={d1011:'10월 11일 아사나 단어장',d1024:'10월 24일 수업 정리',d1122:'11월 22일 수업 정리',d1122a:'11월 22일 아사나 수업 정리',d1122s:'11월 22일 산스크리트어 암기',d1122d:'동작·뜻 사전',d1114:'11월 14일 수업 정리',d1107:'11월 7일 수업 정리',d1108:'11월 8일 수업 정리',d1031:'10월 31일 수업 정리',d1101:'11월 1일 수업 정리',d1101hn:'11월 1일 핸즈온 정리',d1101h:'핸즈온 애니메이션',d1101p:'프라나야마',cue2:'전사 2 묶음 큐잉',cue:'런지 묶음 큐잉',centering:'일반 센터링',handson:'핸즈온 정리',anim:'핸즈온 애니메이션',anatomy:'해부학 2회차',anatomy3:'해부학 3회차'};
   var views={};[].forEach.call(document.querySelectorAll('.hb-view'),function(v){views[v.getAttribute('data-view-id')]=v;});
   var navBtns=[].slice.call(document.querySelectorAll('.side button[data-view]'));
   var side=document.getElementById('side'),scrim=document.getElementById('scrim'),menu=document.getElementById('menu');
@@ -4214,7 +4270,7 @@ function hbAnimLoader(stageId,tabsSel,anims){
 
   function sectionsFor(id){
     var v=views[id],out=[];
-    if(id==='d1024'||id==='d1031'||id==='d1101'||id==='d1101p'||id==='d1107'||id==='d1108'||id==='d1114'||id==='d1122'||id==='d1122a'){
+    if(id==='d1024'||id==='d1031'||id==='d1101'||id==='d1101p'||id==='d1107'||id==='d1108'||id==='d1114'||id==='d1122'||id==='d1122a'||id==='d1011'){
       [].forEach.call(v.querySelectorAll('.hb-sec'),function(s,i){if(!s.id)s.id=id+'-'+i;var h=s.querySelector('h3');out.push({id:s.id,t:h?h.textContent.replace(/\s*\(.*?\)\s*$/,''):''});});
     }else if(id==='anatomy'||id==='anatomy3'){
       [].forEach.call(v.querySelectorAll('.an-toc button'),function(b){var t=b.textContent.replace(/^\d+/,function(n){return n+' ';});out.push({id:b.getAttribute('data-jump'),t:t});});
@@ -4252,7 +4308,7 @@ function hbAnimLoader(stageId,tabsSel,anims){
   }
   function closeMenu(){side.classList.remove('open');scrim.hidden=true;menu.setAttribute('aria-expanded','false');}
   function show(id,opts){
-    opts=opts||{};if(!views[id])id=ORDER[0];
+    opts=opts||{};if(!views[id])id='d1024';
     Object.keys(views).forEach(function(k){views[k].hidden=k!==id;});
     navBtns.forEach(function(b){b.setAttribute('aria-current',b.getAttribute('data-view')===id?'true':'false');});
     current=id;closeMenu();
@@ -4274,7 +4330,7 @@ function hbAnimLoader(stageId,tabsSel,anims){
     if(a){var el=document.getElementById(a.getAttribute('href').slice(1));if(el&&!views[a.getAttribute('href').slice(1)]){e.preventDefault();el.scrollIntoView({block:'start'});var d=a.closest('details');if(d)d.open=false;}}
   });
   var h=(location.hash||'').replace('#','');if(h==='d1122s')h='d1122d';if(h&&!views[h])h='';
-  window.__hbRefresh=function(){show(current||h||ORDER[0],{keepScroll:true});};
+  window.__hbRefresh=function(){show(current||h||'d1024',{keepScroll:true});};
   window.addEventListener('hashchange',function(){var x=(location.hash||'').replace('#','');if(views[x]&&x!==current)show(x);});
   if(ok){unlock();}else{try{pw.focus();}catch(e){}}
 
@@ -4290,12 +4346,12 @@ function hbAnimLoader(stageId,tabsSel,anims){
 })();
 </script>
 <script>
-(function(){var v=document.getElementById('v-d1122s');if(!v)return;
+['v-d1122s','v-d1011'].forEach(function(vid){(function(){var v=document.getElementById(vid);if(!v)return;
   var st={s:false,k:false};
   function apply(){[].forEach.call(v.querySelectorAll('td.sk-s'),function(t){t.classList.toggle('hid',st.s)});[].forEach.call(v.querySelectorAll('td.sk-k'),function(t){t.classList.toggle('hid',st.k)});}
   [].forEach.call(v.querySelectorAll('[data-skhide]'),function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-skhide');st[k]=!st[k];b.classList.toggle('on',st[k]);apply();});});
   v.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('td.hid');if(t)t.classList.remove('hid');});
-})();
+})();});
 </script>
 <script>(function(){var root=document.querySelector('.dc-root');if(!root)return;var q=root.querySelector('.dc-q'),btns=[].slice.call(root.querySelectorAll('.dc-f button')),cards=[].slice.call(root.querySelectorAll('.dc-card')),heads=[].slice.call(root.querySelectorAll('.dc-sh')),cnt=root.querySelector('.dc-cnt'),f='all';
 function apply(){var t=(q.value||'').trim().toLowerCase().replace(/\s+/g,''),n=0,secs={};cards.forEach(function(c){var ok=(f==='all'||(f==='memo'?c.dataset.memo==='1':c.dataset.sec===f))&&(!t||c.dataset.q.replace(/\s+/g,'').indexOf(t)>-1||c.textContent.replace(/\s+/g,'').toLowerCase().indexOf(t)>-1);c.hidden=!ok;if(ok){n++;secs[c.dataset.sec]=1}});heads.forEach(function(h){h.hidden=!secs[h.dataset.sec]});cnt.textContent=n+'개 자세';}

@@ -614,6 +614,71 @@ mark.hb-find{background:#FDEB9C;color:inherit;border-radius:3px;box-shadow:0 0 0
 .dc-root .dc-ph.mask img{visibility:hidden}
 .dc-root .dc-ph.mask::after{content:"눌러서 보기";position:absolute;font-size:12.5px;color:var(--muted);visibility:visible}
 .dc-root .dc-ph{position:relative}
+/* 시퀀싱 과제 도우미 (d1122q) */
+.hb-vhead p.sq-priv{font-size:14px;margin-top:0}
+.sq-msg{font-size:13px;color:var(--muted);align-self:center;margin-left:4px}
+.sq-root{display:flex;flex-direction:column;gap:32px}
+.sq-bar{list-style:none;margin:0;padding:10px 0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;position:sticky;top:var(--top-h);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.sq-bar button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 6px;border-radius:10px;background:var(--surface);color:var(--muted);font-size:14px;font-weight:600;line-height:1.35;word-break:keep-all}
+.sq-bar button b{font-size:13px;font-weight:700;color:var(--faint)}
+.sq-bar button.done b::after{content:" ✓";color:var(--ink-2)}
+.sq-bar button[aria-current="step"]{background:var(--ink);color:var(--bg)}
+.sq-bar button[aria-current="step"] b{color:var(--bg);opacity:.75}
+.sq-bar button[aria-current="step"].done b::after{color:var(--bg)}
+.sq-bar button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.sq-step h3 small,.sq-root .hb-card h4 small{font-size:13px;font-weight:400;color:var(--muted);margin-left:4px}
+.sq-root .hb-steps small{font-weight:400;color:var(--muted);font-size:12.5px;margin-left:4px}
+.sq-pose{display:grid;grid-template-columns:200px minmax(0,1fr);gap:22px;align-items:start}
+.sq-pose figure{margin:0;display:flex;flex-direction:column;gap:6px}
+.sq-pose img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:zoom-in}
+.sq-pose figcaption{font-size:12.5px;color:var(--muted)}
+.sq-pose-t{display:flex;flex-direction:column;gap:8px}
+.sq-links{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.sq-seq{gap:7px!important}
+.sq-seq li::marker{color:var(--muted);font-weight:600}
+.sq-alist{display:flex;flex-direction:column;gap:14px}
+.sq-alist h4{margin-bottom:6px!important}
+.sq-chips{display:flex;flex-wrap:wrap;gap:5px}
+.sq-a{background:var(--surface);border-radius:8px;padding:4px 9px;font-size:13.5px;line-height:1.45;color:var(--ink-2)}
+.sq-a b{font-weight:600;color:var(--ink)}
+.sq-a i{font-style:normal;font-size:12px;color:var(--faint);margin-left:5px}
+details.sq-ex{border:1px solid var(--line);border-radius:12px;padding:0}
+details.sq-ex>summary{cursor:pointer;list-style:none;padding:14px 18px;font-weight:600;color:var(--ink);font-size:15px}
+details.sq-ex>summary::-webkit-details-marker,details.sq-q>summary::-webkit-details-marker{display:none}
+details.sq-ex>summary::before,details.sq-q>summary::before{content:"+ ";color:var(--muted)}
+details.sq-ex[open]>summary::before,details.sq-q[open]>summary::before{content:"− "}
+details.sq-ex .hb-card{border:0;border-top:1px solid var(--line);border-radius:0 0 12px 12px;padding:14px 18px 18px}
+.sq-work{background:var(--surface);border-radius:14px;padding:22px 24px}
+details.sq-q{background:var(--bg);border-radius:10px;padding:0}
+details.sq-q>summary{cursor:pointer;list-style:none;padding:11px 14px;font-weight:600;font-size:14.5px;color:var(--ink-2)}
+details.sq-q ul{padding:0 16px 14px 2.2em!important}
+.sq-f{display:flex;flex-direction:column;gap:6px}
+.sq-f>span{font-weight:600;color:var(--ink);font-size:15px}
+.sq-f>span small{font-weight:400;color:var(--muted);font-size:13px;margin-left:6px}
+.sq-f textarea{width:100%;box-sizing:border-box;font:inherit;font-size:15px;line-height:1.65;padding:10px 12px;border:1px solid var(--line-2);border-radius:10px;background:var(--bg);color:var(--ink);resize:vertical;min-height:3.2em;overflow:hidden}
+.sq-f textarea:focus{outline:2px solid var(--ink);outline-offset:1px;border-color:transparent}
+.sq-tools{display:flex;gap:8px;align-items:center}
+.sq-tools button{height:30px;padding:0 12px;border:1px solid var(--line-2);border-radius:999px;background:var(--bg);color:var(--ink);font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.sq-tools em{font-style:normal;font-size:12.5px;color:var(--muted)}
+.sq-check{list-style:none;padding:0!important;gap:8px!important}
+.sq-check label{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;align-items:start;cursor:pointer;line-height:1.6}
+.sq-check input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--ink)}
+.sq-check b{margin-right:4px}
+.sq-all{margin:0;white-space:pre-wrap;word-break:keep-all;overflow-wrap:anywhere;font:inherit;font-size:14px;line-height:1.7;color:var(--ink-2);background:var(--surface);border-radius:12px;padding:16px 18px}
+.sq-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:18px}
+.sq-nav button{height:40px;padding:0 18px;border:1px solid var(--line-2);border-radius:999px;background:var(--bg);color:var(--ink);font:inherit;font-size:14.5px;font-weight:600;cursor:pointer}
+.sq-nav .sq-next{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sq-nav button[disabled]{visibility:hidden}
+.sq-pos{font-size:13px;color:var(--muted)}
+@media (max-width:600px){
+  .sq-bar{gap:4px}
+  .sq-bar button{align-items:center;justify-content:center;padding:8px 2px}
+  .sq-bar button span{display:none}
+  .sq-bar button b{font-size:14px}
+  .sq-pose{grid-template-columns:120px minmax(0,1fr);gap:14px}
+  .sq-work{padding:18px 16px;margin:0 -4px}
+  .sq-nav button{padding:0 14px;font-size:14px}
+}
 </style>
 </head>
 <body>
@@ -693,6 +758,7 @@ mark.hb-find{background:#FDEB9C;color:inherit;border-radius:3px;box-shadow:0 0 0
       <p class="grp-h">11월 22일 일 <span>TTC 오프라인</span></p>
       <button type="button" data-view="d1122">수업 정리</button>
       <button type="button" data-view="d1122a">아사나 수업 정리</button>
+      <button type="button" data-view="d1122q">시퀀싱 과제 도우미</button>
       <button type="button" data-view="d1122d">동작·뜻 사전</button>
     </div>
     <div class="grp inst-grp" id="inst-grp" hidden>
@@ -1759,6 +1825,7 @@ mark.hb-find{background:#FDEB9C;color:inherit;border-radius:3px;box-shadow:0 0 0
             <li>빈야사 버전, 하타 버전 두 가지로 작성</li>
             <li>교재: 시퀀싱 53~58쪽 참고</li>
           </ul>
+          <p><button type="button" class="hb-link" data-goto="d1122q">시퀀싱 과제 도우미로 짜 보기</button></p>
         </div>
       </div>
       <div class="hb-card"><span class="t">월화수목금</span><h4>3. 매일 수련 영상 촬영</h4>
@@ -1773,6 +1840,420 @@ mark.hb-find{background:#FDEB9C;color:inherit;border-radius:3px;box-shadow:0 0 0
       </div>
     </div>
 
+  </div>
+</section>
+
+
+<section class="hb-view" id="v-d1122q" data-view-id="d1122q" hidden>
+  <div class="hb-vhead">
+    <span class="ey">11월 22일 일 · TTC 오프라인 · 과제</span>
+    <h2>시퀀싱 과제 도우미</h2>
+    <p>피크포즈 나타라자아사나로 하타 버전과 빈야사 버전을 짜는 과제예요. 단계마다 필요한 교재 내용(53~72쪽)과 수업 내용을 모아 두었으니, 책을 펴지 않고 순서대로 따라가며 직접 짜 보세요. 시간(60분, 90분)은 정하지 않아도 되고, 흐름을 점진적으로 짜 보면 돼요.</p>
+    <p class="sq-priv">적은 답은 이 기기의 브라우저에만 저장되고, 다른 선생님께는 보이지 않아요.</p>
+    <div class="hb-actions"><button type="button" class="dl" data-sq="copy">내 답 전체 복사</button><button type="button" class="dl" data-sq="clear">모두 지우기</button><span class="sq-msg" aria-live="polite"></span></div>
+  </div>
+
+  <div class="sq-root">
+    <ol class="sq-bar" aria-label="단계">
+      <li><button type="button" data-step="1"><b>1</b><span>피크포즈</span></button></li>
+      <li><button type="button" data-step="2"><b>2</b><span>주제</span></button></li>
+      <li><button type="button" data-step="3"><b>3</b><span>재료</span></button></li>
+      <li><button type="button" data-step="4"><b>4</b><span>하타</span></button></li>
+      <li><button type="button" data-step="5"><b>5</b><span>빈야사</span></button></li>
+      <li><button type="button" data-step="6"><b>6</b><span>점검</span></button></li>
+    </ol>
+
+    <!-- STEP 1 -->
+    <div class="sq-step hb-doc" data-step-id="1">
+      <div class="hb-sec"><h3>Step 1. 피크포즈 살펴보기</h3>
+        <div class="hb-key">
+          <strong>나타라자아사나에 <mark class="y">무엇이 필요한지</mark> 먼저 나눠 적어요</strong>
+          <p>교재 58쪽은 하타 시퀀싱에서 피크포즈를 해부학적으로 분석해 <b>강화할 곳 / 열어 줄 곳 / 활성화할 곳</b>으로 나누라고 해요. 수업에서도 이 자세에 어떤 힘이 쓰이는지, 어떤 근육을 풀고 어떤 근육을 강화해야 하는지 먼저 생각하라고 하셨어요. 이 분석이 하타와 빈야사 두 버전의 공통 재료가 돼요. 아래 입력 칸도 교재의 세 칸을 따랐어요. 선생님 예시의 "수축해 힘을 쓸 곳"을 어느 칸에 둘지는 직접 판단해 보세요.</p>
+        </div>
+      </div>
+
+      <div class="hb-sec"><h3>나타라자아사나 · 댄서 자세 <span class="an-s">교재 25쪽, 11/22 수업</span></h3>
+        <div class="sq-pose">
+          <figure><img src="img/dict/15.png" alt="나타라자아사나 교재 그림" loading="lazy" data-zoom><figcaption>교재 25쪽 · 선자세와 균형자세</figcaption></figure>
+          <div class="sq-pose-t">
+            <h4>수업에서 배운 순서 <span class="an-s">11/22</span></h4>
+            <p class="hb-note">핵심: 지지발 기반이 먼저, 가슴은 정면</p>
+            <ol>
+              <li>지지발 바닥 고르게, 특히 <b>안쪽 볼·엄지발가락</b> 누르기</li>
+              <li>다리를 뒤로 접어 발날 잡기 (안쪽이 중심 잡기 편함). 두&nbsp;무릎&nbsp;나란히, 발끝 당겨 허벅지 앞면 열기</li>
+              <li>반대 팔을 앞으로 뻗기. 상체는 명치가 정면을 볼 만큼만</li>
+              <li>가슴은 정면, 무릎은 골반 높이까지 조금씩 올리기</li>
+              <li>안정되면 어깨 회전 (팔꿈치 모으기)</li>
+            </ol>
+            <p class="an-s">참고(교재 밖): 고관절이 뒤로 펴지는 범위는 크지 않아서(보통 5~40°), 무릎 높이만 목표로 하면 허리를 꺾어 보상하기 쉬움. 무릎 높이보다 <b>허리가 눌리지 않는 범위</b>가 먼저 (Elson &amp; Aspinall, 2008, Clin Orthop Relat Res)</p>
+          </div>
+        </div>
+        <div class="hb-two hb-three">
+          <div class="hb-card"><h4>주의</h4><ul>
+            <li>무릎이 바깥으로 열리면 허리가 눌림</li>
+            <li>무릎을 올리려고 상체를 숙이지 않기</li>
+            <li>안쪽 볼이 떨어지면 발날 바깥으로 무너짐 → 다시 누르기</li></ul></div>
+          <div class="hb-card"><h4>도구</h4><ul>
+            <li><b>스트랩</b>: 어깨 회전이 힘들 때</li>
+            <li><b>벽</b>: 마주 보고 손가락으로 살짝만 밀기 (기대지 않기)</li></ul></div>
+          <div class="hb-card"><h4>핸즈온 및 옵션</h4><ul>
+            <li>균형과 집중이 필요한 자세라 핸즈온이 반드시 필요하지는 않음. 스스로 반복해야 발목·발바닥 힘이 길러짐</li>
+            <li>중심이 안 잡히면 전&nbsp;단계에서 균형 연습</li></ul></div>
+        </div>
+        <div class="hb-card"><span class="t">11/22 수업 · 공통</span><h4>후굴에서 어깨 쓰기</h4><ul>
+          <li>팔꿈치는 모으고, 어깨는 외회전 유지 (벌어지면 어깨가 안으로 말려 어깨 앞이 찝힘)</li>
+          <li>가동범위가 덜 나와도 팔꿈치 모으기가 먼저</li>
+          <li>팔을 들 때 쇄골이 올라가는 건 자연스러움. 피할 것은 어깨가 말린 채 눌리는 것</li>
+          <li>날개뼈와 흉곽이 팔과 함께 움직임: 앞면은 열고, 등 뒤는 수축</li>
+          <li>복부는 놓지 말고 끌어올려 유지 (놓으면 허리만 꺾임)</li>
+          <li>끝까지가 아니라 내 가동범위만큼, 호흡과 함께</li></ul></div>
+        <p><button type="button" class="hb-link" data-goto="d1122a">11월 22일 아사나 수업 정리 전체 보기</button></p>
+      </div>
+
+      <div class="hb-sec"><h3>교재: 이 자세와 관련된 유형 <span class="an-s">59~61쪽</span></h3>
+        <p class="hb-note">교재는 나타라자아사나를 "선자세와 균형자세"(18~27쪽)에 넣었고, 11/22 수업에서는 후굴 자세들과 함께 다뤘어요.</p>
+        <div class="hb-two">
+          <div class="hb-card"><span class="t">59쪽</span><h4>선 자세</h4><ul>
+            <li>두 발로 지면과 안정적인 접지를 만듦</li>
+            <li>발의 지지 구조인 파다 반다를 활용해 안정적인 정렬을 경험함</li>
+            <li>허벅지와 엉덩이 근육을 강하게 써서 전신의 열과 활력을 높임</li></ul></div>
+          <div class="hb-card"><span class="t">59쪽</span><h4>균형 자세</h4><ul>
+            <li>한쪽 다리를 지지대로 쓰거나 몸의 중심을 유지하며 균형을 잡음</li>
+            <li>안정성과 집중력이 필요하고, 균형을 잡으며 정렬과 중심의 위치를 인식함</li>
+            <li>긴장으로 <mark class="y">호흡이 멈추는 경우가 많아</mark> 안정적인 호흡 유지가 중요함</li></ul></div>
+          <div class="hb-card"><span class="t">60쪽</span><h4>복부 강화 자세</h4><ul>
+            <li>복부는 상체와 하체를 잇는 중심부. 특히 요추 부위는 구조적으로 안정성이 비교적 낮은 영역</li>
+            <li>복부 근육과 척추 주변 근육을 강화해 척추를 안정적으로 지지하는 것이 중요함</li>
+            <li>특히 <mark class="y">균형 자세와 역자세</mark>에서는 코어의 안정성이 중요한 역할을 함</li></ul></div>
+          <div class="hb-card"><span class="t">61쪽</span><h4>후굴 자세</h4><ul>
+            <li>척추를 뒤로 젖히며 몸의 앞면을 확장함</li>
+            <li>가슴, 복부, 서혜부를 열어 호흡의 확장을 돕고 활력을 줌</li>
+            <li>깊게 젖히는 것이 목적이 아니라 <mark class="g">가슴의 확장과 호흡의 흐름</mark>을 느끼는 과정에 집중</li></ul></div>
+        </div>
+      </div>
+
+      <div class="hb-sec"><h3>분석 예시 · 선생님 (우르드바 다누라아사나) <span class="an-s">11/22 수업</span></h3>
+        <div class="hb-tw nw"><table>
+          <tbody>
+            <tr><td>풀어 줄 곳</td><td>어깨 주변, 몸 앞면</td></tr>
+            <tr><td>수축해 힘을 쓸 곳</td><td>등 뒤</td></tr>
+            <tr><td>강화할 곳</td><td>엉덩이와 허벅지, 하체 힘</td></tr>
+          </tbody></table></div>
+        <p class="hb-note">단순히 쓰게만 하는 것이 아니라, 움직임 속에서 수련생이 스스로 몸을 인지할 수 있게 설명해 주기</p>
+        <p class="sq-links"><span class="an-s">근육 이름이 필요하면</span> <button type="button" class="hb-link" data-goto="anatomy">해부학 2회차 (손·손목·견갑골)</button> <button type="button" class="hb-link" data-goto="anatomy3">해부학 3회차 (골반·고관절·엉덩이·허벅지)</button></p>
+      </div>
+
+      <div class="hb-sec sq-work"><h3>직접 적기</h3>
+        <details class="sq-q"><summary>막히면 볼 질문</summary><ul>
+          <li><b>서 있는 다리</b>: 한 발로 버틸 때 발바닥, 발목, 무릎, 엉덩이 중 어디가 일하나요? 골반이 한쪽으로 기울지 않게 잡아 주는 곳은 어디일까요? <span style="white-space:nowrap">(해부학 1회차: 발·발목·무릎·허벅지,</span> <span style="white-space:nowrap">3회차: 골반·고관절·엉덩이)</span></li>
+          <li><b>뒤로 접어 올리는 다리</b>: 무릎을 굽혀 뒤로 들면 허벅지 앞쪽과 골반 앞쪽은 늘어나나요, 줄어드나요? 반대로 그 다리를 들어 올리고 손을 밀어내는 힘은 어디서 나올까요?</li>
+          <li><b>어깨</b>: 피크를 어느 단계(발 잡기까지 / 어깨 회전까지)로 둘까요? 그 단계에서 어깨와 가슴에는 무엇이 필요할까요?</li>
+          <li><b>몸통</b>: "무릎이 바깥으로 열리면 허리가 눌림", "상체를 숙이지 않기"라면, 몸통에서 젖혀져야 하는 곳과 지켜야 하는 곳은 각각 어디일까요?</li>
+          <li><b>골반 방향</b>: 이 자세에서 골반은 매트의 어느 면을 보나요? (Step 5에서 묶음을 고를 때 다시 써요)</li>
+          <li><b>균형</b>: 힘과 유연성 말고 이 자세에 무엇이 더 필요할까요?</li></ul></details>
+        <label class="sq-f"><span>열어 줄 곳 <small>풀기 · 부위와 이유</small></span><textarea data-k="s1_open" rows="3"></textarea></label>
+        <label class="sq-f"><span>강화할 곳 <small>버티기 · 부위와 이유</small></span><textarea data-k="s1_strong" rows="3"></textarea></label>
+        <label class="sq-f"><span>활성화할 곳 <small>수축해 쓸 곳·인지 · 부위와 이유</small></span><textarea data-k="s1_aware" rows="3"></textarea></label>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="sq-step hb-doc" data-step-id="2" hidden>
+      <div class="hb-sec"><h3>Step 2. 주제 정하기</h3>
+        <div class="hb-key">
+          <strong>주제는 Step 1에서 <mark class="y">가장 중요하다고 본 것</mark>에서 나와요</strong>
+          <p>같은 피크포즈라도 무엇에 무게를 두느냐에 따라 수업의 색이 달라져요. 한 줄로 적어 보세요.</p>
+        </div>
+      </div>
+      <div class="hb-sec"><h3>교재 <span class="an-s">53~55쪽</span></h3>
+        <div class="hb-two">
+          <div class="hb-card"><span class="t">53쪽 · 시퀀싱 원칙 1</span><h4>피크 포즈를 선정한다</h4><ul>
+            <li>시퀀싱은 하나의 중심 아사나, 피크 포즈를 정하는 것에서 시작됨</li>
+            <li>피크 포즈는 단순히 가장 어려운 동작이 아니라 <mark class="g">수업의 방향성과 목적</mark>을 보여 주는 핵심 자세</li>
+            <li>지도자는 피크 포즈를 중심으로 흐름을 설계하고, 수련자가 자연스럽게 접근하도록 준비 과정을 구성함</li></ul></div>
+          <div class="hb-card"><span class="t">54쪽 · 수업 구성 1</span><h4>센터링</h4><ul>
+            <li>몸과 호흡을 인식하며 현재의 순간에 집중하도록 안내함</li>
+            <li>지도자는 <b>수업의 주제와 의도</b>를 전달하고, 수련자의 에너지 상태와 집중도를 확인함</li>
+            <li>호흡을 통해 신경계를 안정시키고 수련을 위한 준비 상태를 만듦</li></ul></div>
+          <div class="hb-card"><span class="t">54쪽 · 수업 구성 4</span><h4>피크 포즈</h4><ul>
+            <li>수련 중 가장 높은 수준의 힘, 유연성, 균형, 집중이 요구됨</li>
+            <li>단순한 신체적 도전뿐 아니라 수련자가 <mark class="g">집중, 두려움, 성취감</mark> 등 다양한 내면의 경험을 마주하는 과정이 되기도 함</li></ul></div>
+        </div>
+        <p><button type="button" class="hb-link" data-goto="centering">일반 센터링 스크립트 보기</button></p>
+      </div>
+      <div class="hb-sec sq-work"><h3>직접 적기</h3>
+        <details class="sq-q"><summary>막히면 볼 질문</summary><ul>
+          <li>Step 1의 세 칸(열어 줄 곳, 강화할 곳, 활성화할 곳) 중 이 수업에서 가장 공들이고 싶은 칸은 어디인가요?</li>
+          <li>수련생이 수업을 마치고 몸으로 무엇을 느끼고 가면 좋을까요?</li>
+          <li>몸의 주제와 마음의 주제를 연결할 수 있나요? 예를 들어 균형 자세의 특징(교재 59쪽)이 마음의 주제가 될 수 있을지 생각해 보세요.</li></ul></details>
+        <label class="sq-f"><span>주제 <small>한 줄</small></span><textarea data-k="s2_theme" rows="2"></textarea></label>
+        <label class="sq-f"><span>센터링에서 전할 의도 <small>한두 문장</small></span><textarea data-k="s2_intent" rows="3"></textarea></label>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="sq-step hb-doc" data-step-id="3" hidden>
+      <div class="hb-sec"><h3>Step 3. 재료 고르기</h3>
+        <div class="hb-key">
+          <strong>Step 1의 칸마다 <mark class="y">후보 자세와 고른 이유</mark>를 적어요</strong>
+          <p>수업에서 "아사나(재료)는 같고, 묶는 방식이 다르다"고 했어요. 교재 57쪽도 두 수련 모두 피크포즈에 필요한 <b>열기, 강화, 유연성, 인지</b>를 단계별로 배치하되, 하타는 개별 아사나(부품)로 준비하고 빈야사는 비넷(덩어리) 안에 녹여 낸다고 해요. 여기서 고른 재료로 Step 4(하타)와 Step 5(빈야사)를 각각 엮어요.</p>
+        </div>
+      </div>
+
+      <div class="hb-sec"><h3>교재: 아사나 수업의 기본 구성 <span class="an-s">54~55쪽</span></h3>
+        <div class="hb-tw nw"><table>
+          <thead><tr><th>단계</th><th>하는 일</th><th>교재 예시</th></tr></thead>
+          <tbody>
+            <tr><td>1. 센터링</td><td>주제와 의도 전달, 에너지 상태 확인, 호흡으로 신경계 안정</td><td>주제·의도 전달, 호흡 안내</td></tr>
+            <tr><td>2. 웜업</td><td>큰 관절과 큰 근육 중심으로 부드럽게 움직여 체온을 높임. 가동 범위를 넓히고 긴장을 완화해 부상 위험을 줄임. <b>피크 포즈에 필요한 움직임을 미리 준비함</b></td><td>소·고양이, 아기 자세, 앉은 비틀기, 측굴, 어깨와 골반을 풀어 주는 동작</td></tr>
+            <tr><td>3. 선 자세</td><td>가장 활동적인 단계. 큰 근육 활성화, 전신의 열, 안정성과 힘 강화. 자세 간 연결성과 흐름을 고려해 배치. <b>간단한 동작 → 복잡한 동작 → 피크 포즈</b></td><td>태양경배 A·B, 태양경배 변형, 선자세, 균형 자세</td></tr>
+            <tr><td>4. 피크 포즈</td><td>수업의 중심. 충분한 준비 동작이 먼저</td><td></td></tr>
+            <tr><td>5. 쿨다운</td><td>피크 포즈 후 긴장된 몸을 점차 중립으로. 정적이고 기초적인 자세로 근육 긴장 완화, 호흡 안정</td><td>비틀기, 전굴, 이완 자세</td></tr>
+            <tr><td>6. 명상 또는 사바아사나</td><td>최소 5분 이상 확보하는 것이 좋음. 몸과 마음의 변화를 관찰하며 수련의 효과를 통합함</td><td>신체 감각, 에너지의 변화, 떠오르는 생각과 감정 관찰</td></tr>
+          </tbody></table></div>
+      </div>
+
+      <div class="hb-sec"><h3>교재: 자세를 고른 이유를 적는 방식 <span class="an-s">63~72쪽 대표 시퀀스</span></h3>
+        <p class="hb-note">교재 대표 시퀀스는 준비 자세 옆에 "왜 넣었는지"를 붙여 둬요. Step 1의 칸과 연결해 이유를 쓰는 연습에 참고하세요.</p>
+        <div class="hb-two">
+          <div class="hb-card"><span class="t">66쪽 · 하타, 피크 부장가아사나</span><h4>비둘기 준비 자세</h4><p>고관절 앞쪽(장요근)과 엉덩이 근육(둔근)을 깊게 이완시켜 골반의 가동성을 확보함. 부장가아사나에서 허리가 과도하게 꺾이는 것을 방지할 수 있게 하체 기반을 만들어 줌</p></div>
+          <div class="hb-card"><span class="t">71쪽 · 빈야사, 피크 전사 3</span><h4>테이블 변형 자세 <small>웜업</small></h4><p>피크포즈(전사 3)에 필요한 복부 힘과 척추의 안정화를 위한 준비 동작</p></div>
+          <div class="hb-card"><span class="t">71쪽 · 빈야사, 피크 전사 3</span><h4>브륵샤아사나, 가루다아사나</h4><p>피크포즈(전사 3)에 필요한 한 발로 균형 잡는 동작. 발바닥 균형 감각을 깨워 줌</p></div>
+          <div class="hb-card"><span class="t">69쪽 · 빈야사 Lv.1</span><h4>욷티타하스타 파당구쉬타아사나</h4><p>Lv.0 피크포즈 전사 3에서 또 다른 한 다리로 중심 잡는 자세로 전환해 몸의 균형 감각을 더 깊이 깨워 냄</p></div>
+          <div class="hb-card"><span class="t">72쪽 · 빈야사 쿨다운</span><h4>받다코나아사나</h4><p>상체를 바닥으로 낮추는 자세로 몸을 이완시켜 줌</p></div>
+          <div class="hb-card"><span class="t">64쪽 · 하타 Lv.1</span><h4>다누라아사나</h4><p>부장가아사나에서 나아가 배를 바닥에 두고 상체뿐 아니라 하체도 같이 뻗어 올리는 움직임으로 이어 감</p></div>
+        </div>
+      </div>
+
+      <div class="hb-sec"><h3>교재 아사나 목록 <span class="an-s">14~50쪽</span></h3>
+        <p class="hb-note">이름 옆 숫자는 교재 쪽수예요. 그림은 <button type="button" class="hb-link" data-goto="d1122d">동작·뜻 사전</button>에서 볼 수 있어요.</p>
+        <div class="sq-alist">
+        <div><h4>태양경배 <span class="an-s">14~17쪽</span></h4><div class="sq-chips"><span class="sq-a"><b>수리야 나마스카라 A</b><i>14</i></span><span class="sq-a"><b>수리야 나마스카라 B</b><i>15</i></span><span class="sq-a"><b>찬드라 나마스카라</b><i>16</i></span><span class="sq-a"><b>시바난다 수리야 나마스카라</b><i>17</i></span></div></div>
+        <div><h4>선자세와 균형자세 <span class="an-s">18~27쪽</span></h4><div class="sq-chips"><span class="sq-a"><b>타다아사나</b> 산자세<i>18</i></span><span class="sq-a"><b>우르드바하스타아사나</b> 손 끝 하늘 자세<i>18</i></span><span class="sq-a"><b>욷타나아사나</b> 상체 숙인 자세<i>19</i></span><span class="sq-a"><b>욷카타아사나</b> 의자자세<i>19</i></span><span class="sq-a"><b>비라바드라아사나 1</b> 전사 1 자세<i>20</i></span><span class="sq-a"><b>비라바드라아사나 2</b> 전사 2 자세<i>20</i></span><span class="sq-a"><b>비라바드라아사나 3</b> 전사 3 자세<i>21</i></span><span class="sq-a"><b>비파리타 비라바드라아사나</b> 역전사자세<i>21</i></span><span class="sq-a"><b>우티타 트리코나아사나</b> 삼각 자세<i>22</i></span><span class="sq-a"><b>파르스보타나아사나</b> 피라미드 자세<i>22</i></span><span class="sq-a"><b>파리브리타 트리코나아사나</b> 비튼 삼각 자세<i>23</i></span><span class="sq-a"><b>우티타 파르스바코나아사나</b> 측각도 자세<i>23</i></span><span class="sq-a"><b>파리브리타 파르스바코나아사나</b> 비튼 측각도 자세<i>24</i></span><span class="sq-a"><b>프라사리타 파도타나아사나</b> 다리 넓힌 전굴 자세<i>24</i></span><span class="sq-a"><b>나타라자아사나</b> 댄서포즈<i>25</i></span><span class="sq-a"><b>욷티타하스타 파당구쉬타아사나 1</b><i>25</i></span><span class="sq-a"><b>욷티타하스타 파당구쉬타아사나 2</b><i>26</i></span><span class="sq-a"><b>브륵샤아사나</b> 나무 자세<i>26</i></span><span class="sq-a"><b>가루다아사나</b> 독수리 자세<i>27</i></span><span class="sq-a"><b>아르다찬드라아사나</b> 반달 자세<i>27</i></span></div></div>
+        <div><h4>앉은자세, 전굴, 골반열기 <span class="an-s">28~36쪽</span></h4><div class="sq-chips"><span class="sq-a"><b>파드마아사나</b> 연꽃자세<i>28</i></span><span class="sq-a"><b>바즈라아사나</b> 번개자세<i>28</i></span><span class="sq-a"><b>비라아사나</b> 영웅자세<i>29</i></span><span class="sq-a"><b>발라아사나</b> 아기 자세<i>29</i></span><span class="sq-a"><b>수카아사나</b> 편안한 자세<i>30</i></span><span class="sq-a"><b>받다코나아사나</b> 나비 자세<i>30</i></span><span class="sq-a"><b>자누시르사아사나</b><i>31</i></span><span class="sq-a"><b>파리브리타 자누시르사아사나</b><i>31</i></span><span class="sq-a"><b>파스치모타나아사나</b><i>32</i></span><span class="sq-a"><b>단다아사나</b> 막대기 자세<i>32</i></span><span class="sq-a"><b>아르다 마첸드라아사나</b><i>33</i></span><span class="sq-a"><b>마리치아사나</b><i>33</i></span><span class="sq-a"><b>말라아사나</b> 화환자세<i>34</i></span><span class="sq-a"><b>사마코나아사나</b><i>34</i></span><span class="sq-a"><b>우파비스타코나아사나</b><i>35</i></span><span class="sq-a"><b>하누만아사나</b> 원숭이 자세<i>35</i></span><span class="sq-a"><b>나바아사나</b> 배(보트) 자세<i>36</i></span></div></div>
+        <div><h4>역자세 <span class="an-s">37~39쪽</span></h4><div class="sq-chips"><span class="sq-a"><b>아도무카 스바나아사나</b> 견상 자세 (다운독)<i>37</i></span><span class="sq-a"><b>할라아사나</b> 쟁기자세<i>37</i></span><span class="sq-a"><b>살람바사르방가아사나</b> 어깨서기<i>38</i></span><span class="sq-a"><b>살람바 시르사아사나</b> 머리서기 자세<i>38</i></span><span class="sq-a"><b>살람바 시르사아사나 2</b> 머리서기 자세 2<i>39</i></span></div></div>
+        <div><h4>후굴자세 <span class="an-s">40~46쪽</span></h4><div class="sq-chips"><span class="sq-a"><b>부장가아사나</b> 코브라 자세<i>40</i></span><span class="sq-a"><b>우르드바 무카 스바나아사나</b> 업독<i>40</i></span><span class="sq-a"><b>살라바사나</b> 메뚜기 자세<i>41</i></span><span class="sq-a"><b>안자네야아사나</b> 로우런지<i>41</i></span><span class="sq-a"><b>에카 파다 라자카포타아사나(준비)</b> 비둘기 준비 자세<i>42</i></span><span class="sq-a"><b>에카 파다 라자카포타아사나</b> 비둘기 자세<i>42</i></span><span class="sq-a"><b>비야그라아사나</b> 호랑이 자세<i>43</i></span><span class="sq-a"><b>세투 반다 사르반가아사나</b> 브릿지 포즈<i>43</i></span><span class="sq-a"><b>푸르보타나아사나</b><i>44</i></span><span class="sq-a"><b>우스트라아사나</b> 낙타 자세<i>44</i></span><span class="sq-a"><b>다누라아사나</b> 활 자세<i>45</i></span><span class="sq-a"><b>우르드바 다누라아사나</b> 휠(wheel) 자세<i>45</i></span><span class="sq-a"><b>카맛카라아사나</b> 와일드 띵<i>46</i></span></div></div>
+        <div><h4>손 균형자세 <span class="an-s">47~48쪽</span></h4><div class="sq-chips"><span class="sq-a"><b>산톨라나아사나</b> 널판지아사나<i>47</i></span><span class="sq-a"><b>차투랑가 단다아사나</b> 널판지 자세<i>47</i></span><span class="sq-a"><b>바시스타아사나</b> 사이드플랭크<i>48</i></span><span class="sq-a"><b>바카아사나</b> 두루미 자세<i>48</i></span></div></div>
+        <div><h4>기타자세, 웜업자세 <span class="an-s">49~50쪽</span></h4><div class="sq-chips"><span class="sq-a"><b>비틸라아사나</b> 소 자세<i>49</i></span><span class="sq-a"><b>마르자리아사나</b> 고양이 자세<i>49</i></span><span class="sq-a"><b>고무카아사나</b><i>49</i></span><span class="sq-a"><b>사바아사나</b><i>50</i></span></div></div>
+        <div><h4>대표 시퀀스에 나오는 다른 동작 <span class="an-s">63~72쪽</span></h4><div class="sq-chips"><span class="sq-a"><b>테이블 자세</b></span><span class="sq-a"><b>테이블 변형 자세</b></span><span class="sq-a"><b>아쉬와산찰라나아사나</b></span><span class="sq-a"><b>마카라아사나</b></span><span class="sq-a"><b>하이런지</b></span><span class="sq-a"><b>로우런지 비틀기</b></span><span class="sq-a"><b>견상 스플릿</b></span><span class="sq-a"><b>무릎 가슴 당기기</b></span><span class="sq-a"><b>플랭크</b></span><span class="sq-a"><b>측면 늘리기</b></span><span class="sq-a"><b>아르다 부장가아사나</b></span><span class="sq-a"><b>파르스바 다누라아사나</b></span><span class="sq-a"><b>아르다 나바아사나</b></span><span class="sq-a"><b>누운 비틀기</b></span><span class="sq-a"><b>행복한 아기 자세</b></span></div></div>
+        </div>
+      </div>
+
+      <div class="hb-sec sq-work"><h3>직접 적기</h3>
+        <details class="sq-q"><summary>막히면 볼 질문</summary><ul>
+          <li>이 자세는 Step 1의 어느 칸(풀기, 강화, 인지)을 맡고 있나요?</li>
+          <li>이 자세를 빼면 피크포즈에서 무엇이 부족해질까요? 답이 안 나오면 빼도 되는 자세일 수 있어요.</li>
+          <li>피크 전에 한 발 감각을 미리 깨워 줄 자세가 필요할까요? 필요하다면 어떤 자세일까요?</li>
+          <li>고른 준비 자세에서 뒷다리 무릎은 펴져 있나요, 굽혀져 있나요? 나타라자아사나의 뒷다리와 같은 모양인가요?</li>
+          <li>깊은 후굴 이후에는 전굴이나 이완 동작으로 긴장을 완화할 수 있다고 했어요(53쪽 원칙 4). 쿨다운에는 어떤 자세가 맞을까요?</li></ul></details>
+        <label class="sq-f"><span>웜업 후보 <small>자세: 고른 이유</small></span><textarea data-k="s3_warm" rows="3"></textarea></label>
+        <label class="sq-f"><span>열어 줄 곳을 위한 자세 <small>자세: 고른 이유</small></span><textarea data-k="s3_open" rows="3"></textarea></label>
+        <label class="sq-f"><span>강화할 곳을 위한 자세 <small>자세: 고른 이유</small></span><textarea data-k="s3_strong" rows="3"></textarea></label>
+        <label class="sq-f"><span>활성화할 곳을 위한 자세 <small>자세: 고른 이유</small></span><textarea data-k="s3_aware" rows="3"></textarea></label>
+        <label class="sq-f"><span>쿨다운 후보 <small>자세: 고른 이유</small></span><textarea data-k="s3_cool" rows="3"></textarea></label>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="sq-step hb-doc" data-step-id="4" hidden>
+      <div class="hb-sec"><h3>Step 4. 하타 버전</h3>
+        <div class="hb-key">
+          <strong>재료를 <mark class="y">하나씩 놓고, 머물고, 쉬며 매듭지어요</mark></strong>
+          <p>하타는 피크포즈에 필요한 조건을 개별 아사나로 하나씩 확보해 나가는 방식이에요(교재 58쪽). 하타를 먼저 짜 두면 같은 재료를 빈야사로 옮기기 편할 거예요.</p>
+        </div>
+      </div>
+
+      <div class="hb-sec"><h3>교재: 현대 하타 <span class="an-s">57~58쪽</span></h3>
+        <p>하타에서 빈야사 크라마는 <b>한 자세에 온전히 머물기 위한 육체적, 내적 준비 과정</b>이에요. 동작을 묶기보다 개별 아사나의 고유한 힘과 정렬에 집중하고, 그 자세에서의 내적 관찰을 주 목적으로 해요.</p>
+        <div class="hb-tw nw"><table>
+          <tbody>
+            <tr><td>준비 단계</td><td>시바난다 태양경배로 고전적인 정렬을 익히고 정적인 힘으로 몸을 깨움</td></tr>
+            <tr><td>개별 아사나 중심</td><td>하나의 아사나를 독립적인 목적지로 정하고 <mark class="y">1~5분 이상</mark> 충분히 머묾</td></tr>
+            <tr><td>중립화와 회복</td><td>강한 자극 뒤에는 반드시 마카라아사나 같은 중간 회복 자세를 둬 에너지를 통합함. 빈야사의 '흐름'과 대조되는 하타만의 <mark class="g">'매듭짓기'</mark></td></tr>
+            <tr><td>실전 적용</td><td>크라마는 '다음 동작으로 가는 길'이 아니라 '이 동작을 더 깊게 하기 위한 예비 단계'</td></tr>
+            <tr><td>전략 <small>58쪽</small></td><td>피크포즈를 해부학적으로 분석해 강화할 곳 / 열어 줄 곳 / 활성화할 곳에 해당하는 아사나를 독립적으로 배치. 동작 사이 중립화로 앞선 아사나의 효과를 충분히 흡수하고 다음 단계로</td></tr>
+          </tbody></table></div>
+        <h4>교재 예시 · 피크 에카 파다 코운딘야아사나 <span class="an-s">58쪽</span></h4>
+        <div class="hb-steps"><span>플랭크 <small>코어 강화</small></span><i>→</i><span>마카라아사나 <small>이완</small></span><i>→</i><span>하누만아사나 <small>골반 열기</small></span><i>→</i><span>우탄 프리스타아사나 <small>골반 열기</small></span><i>→</i><span class="on">에카 파다 코운딘야아사나 <small>도전 자세</small></span></div>
+      </div>
+
+      <div class="hb-sec"><h3>하타와 빈야사 비교 <span class="an-s">교재 57쪽, 11/22 수업</span></h3>
+        <div class="hb-tw nw"><table>
+          <thead><tr><th></th><th>빈야사</th><th>하타</th></tr></thead>
+          <tbody>
+            <tr><td>최소 단위 <small>교재</small></td><td>동작의 덩어리 (묶음)</td><td>개별 아사나</td></tr>
+            <tr><td>크라마의 방향 <small>교재</small></td><td>연결, 유기적인 흐름</td><td>심화, 한 아사나의 개별적 깊이</td></tr>
+            <tr><td>태양경배 <small>교재</small></td><td>수리야 나마스카라 A / B</td><td>시바난다 수리야 나마스카라</td></tr>
+            <tr><td>시퀀싱 리듬 <small>교재</small></td><td>중단 없는 호흡</td><td>자극과 휴식의 반복</td></tr>
+            <tr><td>자세 사이 <small>교재·수업</small></td><td>플랭크-차투랑가-부장가아사나-견상으로 이어 감 <small>교재 68쪽 대표 시퀀스</small></td><td>보통 그 자리에서 발 방향만 바꿔 다음 자세로 <small>수업</small></td></tr>
+            <tr><td>쉬는 곳 <small>수업</small></td><td>끊김 없이 가다 보통 마지막 이완에서 쉼</td><td>어려운 자세 뒤 쉬며 매듭 (발라·마카라·사바아사나 등)</td></tr>
+          </tbody></table></div>
+        <div class="hb-card"><span class="t">11/22 수업</span><h4>하타에서 알아 둘 것</h4><ul>
+          <li>오래 머물면 처음엔 무감각해도, 준비된 몸으로 머물수록 미세한 감각·호흡·고요함을 만남</li>
+          <li>근육만 느끼게 하는 게 아니라, 몸을 관찰하고 마음에 집중하도록 안내하기</li>
+          <li>쉬는 자세는 정해져 있지 않음. 편안하게 숨 쉴 수 있는 자세면 됨</li></ul></div>
+      </div>
+
+      <div class="hb-sec"><h3>교재 대표 시퀀스 · 하타0 60분 <span class="an-s">63쪽</span></h3>
+        <p class="hb-note">피크포즈가 부장가아사나인 예시예요. 괄호 안은 교재의 카운트예요.</p>
+        <ol class="sq-seq">
+          <li><b>인사 및 자기소개, 센터링</b></li>
+          <li><b>웜업</b>: 발라아사나(3) → 테이블 자세(전환) → 소·고양이 자세 3세트 → 아도무카스바나아사나(3) → 욷타나아사나(3) → 타다아사나</li>
+          <li><b>시바난다 수리야나마스카라</b> 2세트</li>
+          <li><b>선 자세</b>: 욷카타아사나(3카운트 3세트) → 비라바드라아사나 1(3) → 이어서 우르드바 무카(3) → 타다아사나</li>
+          <li><b>피크포즈 준비</b>: 아쉬와산찰라나아사나(양손 어깨 아래 짚기 → 가슴 앞 합장 → 머리 위 합장) → 아도무카스바나아사나 → 발라아사나 → 바즈라아사나(양손 머리 깍지, 고무카아사나, 측면 늘리기) → 테이블 자세 → 마카라아사나</li>
+          <li><b>피크포즈</b>: 부장가아사나(5) → <mark class="g">마카라아사나 휴식(3)</mark> → 우르드바 무카 부장가아사나(5) → <mark class="g">마카라아사나 휴식(3)</mark></li>
+          <li><b>쿨다운/회복</b>: 발라아사나(3) → 단다아사나(전환) → 파스치모타나아사나(3) → 아르다 나바아사나(5) → 단다아사나(전환) → 아르다 마첸드라아사나(3) → 할라아사나(5)</li>
+          <li><b>이완 및 일으키기</b></li>
+        </ol>
+        <p class="hb-note">66쪽 60~90분 버전은 피크포즈 준비에 비둘기 준비 자세(양손 바닥 짚기 → 상체 바닥으로 낮추기)가 더해지고, "측면 늘리기(3) → 자누시르사아사나(5)"로 적혀 있으며, 일부 카운트가 늘어남</p>
+      </div>
+
+      <details class="sq-ex"><summary>다른 피크포즈 예시 · 선생님 하타 (우르드바 다누라아사나, 11/22): 직접 짠 뒤 열어서 비교하기</summary>
+        <div class="hb-card">
+          <p class="hb-note">피크가 다른 예시예요. 자세 목록을 옮기지 말고, 자세마다 이유를 붙이는 방식과 쉬는 곳, 묶는 방식을 비교해 보세요.</p>
+          <span class="t">웜업</span><p>찬드라 나마스카라(몸 앞면 열기) → 전사&nbsp;1·2·3(둔근·하체 힘) → 아쉬와&nbsp;산찰라나(허벅지~가슴&nbsp;앞면 풀기) → 견상</p>
+          <span class="t">척추·어깨 깨우기</span><p>테이블 → 소·고양이(척추 분절) → 엉덩이 든 고양이 자세(양손 만세, 팔꿈치 열리지 않게 어깨 인지)</p>
+          <span class="t">피크 준비</span><ul>
+            <li>비라아사나 → 고무카아사나 (팔꿈치 모으고 어깨 뒤로·아래로, 앞가슴 열기)</li>
+            <li>숩타 비라아사나에서 만세 (팔꿈치 벌리지 않게 연결 연습)</li>
+            <li>세투 반다 → 우르드바 다누라아사나 준비 자세</li></ul>
+          <span class="t">피크</span><p><mark class="y">우르드바 다누라아사나</mark></p>
+          <span class="t">쿨다운</span><ul>
+            <li>앉는 자세 → 사바아사나로 잠시 휴식</li>
+            <li>앉은 전굴: 앞면을 열었으니 전굴로 회복. 꼬리뼈를 말아 등을 둥글게, 등 뒤로 호흡</li>
+            <li>파스치모타나아사나: 깊게 가지 않기. 무릎을 많이 구부리고 등을 회복한다는 느낌으로 호흡 유도</li>
+            <li>마리치아사나(비틀기): 척추 마디 사이 공간을 만들어 중립으로</li>
+            <li>할라아사나 → 사바아사나</li></ul>
+          <p class="hb-note">수업에서는 찬드라 나마스카라를 깊은 후굴 피크포즈일 때 쓰는 편이라고 하셨어요.</p>
+        </div>
+      </details>
+
+      <div class="hb-sec sq-work"><h3>직접 짜기</h3>
+        <details class="sq-q"><summary>막히면 볼 질문</summary><ul>
+          <li>간단한 동작 → 복잡한 동작 → 피크 순서가 되었나요? (54쪽)</li>
+          <li>각 자세에 얼마나 머물까요? (교재 대표 시퀀스는 피크포즈를 3~5카운트로 적음, 63~64쪽) 어느 자세 뒤에 쉬어 갈까요? 쉬는 자세는 앞 자세와 어울리나요? (서&nbsp;있다가 바로 엎드리는지 등)</li>
+          <li>피크 바로 앞의 준비 자세는 나타라자아사나의 어떤 부분을 미리 해 보게 하나요?</li>
+          <li>한쪽씩 하는 자세는 오른쪽, 왼쪽 모두 적었나요?</li>
+          <li>균형과 후굴을 마친 몸을 무엇으로 중립에 돌려놓을까요?</li></ul></details>
+        <div class="sq-f"><span>하타 시퀀스 <small>한 줄에 한 자세 · 카운트나 이유를 덧붙여도 좋아요</small></span>
+          <div class="sq-tools"><button type="button" data-skel="s4_seq">빈 골격 넣기</button></div>
+          <textarea data-k="s4_seq" rows="14"></textarea></div>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="sq-step hb-doc" data-step-id="5" hidden>
+      <div class="hb-sec"><h3>Step 5. 빈야사 버전</h3>
+        <div class="hb-key">
+          <strong>같은 재료를 <mark class="y">묶음(비넷) 안에 녹여</mark> 호흡이 끊기지 않게 이어요</strong>
+          <p>빈야사는 피크포즈에 필요한 요소를 흐름의 덩어리인 '묶음' 속에 자연스럽게 배치하는 방식이에요. 수련생은 흐름을 타는 동안 자신도 모르게 피크포즈에 필요한 근육을 강화하고, 열어 주고, 활성화하게 돼요(교재 57쪽).</p>
+        </div>
+      </div>
+
+      <div class="hb-sec"><h3>교재: 현대 빈야사의 주요 묶음 유형 <span class="an-s">56쪽</span></h3>
+        <p>빈야사 크라마는 동작과 동작 사이의 <b>연결성</b>으로 구현돼요. 호흡의 리듬이 끊기지 않도록 <mark class="g">비슷한 골반의 방향이나 지지점</mark>을 가진 동작들을 하나의 묶음으로 배치해요.</p>
+        <div class="hb-tw"><table>
+          <thead><tr><th>묶음</th><th>개요</th><th>구성 예시</th><th>특징</th></tr></thead>
+          <tbody>
+            <tr><td>골반 정면</td><td>다리가 앞뒤로 열림. 두 ASIS(골반 앞쪽 뼈)가 매트 앞면을 봄</td><td>전사 1 - 파르스보타나 - 전사 3 - 하이런지 - 로우런지</td><td>다리 근육의 강한 개입, 척추의 정면 정렬. 에너지를 직선적으로 씀</td></tr>
+            <tr><td>열린 골반</td><td>다리가 양옆으로 열림. 골반이 매트의 긴 옆면을 봄</td><td>전사 2 - 역전사 - 측각도 - 삼각</td><td>골반 주변 근육(내전근, 외회전근)을 길게 늘리고 몸의 측면을 확장</td></tr>
+            <tr><td>회전</td><td>중립 비넷에서 척추의 회전을 더함</td><td>로우런지 - 로우런지 비틀기</td><td>복부 장기 자극, 척추 가동성. 골반 정면 묶음과 섞어 쓰기도 함 (로우런지 비틀기, 하이런지 비틀기)</td></tr>
+            <tr><td>한 발 균형 또는 도전 자세</td><td>비넷의 마지막에 배치해 집중력을 최고조로</td><td>전사 2 - 아르다찬드라 - 전사 3 - 욷티타하스타 파당구쉬타</td><td>앞선 묶음들에서 쌓은 열기와 유연성을 바탕으로 고도의 인지력이 필요함</td></tr>
+          </tbody></table></div>
+        <h4>숨 쉬는 고래 대표 배열 <span class="an-s">56~57쪽</span></h4>
+        <div class="hb-steps"><span>웜업 + 수리야 나마스카라 A <small>전신 가열</small></span><i>→</i><span>골반 정면 + 비틀기 <small>로우런지 중심 낮은 흐름</small></span><i>→</i><span>열린 골반 <small>전사 2 중심 선 자세 비넷</small></span><i>→</i><span>한 발 균형 <small>전사 3, 집중력·하체</small></span><i>→</i><span>쿨다운 <small>회복·보상 자세</small></span></div>
+      </div>
+
+      <div class="hb-sec"><h3>교재 예시 · 피크 에카 파다 코운딘야아사나 <span class="an-s">57~58쪽</span></h3>
+        <p class="hb-note">전략: 피크포즈의 '골반 방향'과 '필요 근육'을 고려해 3~4개 동작을 하나의 비넷으로 묶어 배치</p>
+        <div class="hb-tw nw"><table>
+          <tbody>
+            <tr><td>웜업</td><td>수리야 나마스카라 A/B로 전체적인 열기</td></tr>
+            <tr><td>골반 정면 묶음 1</td><td>로우런지 - 플랭크 - 무릎 대고 차투랑가 <small>손목 예열, 코어 및 전거근 활성화</small></td></tr>
+            <tr><td>골반 정면 묶음 2</td><td>하이런지 - 전사 3 - 런지 트위스트 <small>하체 안정성 확보, 척추 회전 준비</small></td></tr>
+            <tr><td>열린 골반 묶음</td><td>전사 2 - 측면 각도 자세 - 리자드 포즈 <small>고관절 외회전, 깊은 열기</small></td></tr>
+            <tr><td>도전 자세</td><td><mark class="y">에카 파다 코운딘야아사나</mark> <small>앞선 비넷들의 모든 요소 통합</small></td></tr>
+          </tbody></table></div>
+      </div>
+
+      <div class="hb-sec"><h3>교재 대표 시퀀스 · 빈야사0 60분 <span class="an-s">68쪽</span></h3>
+        <p class="hb-note">교재의 큰 순서와 "설명세트" 흐름이에요. 카운트는 뺐어요.</p>
+        <ol class="sq-seq">
+          <li><b>인사 및 자기소개, 센터링</b></li>
+          <li><b>웜업</b>: 현자세 기울기(5) → 테이블 자세(전환) → 소·고양이 자세(5회 반복)</li>
+          <li><b>수리야나마스카라</b> 3세트</li>
+          <li><b>설명세트</b>: 견상 스플릿(수리야나마스카라 A의 세 번째 견상에서 연결) → 무릎 가슴 당기기 → 로우런지 → 로우런지 비틀기 → 하이런지 → 전사 2 → 역전사 → 전사 2 → 삼각 자세 → 파르스보타나아사나 → 욷타나아사나 → 의자 자세 → 한 다리 균형 자세 → <mark class="y">전사 3</mark> → 견상 (오른쪽 후 플랭크-차투랑가-부장가아사나-견상, 왼쪽 들어감)</li>
+          <li><b>플로우세트</b>: 설명세트의 왼쪽 마무리 후 플랭크-차투랑가-부장가아사나-견상 뒤 연결. 같은 순서를 다시 이어 감</li>
+          <li><b>쿨다운</b>: 아기 자세 → 누운 비틀기 → 행복한 아기 자세</li>
+          <li><b>이완</b></li>
+          <li><b>일으키기</b></li>
+        </ol>
+        <p class="hb-note">71~72쪽 60~90분 버전은 웜업에 테이블 변형 자세, 설명세트 처음에 타다아사나 → 브륵샤·가루다아사나, 쿨다운에 받다코나아사나가 더해지고, 이 자세들의 이유에 전사 3을 "피크포즈(전사3)"라고 적어 둠</p>
+      </div>
+
+      <details class="sq-ex"><summary>다른 피크포즈 예시 · 선생님 빈야사 (우르드바 다누라아사나, 11/22): 직접 짠 뒤 열어서 비교하기</summary>
+        <div class="hb-card">
+          <p class="hb-note">피크가 다른 예시예요. 자세 목록을 옮기지 말고, 자세마다 이유를 붙이는 방식과 묶는 방식을 비교해 보세요.</p>
+          <span class="t">웜업</span><p>호흡 → 테이블 → 소·고양이(척추 분절) → 견상 → 수리야 나마스카라 3~5세트(수업 길이에 따라) → 견상</p>
+          <span class="t">흐름 <span class="hb-pill">끊지 않고 이어 감, 한 번 더 반복해도 됨</span></span><ul>
+            <li>오른 다리를 뒷벽으로 뻗어 올리기(에카 파다 견상) → 아쉬와&nbsp;산찰라나</li>
+            <li>올라와서 고무카아사나 팔(호흡 카운트) → 손 풀고 하이런지, 등&nbsp;뒤&nbsp;깍지(카운트)</li>
+            <li>전사 2(열린 골반, 카운트) → 역전사 → 풍차 돌리듯 내려와 빈야사&nbsp;→&nbsp;견상</li>
+            <li>다리 차 올려 매트 앞으로, 전사 1 → 전사 3 → 견상 → 반대쪽</li></ul>
+          <span class="t">피크 <span class="hb-pill">흐름이 끝난 뒤 따로</span></span><p>숩타 비라아사나로 몸 열기 → 세투 반다 → <mark class="y">우르드바 다누라아사나</mark></p>
+          <p class="hb-note">도전 자세는 흐름 안에 넣을 필요 없음. 하타처럼 끊어 가도 됨</p>
+          <span class="t">마무리</span><p>비틀기 → 할라아사나 → 사바아사나</p>
+        </div>
+      </details>
+
+      <div class="hb-sec sq-work"><h3>직접 짜기</h3>
+        <details class="sq-q"><summary>막히면 볼 질문</summary><ul>
+          <li>Step 1에서 적은 나타라자아사나의 골반 방향은 어느 묶음과 이어지기 쉬울까요?</li>
+          <li>Step 3에서 고른 재료를 골반 방향(정면, 열린 골반)이나 지지점별로 나누면 어느 묶음에 들어가나요?</li>
+          <li>한 묶음은 몇 개 동작으로 할까요? (교재 전략: 3~4개)</li>
+          <li>묶음과 묶음 사이, 오른쪽과 왼쪽 사이는 무엇으로 이어 가나요?</li>
+          <li>나타라자아사나를 흐름 안의 마지막(한 발 균형 묶음)에 둘까요, 선생님 예시처럼 흐름이 끝난 뒤 따로 둘까요? 이유도 적어 보세요.</li>
+          <li>하타 버전과 비교해 같은 재료가 어디에 녹아 들어갔나요?</li></ul></details>
+        <div class="sq-f"><span>빈야사 시퀀스 <small>묶음마다 한 줄 · 예: 묶음 이름: 자세 - 자세 - 자세</small></span>
+          <div class="sq-tools"><button type="button" data-skel="s5_seq">빈 골격 넣기</button></div>
+          <textarea data-k="s5_seq" rows="14"></textarea></div>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="sq-step hb-doc" data-step-id="6" hidden>
+      <div class="hb-sec"><h3>Step 6. 점검하기</h3>
+        <div class="hb-key">
+          <strong>교재 53쪽 <mark class="y">시퀀싱의 5가지 원칙</mark>으로 두 버전을 확인해요</strong>
+          <p>빈야사 크라마는 "올바른 방향으로, 적절한 순서와 단계에 따라 수련을 발전시키는 방법"이에요(53쪽). 숨쉬는&nbsp;고래 TTC의 모든 시퀀싱은 이 원칙을 바탕으로 하며, 반드시 수련 후의 안정과 회복을 위한 적절한 회복 자세를 포함해요(56쪽). 체크한 것도 이 기기에 저장돼요.</p>
+        </div>
+        <ul class="sq-check">
+          <li><label><input type="checkbox" data-k="c1"><span><b>원칙 1</b> 피크 포즈를 중심으로 수업의 방향과 목적(주제)이 보인다</span></label></li>
+          <li><label><input type="checkbox" data-k="c2"><span><b>원칙 2</b> 피크에 필요한 관절의 움직임, 가동성, 근 활성, 안정성을 준비했고, 간단한 동작에서 깊은 아사나로 점차 나아간다</span></label></li>
+          <li><label><input type="checkbox" data-k="c9"><span><b>원칙 2</b> 피크포즈보다 더 어려운 자세가 준비 자세로 앞에 들어가지 않았다</span></label></li>
+          <li><label><input type="checkbox" data-k="c3"><span><b>Step 1</b> 열어 줄 곳, 강화할 곳, 활성화할 곳이 모두 어떤 자세로 준비되었다</span></label></li>
+          <li><label><input type="checkbox" data-k="c10"><span><b>이유</b> 준비 자세마다 Step 1의 어느 칸을 맡는지 내 말로 이유를 적었다</span></label></li>
+          <li><label><input type="checkbox" data-k="c11"><span><b>유형</b> 한 가지 아사나 유형에 치우치지 않았다 (59쪽)</span></label></li>
+          <li><label><input type="checkbox" data-k="c4"><span><b>원칙 3</b> 오른쪽과 왼쪽이 같은 시간과 강도로 들어갔다</span></label></li>
+          <li><label><input type="checkbox" data-k="c5"><span><b>원칙 4</b> 강한 자극 뒤에 몸이 회복하고 중립으로 돌아올 자세가 있다 (예: 깊은 후굴 뒤 전굴이나 이완)</span></label></li>
+          <li><label><input type="checkbox" data-k="c6"><span><b>원칙 5</b> 열을 낮추고 호흡을 길고 부드럽게 해 신경계가 안정된 상태로 마무리한다 (사바아사나는 최소 5분 이상이 좋음, 55쪽)</span></label></li>
+          <li><label><input type="checkbox" data-k="c7"><span><b>하타</b> 개별 자세에 머물고, 강한 자세 뒤 중간 회복 자세로 매듭짓는다</span></label></li>
+          <li><label><input type="checkbox" data-k="c8"><span><b>빈야사</b> 비슷한 골반 방향이나 지지점끼리 묶여 호흡이 끊기지 않고 이어진다</span></label></li>
+        </ul>
+      </div>
+      <div class="hb-sec"><h3>내 답 모아 보기</h3>
+        <p class="hb-note">지금까지 적은 답이에요. 복사해서 메모나 과제 정리에 붙여 넣을 수 있어요.</p>
+        <pre class="sq-all"></pre>
+        <div class="hb-actions"><button type="button" class="dl" data-sq="copy">내 답 전체 복사</button></div>
+      </div>
+    </div>
+
+    <div class="sq-nav">
+      <button type="button" class="sq-prev">← 이전 단계</button>
+      <span class="sq-pos"></span>
+      <button type="button" class="sq-next">다음 단계 →</button>
+    </div>
   </div>
 </section>
 
@@ -4319,8 +4800,8 @@ function hbAnimLoader(stageId,tabsSel,anims){
   });
 
   /* 보기 전환 */
-  var ORDER=['d1011','d1024','cue','centering','handson','anim','anatomy','d1031','d1101','d1101hn','d1101h','d1101p','cue2','d1107','d1108','d1114','anatomy3','d1122','d1122a','d1122d'];
-  var LABEL={d1011:'10월 11일 아사나 단어장',d1024:'10월 24일 수업 정리',d1122:'11월 22일 수업 정리',d1122a:'11월 22일 아사나 수업 정리',d1122s:'11월 22일 산스크리트어 암기',d1122d:'동작·뜻 사전',d1114:'11월 14일 수업 정리',d1107:'11월 7일 수업 정리',d1108:'11월 8일 수업 정리',d1031:'10월 31일 수업 정리',d1101:'11월 1일 수업 정리',d1101hn:'11월 1일 핸즈온 정리',d1101h:'핸즈온 애니메이션',d1101p:'프라나야마',cue2:'전사 2 묶음 큐잉',cue:'런지 묶음 큐잉',centering:'일반 센터링',handson:'핸즈온 정리',anim:'핸즈온 애니메이션',anatomy:'해부학 2회차',anatomy3:'해부학 3회차'};
+  var ORDER=['d1011','d1024','cue','centering','handson','anim','anatomy','d1031','d1101','d1101hn','d1101h','d1101p','cue2','d1107','d1108','d1114','anatomy3','d1122','d1122a','d1122q','d1122d'];
+  var LABEL={d1011:'10월 11일 아사나 단어장',d1024:'10월 24일 수업 정리',d1122:'11월 22일 수업 정리',d1122a:'11월 22일 아사나 수업 정리',d1122q:'시퀀싱 과제 도우미',d1122s:'11월 22일 산스크리트어 암기',d1122d:'동작·뜻 사전',d1114:'11월 14일 수업 정리',d1107:'11월 7일 수업 정리',d1108:'11월 8일 수업 정리',d1031:'10월 31일 수업 정리',d1101:'11월 1일 수업 정리',d1101hn:'11월 1일 핸즈온 정리',d1101h:'핸즈온 애니메이션',d1101p:'프라나야마',cue2:'전사 2 묶음 큐잉',cue:'런지 묶음 큐잉',centering:'일반 센터링',handson:'핸즈온 정리',anim:'핸즈온 애니메이션',anatomy:'해부학 2회차',anatomy3:'해부학 3회차'};
   var views={};[].forEach.call(document.querySelectorAll('.hb-view'),function(v){views[v.getAttribute('data-view-id')]=v;});
   var navBtns=[].slice.call(document.querySelectorAll('.side button[data-view]'));
   var side=document.getElementById('side'),scrim=document.getElementById('scrim'),menu=document.getElementById('menu');
@@ -4509,6 +4990,80 @@ btns.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;btn
       [450,1000,1800].forEach(function(t){setTimeout(function(){var r=tgt.getBoundingClientRect();if(r.top<60||r.bottom>innerHeight)tgt.scrollIntoView({block:'center'});},t);});
     },260);
   });
+})();
+</script>
+<script>
+/* 시퀀싱 과제 도우미: 단계 넘기기, 이 기기에 답 저장, 복사 */
+(function(){
+  var v=document.getElementById('v-d1122q');if(!v)return;
+  var KEY='ttc-seq-nataraja-v1',st={f:{},step:1};
+  try{var raw=localStorage.getItem(KEY);if(raw){var o=JSON.parse(raw);if(o&&o.f)st=o;}}catch(e){}
+  var steps=[].slice.call(v.querySelectorAll('.sq-step')),bar=[].slice.call(v.querySelectorAll('.sq-bar button')),root=v.querySelector('.sq-root');
+  var prev=v.querySelector('.sq-prev'),next=v.querySelector('.sq-next'),pos=v.querySelector('.sq-pos'),msg=v.querySelector('.sq-msg'),all=v.querySelector('.sq-all');
+  var fields=[].slice.call(v.querySelectorAll('[data-k]'));
+  var NAMES={'1':'피크포즈 살펴보기','2':'주제 정하기','3':'재료 고르기','4':'하타 버전','5':'빈야사 버전','6':'점검하기'};
+  var SKEL={
+    s4_seq:'1. 센터링 (주제: )\n2. 웜업\n3. 시바난다 수리야 나마스카라\n4. 선 자세\n5. 피크포즈 준비\n6. 피크포즈: 나타라자아사나 (오른쪽, 왼쪽)\n7. 쿨다운·회복\n8. 이완 및 일으키기',
+    s5_seq:'1. 센터링 (주제: )\n2. 웜업\n3. 수리야 나마스카라\n4. 흐름 (묶음마다 한 줄)\n   묶음 1: \n   묶음 2: \n   묶음 3: (필요하면)\n5. 피크포즈: 나타라자아사나 (흐름 안 / 따로 중 선택)\n6. 쿨다운\n7. 이완 및 일으키기'
+  };
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+  function grow(t){t.style.height='auto';t.style.height=(t.scrollHeight+2)+'px';}
+  function label(el){var f=el.closest('.sq-f,label');var s=f&&f.querySelector('span');if(!s)return el.getAttribute('data-k');var c=s.cloneNode(true);var sm=c.querySelector('small');if(sm)sm.remove();return c.textContent.replace(/\s+/g,' ').trim();}
+  function filled(n){var s=steps[n-1];return [].some.call(s.querySelectorAll('[data-k]'),function(el){var x=st.f[el.getAttribute('data-k')];return el.type==='checkbox'?!!x:!!(x&&String(x).trim());});}
+  function marks(){bar.forEach(function(b){b.classList.toggle('done',filled(+b.getAttribute('data-step')));});}
+  function text(){
+    var out=['시퀀싱 과제: 피크포즈 나타라자아사나',''];
+    steps.forEach(function(s,i){
+      var n=i+1,lines=[];
+      [].forEach.call(s.querySelectorAll('[data-k]'),function(el){var k=el.getAttribute('data-k'),x=st.f[k];
+        if(el.type==='checkbox'){lines.push((x?'[v] ':'[ ] ')+el.parentNode.textContent.replace(/\s+/g,' ').trim());}
+        else if(x&&String(x).trim()){lines.push('■ '+label(el));lines.push(String(x).replace(/\s+$/,''));lines.push('');}
+      });
+      if(n===6&&!lines.some(function(l){return l.indexOf('[v]')===0;}))return;
+      if(!lines.length)return;
+      out.push('【Step '+n+'. '+NAMES[n]+'】');out=out.concat(lines);if(out[out.length-1]!=='')out.push('');
+    });
+    return out.join('\n').replace(/\n{3,}/g,'\n\n').trim();
+  }
+  function refreshAll(){var t=text();all.textContent=t.split('\n').length>2?t:'아직 적은 답이 없어요.';}
+  function go(n,scroll){
+    n=Math.max(1,Math.min(6,n));st.step=n;save();
+    steps.forEach(function(s,i){s.hidden=i!==n-1;});
+    bar.forEach(function(b){if(+b.getAttribute('data-step')===n)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});
+    prev.disabled=n===1;next.disabled=n===6;pos.textContent=n+' / 6';
+    if(n===6)refreshAll();
+    steps[n-1].querySelectorAll('textarea').forEach(grow);
+    if(scroll){var y=root.getBoundingClientRect().top+window.scrollY-70;if(window.scrollY>y)window.scrollTo(0,y);}
+  }
+  fields.forEach(function(el){var k=el.getAttribute('data-k');
+    if(el.type==='checkbox'){el.checked=!!st.f[k];el.addEventListener('change',function(){st.f[k]=el.checked;save();marks();});}
+    else{el.value=st.f[k]||'';el.addEventListener('input',function(){st.f[k]=el.value;save();grow(el);marks();});}
+  });
+  v.addEventListener('click',function(e){
+    var b=e.target.closest('[data-step]');if(b&&v.contains(b)){go(+b.getAttribute('data-step'),true);return;}
+    var sk=e.target.closest('[data-skel]');
+    if(sk){var k=sk.getAttribute('data-skel'),ta=v.querySelector('textarea[data-k="'+k+'"]'),em=sk.parentNode.querySelector('em');
+      if(!em){em=document.createElement('em');sk.parentNode.appendChild(em);}
+      if(ta.value.trim()){em.textContent='이미 적은 내용이 있어서 넣지 않았어요.';}
+      else{ta.value=SKEL[k];st.f[k]=ta.value;save();grow(ta);marks();em.textContent='교재 수업 구성 순서예요. 칸을 채워 보세요.';ta.focus();}
+      return;}
+    var a=e.target.closest('[data-sq]');if(!a)return;
+    if(a.getAttribute('data-sq')==='copy'){
+      var t=text();if(t.split('\n').length<3){say('아직 적은 답이 없어요.');return;}
+      function fallback(){var x=document.createElement('textarea');x.value=t;x.style.position='fixed';x.style.opacity='0';document.body.appendChild(x);x.select();var ok=false;try{ok=document.execCommand('copy');}catch(e){}x.remove();say(ok?'복사했어요.':'복사가 안 돼요. 6단계의 답 모아 보기에서 직접 선택해 복사해 주세요.');}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){say('복사했어요.');},fallback);}else fallback();
+    }else{
+      if(!a.classList.contains('arm')){a.classList.add('arm');a.textContent='한 번 더 누르면 지워져요';setTimeout(function(){a.classList.remove('arm');a.textContent='모두 지우기';},3500);return;}
+      a.classList.remove('arm');a.textContent='모두 지우기';
+      st={f:{},step:1};save();fields.forEach(function(el){if(el.type==='checkbox')el.checked=false;else{el.value='';grow(el);}});marks();go(1,true);say('모두 지웠어요.');
+    }
+  });
+  var tm;function say(t){msg.textContent=t;clearTimeout(tm);tm=setTimeout(function(){msg.textContent='';},4000);}
+  prev.addEventListener('click',function(){go(st.step-1,true);});
+  next.addEventListener('click',function(){go(st.step+1,true);});
+  marks();go(st.step||1,false);
+  /* 화면이 보일 때 칸 높이 다시 맞춤 */
+  new MutationObserver(function(){if(!v.hidden)steps[st.step-1].querySelectorAll('textarea').forEach(grow);}).observe(v,{attributes:true,attributeFilter:['hidden']});
 })();
 </script>
 </body>

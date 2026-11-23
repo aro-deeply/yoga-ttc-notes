@@ -637,6 +637,31 @@ mark.hb-find{background:#FDEB9C;color:inherit;border-radius:3px;box-shadow:0 0 0
 .dc-root .dc-ph.mask::after{content:"눌러서 보기";position:absolute;font-size:12.5px;color:var(--muted);visibility:visible}
 .dc-root .dc-ph{position:relative}
 /* 시퀀싱 과제 도우미 (d1122q) */
+.sq-pnote{margin:0;font-size:14px;line-height:1.65;color:var(--ink-2)}
+.sq-pair{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px}
+.sq-pair .sq-pl{grid-column:1/-1;margin:4px 0 0;font-weight:700;color:var(--ink);font-size:15px}
+.sq-pair .sq-pl small{font-weight:400;color:var(--muted);font-size:13px;margin-left:6px}
+.sq-pair .sq-f>span{font-size:13px;font-weight:600;color:var(--muted)}
+@media (max-width:600px){.sq-pair{grid-template-columns:1fr}}
+.sq-exwrap h3 .an-s{display:block;margin:4px 0 0;font-weight:400}
+.sq-tabs{display:flex;flex-wrap:wrap;gap:6px}
+.sq-tabs button{height:34px;padding:0 13px;border:1px solid var(--line-2);border-radius:999px;background:var(--bg);color:var(--ink-2);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.sq-tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sq-pane{border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.sq-pane .hb-card{border:0;padding:0;background:none}
+.sq-pcap{margin:0;font-size:13px;color:var(--muted)}
+details.sq-mine{background:var(--bg);border:1px solid var(--line-2);border-radius:10px}
+details.sq-mine>summary{cursor:pointer;list-style:none;padding:11px 14px;font-weight:700;font-size:14.5px;color:var(--ink)}
+details.sq-mine>summary::-webkit-details-marker{display:none}
+details.sq-mine>summary::before{content:"+ ";color:var(--muted)}
+details.sq-mine[open]>summary::before{content:"− "}
+.sq-mine-b{padding:0 14px 12px;display:flex;flex-direction:column;gap:8px}
+.sq-mine-b h5{margin:4px 0 0;font-size:12.5px;color:var(--muted);font-weight:600}
+.sq-mine-b dl{margin:0;display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 14px;font-size:14px;line-height:1.6}
+.sq-mine-b dt{font-weight:600;color:var(--ink)}
+.sq-mine-b dd{margin:0;white-space:pre-wrap;color:var(--ink-2)}
+.sq-mine-b .empty{font-size:13.5px;color:var(--muted);margin:0}
+@media (max-width:600px){.sq-mine-b dl{grid-template-columns:1fr;gap:0}.sq-mine-b dd{margin-bottom:6px}.sq-tabs button{font-size:13px;padding:0 11px}}
 .hb-vhead p.sq-priv{font-size:14px;margin-top:0}
 .sq-msg{font-size:13px;color:var(--muted);align-self:center;margin-left:4px}
 .sq-root{display:flex;flex-direction:column;gap:32px}
@@ -679,7 +704,7 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
 .sq-f>span small{font-weight:400;color:var(--muted);font-size:13px;margin-left:6px}
 .sq-f textarea{width:100%;box-sizing:border-box;font:inherit;font-size:15px;line-height:1.65;padding:10px 12px;border:1px solid var(--line-2);border-radius:10px;background:var(--bg);color:var(--ink);resize:vertical;min-height:3.2em;overflow:hidden}
 .sq-f textarea:focus{outline:2px solid var(--ink);outline-offset:1px;border-color:transparent}
-.sq-tools{display:flex;gap:8px;align-items:center}
+.sq-tools{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}.sq-tools button{white-space:nowrap}
 .sq-tools button{height:30px;padding:0 12px;border:1px solid var(--line-2);border-radius:999px;background:var(--bg);color:var(--ink);font:inherit;font-size:13px;font-weight:600;cursor:pointer}
 .sq-tools em{font-style:normal;font-size:12.5px;color:var(--muted)}
 .sq-check{list-style:none;padding:0!important;gap:8px!important}
@@ -1890,6 +1915,88 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
       <li><button type="button" data-step="5"><b>5</b><span>점검</span></button></li>
     </ol>
 
+    <div class="hb-sec sq-exwrap" hidden><h3>시퀀스 예시 <span class="an-s">모두 피크가 다른 예시예요. 자세를 옮기기보다 순서·쉬는 곳·묶는 방식을 참고하세요</span></h3>
+        <div class="sq-tabs" role="tablist"><button type="button" role="tab" data-ex="h63">숨쉬는고래 하타</button><button type="button" role="tab" data-ex="v68">숨쉬는고래 빈야사</button><button type="button" role="tab" data-ex="kd">교재 예시</button><button type="button" role="tab" data-ex="th">선생님 하타</button><button type="button" role="tab" data-ex="tv">선생님 빈야사</button></div>
+        <div class="sq-pane" data-ex="h63" role="tabpanel" hidden><p class="sq-pcap">63쪽, 피크 부장가아사나</p>
+        <p class="hb-note">괄호 안은 교재의 카운트예요.</p>
+        <ol class="sq-seq">
+          <li><b>인사 및 자기소개, 센터링</b></li>
+          <li><b>웜업</b>: 발라아사나(3) → 테이블 자세(전환) → 소·고양이 자세 3세트 → 아도무카스바나아사나(3) → 욷타나아사나(3) → 타다아사나</li>
+          <li><b>시바난다 수리야나마스카라</b> 2세트</li>
+          <li><b>선 자세</b>: 욷카타아사나(3카운트 3세트) → 비라바드라아사나 1(3) → 이어서 우르드바 무카(3) → 타다아사나</li>
+          <li><b>피크포즈 준비</b>: 아쉬와산찰라나아사나(양손 어깨 아래 짚기 → 가슴 앞 합장 → 머리 위 합장) → 아도무카스바나아사나 → 발라아사나 → 바즈라아사나(양손 머리 깍지, 고무카아사나, 측면 늘리기) → 테이블 자세 → 마카라아사나</li>
+          <li><b>피크포즈</b>: 부장가아사나(5) → <mark class="g">마카라아사나 휴식(3)</mark> → 우르드바 무카 부장가아사나(5) → <mark class="g">마카라아사나 휴식(3)</mark></li>
+          <li><b>쿨다운/회복</b>: 발라아사나(3) → 단다아사나(전환) → 파스치모타나아사나(3) → 아르다 나바아사나(5) → 단다아사나(전환) → 아르다 마첸드라아사나(3) → 할라아사나(5)</li>
+          <li><b>이완 및 일으키기</b></li>
+        </ol>
+        <p class="hb-note">66쪽 60~90분 버전은 피크포즈 준비에 비둘기 준비 자세(양손 바닥 짚기 → 상체 바닥으로 낮추기)가 더해지고, "측면 늘리기(3) → 자누시르사아사나(5)"로 적혀 있으며, 일부 카운트가 늘어남</p>
+      
+</div><div class="sq-pane" data-ex="v68" role="tabpanel" hidden><p class="sq-pcap">68쪽, 마지막 전사 3</p>
+        <p class="hb-note">교재의 큰 순서와 "설명세트" 흐름이에요. 카운트는 뺐어요.</p>
+        <ol class="sq-seq">
+          <li><b>인사 및 자기소개, 센터링</b></li>
+          <li><b>웜업</b>: 현자세 기울기(5) → 테이블 자세(전환) → 소·고양이 자세(5회 반복)</li>
+          <li><b>수리야나마스카라</b> 3세트</li>
+          <li><b>설명세트</b>: 견상 스플릿(수리야나마스카라 A의 세 번째 견상에서 연결) → 무릎 가슴 당기기 → 로우런지 → 로우런지 비틀기 → 하이런지 → 전사 2 → 역전사 → 전사 2 → 삼각 자세 → 파르스보타나아사나 → 욷타나아사나 → 의자 자세 → 한 다리 균형 자세 → <mark class="y">전사 3</mark> → 견상 (오른쪽 후 플랭크-차투랑가-부장가아사나-견상, 왼쪽 들어감)</li>
+          <li><b>플로우세트</b>: 설명세트의 왼쪽 마무리 후 플랭크-차투랑가-부장가아사나-견상 뒤 연결. 같은 순서를 다시 이어 감</li>
+          <li><b>쿨다운</b>: 아기 자세 → 누운 비틀기 → 행복한 아기 자세</li>
+          <li><b>이완</b></li>
+          <li><b>일으키기</b></li>
+        </ol>
+        <p class="hb-note">71~72쪽 60~90분 버전은 웜업에 테이블 변형 자세, 설명세트 처음에 타다아사나 → 브륵샤·가루다아사나, 쿨다운에 받다코나아사나가 더해지고, 이 자세들의 이유에 전사 3을 "피크포즈(전사3)"라고 적어 둠</p>
+      
+</div><div class="sq-pane" data-ex="kd" role="tabpanel" hidden><p class="sq-pcap">57~58쪽, 피크 에카 파다 코운딘야아사나</p>
+<h4>빈야사 <span class="an-s">57~58쪽</span></h4>
+        <p class="hb-note">전략: 피크포즈의 '골반 방향'과 '필요 근육'을 고려해 3~4개 동작을 하나의 비넷으로 묶어 배치</p>
+        <div class="hb-tw nw"><table>
+          <tbody>
+            <tr><td>웜업</td><td>수리야 나마스카라 A/B로 전체적인 열기</td></tr>
+            <tr><td>골반 정면 묶음 1</td><td>로우런지 - 플랭크 - 무릎 대고 차투랑가 <small>손목 예열, 코어 및 전거근 활성화</small></td></tr>
+            <tr><td>골반 정면 묶음 2</td><td>하이런지 - 전사 3 - 런지 트위스트 <small>하체 안정성 확보, 척추 회전 준비</small></td></tr>
+            <tr><td>열린 골반 묶음</td><td>전사 2 - 측면 각도 자세 - 리자드 포즈 <small>고관절 외회전, 깊은 열기</small></td></tr>
+            <tr><td>도전 자세</td><td><mark class="y">에카 파다 코운딘야아사나</mark> <small>앞선 비넷들의 모든 요소 통합</small></td></tr>
+          </tbody></table></div>
+      
+        <h4>하타 <span class="an-s">58쪽</span></h4>
+        <div class="hb-steps"><span>플랭크 <small>코어 강화</small></span><i>→</i><span>마카라아사나 <small>이완</small></span><i>→</i><span>하누만아사나 <small>골반 열기</small></span><i>→</i><span>우탄 프리스타아사나 <small>골반 열기</small></span><i>→</i><span class="on">에카 파다 코운딘야아사나 <small>도전 자세</small></span></div>
+
+</div><div class="sq-pane" data-ex="th" role="tabpanel" hidden><p class="sq-pcap">11/22, 피크 우르드바 다누라아사나</p>
+        <div class="hb-card">
+          
+          <span class="t">웜업</span><p>찬드라 나마스카라(몸 앞면 열기) → 전사&nbsp;1·2·3(둔근·하체 힘) → 아쉬와&nbsp;산찰라나(허벅지~가슴&nbsp;앞면 풀기) → 견상</p>
+          <span class="t">척추·어깨 깨우기</span><p>테이블 → 소·고양이(척추 분절) → 엉덩이 든 고양이 자세(양손 만세, 팔꿈치 열리지 않게 어깨 인지)</p>
+          <span class="t">피크 준비</span><ul>
+            <li>비라아사나 → 고무카아사나 (팔꿈치 모으고 어깨 뒤로·아래로, 앞가슴 열기)</li>
+            <li>숩타 비라아사나에서 만세 (팔꿈치 벌리지 않게 연결 연습)</li>
+            <li>세투 반다 → 우르드바 다누라아사나 준비 자세</li></ul>
+          <span class="t">피크</span><p><mark class="y">우르드바 다누라아사나</mark></p>
+          <span class="t">쿨다운</span><ul>
+            <li>앉는 자세 → 사바아사나로 잠시 휴식</li>
+            <li>받다코나아사나: 앞면을 열었으니 전굴로 회복. 꼬리뼈를 말아 등을 둥글게, 등 뒤로 호흡</li>
+            <li>파스치모타나아사나: 깊게 가지 않기. 무릎을 많이 구부리고 등을 회복한다는 느낌으로 호흡 유도</li>
+            <li>마리치아사나(비틀기): 척추 마디 사이 공간을 만들어 중립으로</li>
+            <li>할라아사나 → 사바아사나</li></ul>
+          <p class="hb-note">수업에서는 찬드라 나마스카라를 깊은 후굴 피크포즈일 때 쓰는 편이라고 하셨어요.</p>
+        </div>
+      
+</div><div class="sq-pane" data-ex="tv" role="tabpanel" hidden><p class="sq-pcap">11/22, 피크 우르드바 다누라아사나</p>
+        <div class="hb-card">
+          
+          <span class="t">웜업</span><p>호흡 → 테이블 → 소·고양이(척추 분절) → 견상 → 수리야 나마스카라 3~5세트(수업 길이에 따라) → 견상</p>
+          <span class="t">흐름 <span class="hb-pill">끊지 않고 이어 감, 한 번 더 반복해도 됨</span></span><ul>
+            <li>오른 다리를 뒷벽으로 뻗어 올리기(에카 파다 견상) → 아쉬와&nbsp;산찰라나</li>
+            <li>올라와서 고무카아사나 팔(호흡 카운트) → 손 풀고 하이런지, 등&nbsp;뒤&nbsp;깍지(카운트)</li>
+            <li>전사 2(열린 골반, 카운트) → 역전사 → 풍차 돌리듯 내려와 빈야사&nbsp;→&nbsp;견상</li>
+            <li>다리 차 올려 매트 앞으로, 전사 1 → 전사 3 → 견상 → 반대쪽</li></ul>
+          <span class="t">피크 <span class="hb-pill">흐름이 끝난 뒤 따로</span></span><p>숩타 비라아사나로 몸 열기 → 세투 반다 → <mark class="y">우르드바 다누라아사나</mark></p>
+          <p class="hb-note">도전 자세는 흐름 안에 넣을 필요 없음. 하타처럼 끊어 가도 됨</p>
+          <span class="t">마무리</span><p>비틀기 → 할라아사나 → 사바아사나</p>
+        </div>
+      
+</div>
+      </div>
+      <details class="sq-mine" open hidden><summary>앞 단계에서 내가 적은 것</summary><div class="sq-mine-b"></div></details>
+
     <!-- STEP 1 -->
     <div class="sq-step hb-doc" data-step-id="1">
       <div class="hb-sec"><h3>Step 1. 피크포즈 살펴보기</h3>
@@ -1989,7 +2096,7 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
       <div class="hb-sec"><h3>Step 2. 재료 고르기</h3>
         <div class="hb-key">
           <strong>Step 1의 칸마다 <mark class="y">후보 자세와 고른 이유</mark>를 적어요</strong>
-          <p>수업에서 "아사나(재료)는 같고, 묶는 방식이 다르다"고 했어요. 교재 57쪽도 두 수련 모두 피크포즈에 필요한 <b>열기, 강화, 유연성, 인지</b>를 단계별로 배치하되, 하타는 개별 아사나(부품)로 준비하고 빈야사는 비넷(덩어리) 안에 녹여 낸다고 해요. 여기서 고른 재료로 Step 3(하타)와 Step 4(빈야사)를 각각 엮어요.</p>
+          <p>수업에서 "아사나(재료)는 같고, 묶는 방식이 다르다"고 했어요. 다만 태양경배나 쉬는 자세처럼 버전마다 달라지는 재료도 있어서, 적는 칸은 하타와 빈야사로 나눴어요. 교재 57쪽도 두 수련 모두 피크포즈에 필요한 <b>열기, 강화, 유연성, 인지</b>를 단계별로 배치하되, 하타는 개별 아사나(부품)로 준비하고 빈야사는 비넷(덩어리) 안에 녹여 낸다고 해요. 여기서 고른 재료로 Step 3(하타)와 Step 4(빈야사)를 각각 엮어요.</p>
         </div>
       </div>
 
@@ -2019,7 +2126,7 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
       </div>
 
       <div class="hb-sec"><h3>교재 아사나 목록 <span class="an-s">14~50쪽</span></h3>
-        <p class="hb-note">이름 옆 숫자는 교재 쪽수예요. 그림은 <button type="button" class="hb-link" data-goto="d1122d">동작·뜻 사전</button>에서 볼 수 있어요.</p>
+        <p class="hb-note">이름 옆 숫자는 교재 쪽수예요. 그림은 <button type="button" class="hb-link" data-goto="d1122d">동작·뜻 사전</button>에서 볼 수 있고, <a class="hb-link" href="file/asana-63.pdf" download="요가TTC_아사나63개_그림.pdf">63개 그림 인쇄용 PDF</a>로 받아 펼쳐 놓고 골라도 돼요.</p>
         <div class="sq-alist">
         <div><h4>태양경배 <span class="an-s">14~17쪽</span></h4><div class="sq-chips"><span class="sq-a"><b>수리야 나마스카라 A</b><i>14</i></span><span class="sq-a"><b>수리야 나마스카라 B</b><i>15</i></span><span class="sq-a"><b>찬드라 나마스카라</b><i>16</i></span><span class="sq-a"><b>시바난다 수리야 나마스카라</b><i>17</i></span></div></div>
         <div><h4>선자세와 균형자세 <span class="an-s">18~27쪽</span></h4><div class="sq-chips"><span class="sq-a"><b>타다아사나</b> 산자세<i>18</i></span><span class="sq-a"><b>우르드바하스타아사나</b> 손 끝 하늘 자세<i>18</i></span><span class="sq-a"><b>욷타나아사나</b> 상체 숙인 자세<i>19</i></span><span class="sq-a"><b>욷카타아사나</b> 의자자세<i>19</i></span><span class="sq-a"><b>비라바드라아사나 1</b> 전사 1 자세<i>20</i></span><span class="sq-a"><b>비라바드라아사나 2</b> 전사 2 자세<i>20</i></span><span class="sq-a"><b>비라바드라아사나 3</b> 전사 3 자세<i>21</i></span><span class="sq-a"><b>비파리타 비라바드라아사나</b> 역전사자세<i>21</i></span><span class="sq-a"><b>우티타 트리코나아사나</b> 삼각 자세<i>22</i></span><span class="sq-a"><b>파르스보타나아사나</b> 피라미드 자세<i>22</i></span><span class="sq-a"><b>파리브리타 트리코나아사나</b> 비튼 삼각 자세<i>23</i></span><span class="sq-a"><b>우티타 파르스바코나아사나</b> 측각도 자세<i>23</i></span><span class="sq-a"><b>파리브리타 파르스바코나아사나</b> 비튼 측각도 자세<i>24</i></span><span class="sq-a"><b>프라사리타 파도타나아사나</b> 다리 넓힌 전굴 자세<i>24</i></span><span class="sq-a"><b>나타라자아사나</b> 댄서포즈<i>25</i></span><span class="sq-a"><b>욷티타하스타 파당구쉬타아사나 1</b><i>25</i></span><span class="sq-a"><b>욷티타하스타 파당구쉬타아사나 2</b><i>26</i></span><span class="sq-a"><b>브륵샤아사나</b> 나무 자세<i>26</i></span><span class="sq-a"><b>가루다아사나</b> 독수리 자세<i>27</i></span><span class="sq-a"><b>아르다찬드라아사나</b> 반달 자세<i>27</i></span></div></div>
@@ -2038,12 +2145,26 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
           <li>이 자세를 빼면 피크포즈에서 무엇이 부족해질까요? 답이 안 나오면 빼도 되는 자세일 수 있어요.</li>
           <li>피크 전에 한 발 감각을 미리 깨워 줄 자세가 필요할까요? 필요하다면 어떤 자세일까요?</li>
           <li>고른 준비 자세에서 뒷다리 무릎은 펴져 있나요, 굽혀져 있나요? 나타라자아사나의 뒷다리와 같은 모양인가요?</li>
-          <li>깊은 후굴 이후에는 전굴이나 이완 동작으로 긴장을 완화할 수 있다고 했어요(53쪽 원칙 4). 쿨다운에는 어떤 자세가 맞을까요?</li></ul></details>
-        <label class="sq-f"><span>웜업 후보 <small>자세: 고른 이유</small></span><textarea data-k="s3_warm" rows="3"></textarea></label>
-        <label class="sq-f"><span>열어 줄 곳을 위한 자세 <small>자세: 고른 이유</small></span><textarea data-k="s3_open" rows="3"></textarea></label>
-        <label class="sq-f"><span>강화할 곳을 위한 자세 <small>자세: 고른 이유</small></span><textarea data-k="s3_strong" rows="3"></textarea></label>
-        <label class="sq-f"><span>활성화할 곳을 위한 자세 <small>자세: 고른 이유</small></span><textarea data-k="s3_aware" rows="3"></textarea></label>
-        <label class="sq-f"><span>쿨다운 후보 <small>자세: 고른 이유</small></span><textarea data-k="s3_cool" rows="3"></textarea></label>
+          <li>깊은 후굴 이후에는 전굴이나 이완 동작으로 긴장을 완화할 수 있다고 했어요(53쪽 원칙 4). 쿨다운에는 어떤 자세가 맞을까요?</li>
+          <li><b>하타</b>: 어느 자세에 머물고, 강한 자세 뒤 어떤 자세로 쉬며 매듭지을까요? (교재 57~58쪽)</li>
+          <li><b>빈야사</b>: 비슷한 골반 방향이나 지지점끼리 이어질 재료는 무엇일까요? 묶음 사이를 무엇으로 이어 갈까요? (교재 56~57쪽)</li></ul></details>
+        <p class="sq-pnote">하타와 빈야사는 재료가 겹쳐도 완전히 같지는 않아요. 예를 들어 태양경배는 하타가 시바난다 수리야 나마스카라, 빈야사가 수리야 나마스카라 A/B예요(교재 57쪽). 버전별로 나눠 적어 보세요.</p>
+        <div class="sq-tools"><button type="button" data-copyhv>하타 칸을 빈야사 칸으로 복사 (빈 칸만)</button></div>
+        <div class="sq-pair"><p class="sq-pl">웜업 후보 <small>자세: 고른 이유</small></p>
+          <label class="sq-f"><span>하타</span><textarea data-k="s3_warm" data-v="h" rows="3"></textarea></label>
+          <label class="sq-f"><span>빈야사</span><textarea data-k="s3v_warm" data-v="v" rows="3"></textarea></label></div>
+        <div class="sq-pair"><p class="sq-pl">열어 줄 곳을 위한 자세 <small>자세: 고른 이유</small></p>
+          <label class="sq-f"><span>하타</span><textarea data-k="s3_open" data-v="h" rows="3"></textarea></label>
+          <label class="sq-f"><span>빈야사</span><textarea data-k="s3v_open" data-v="v" rows="3"></textarea></label></div>
+        <div class="sq-pair"><p class="sq-pl">강화할 곳을 위한 자세 <small>자세: 고른 이유</small></p>
+          <label class="sq-f"><span>하타</span><textarea data-k="s3_strong" data-v="h" rows="3"></textarea></label>
+          <label class="sq-f"><span>빈야사</span><textarea data-k="s3v_strong" data-v="v" rows="3"></textarea></label></div>
+        <div class="sq-pair"><p class="sq-pl">활성화할 곳을 위한 자세 <small>자세: 고른 이유</small></p>
+          <label class="sq-f"><span>하타</span><textarea data-k="s3_aware" data-v="h" rows="3"></textarea></label>
+          <label class="sq-f"><span>빈야사</span><textarea data-k="s3v_aware" data-v="v" rows="3"></textarea></label></div>
+        <div class="sq-pair"><p class="sq-pl">쿨다운 후보 <small>자세: 고른 이유</small></p>
+          <label class="sq-f"><span>하타</span><textarea data-k="s3_cool" data-v="h" rows="3"></textarea></label>
+          <label class="sq-f"><span>빈야사</span><textarea data-k="s3v_cool" data-v="v" rows="3"></textarea></label></div>
       </div>
     </div>
 
@@ -2066,8 +2187,6 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
             <tr><td>실전 적용</td><td>크라마는 '다음 동작으로 가는 길'이 아니라 '이 동작을 더 깊게 하기 위한 예비 단계'</td></tr>
             <tr><td>전략 <small>58쪽</small></td><td>피크포즈를 해부학적으로 분석해 강화할 곳 / 열어 줄 곳 / 활성화할 곳에 해당하는 아사나를 독립적으로 배치. 동작 사이 중립화로 앞선 아사나의 효과를 충분히 흡수하고 다음 단계로</td></tr>
           </tbody></table></div>
-        <h4>교재 예시 · 피크 에카 파다 코운딘야아사나 <span class="an-s">58쪽</span></h4>
-        <div class="hb-steps"><span>플랭크 <small>코어 강화</small></span><i>→</i><span>마카라아사나 <small>이완</small></span><i>→</i><span>하누만아사나 <small>골반 열기</small></span><i>→</i><span>우탄 프리스타아사나 <small>골반 열기</small></span><i>→</i><span class="on">에카 파다 코운딘야아사나 <small>도전 자세</small></span></div>
       </div>
 
       <div class="hb-sec"><h3>하타와 빈야사 비교 <span class="an-s">교재 57쪽, 11/22 수업</span></h3>
@@ -2086,41 +2205,6 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
           <li>근육만 느끼게 하는 게 아니라, 몸을 관찰하고 마음에 집중하도록 안내하기</li>
           <li>쉬는 자세는 정해져 있지 않음. 편안하게 숨 쉴 수 있는 자세면 됨</li></ul></div>
       </div>
-
-      <div class="hb-sec"><h3>교재 대표 시퀀스 · 하타0 60분 <span class="an-s">63쪽</span></h3>
-        <p class="hb-note">피크포즈가 부장가아사나인 예시예요. 괄호 안은 교재의 카운트예요.</p>
-        <ol class="sq-seq">
-          <li><b>인사 및 자기소개, 센터링</b></li>
-          <li><b>웜업</b>: 발라아사나(3) → 테이블 자세(전환) → 소·고양이 자세 3세트 → 아도무카스바나아사나(3) → 욷타나아사나(3) → 타다아사나</li>
-          <li><b>시바난다 수리야나마스카라</b> 2세트</li>
-          <li><b>선 자세</b>: 욷카타아사나(3카운트 3세트) → 비라바드라아사나 1(3) → 이어서 우르드바 무카(3) → 타다아사나</li>
-          <li><b>피크포즈 준비</b>: 아쉬와산찰라나아사나(양손 어깨 아래 짚기 → 가슴 앞 합장 → 머리 위 합장) → 아도무카스바나아사나 → 발라아사나 → 바즈라아사나(양손 머리 깍지, 고무카아사나, 측면 늘리기) → 테이블 자세 → 마카라아사나</li>
-          <li><b>피크포즈</b>: 부장가아사나(5) → <mark class="g">마카라아사나 휴식(3)</mark> → 우르드바 무카 부장가아사나(5) → <mark class="g">마카라아사나 휴식(3)</mark></li>
-          <li><b>쿨다운/회복</b>: 발라아사나(3) → 단다아사나(전환) → 파스치모타나아사나(3) → 아르다 나바아사나(5) → 단다아사나(전환) → 아르다 마첸드라아사나(3) → 할라아사나(5)</li>
-          <li><b>이완 및 일으키기</b></li>
-        </ol>
-        <p class="hb-note">66쪽 60~90분 버전은 피크포즈 준비에 비둘기 준비 자세(양손 바닥 짚기 → 상체 바닥으로 낮추기)가 더해지고, "측면 늘리기(3) → 자누시르사아사나(5)"로 적혀 있으며, 일부 카운트가 늘어남</p>
-      </div>
-
-      <details class="sq-ex"><summary>다른 피크포즈 예시 · 선생님 하타 (우르드바 다누라아사나, 11/22): 직접 짠 뒤 열어서 비교하기</summary>
-        <div class="hb-card">
-          <p class="hb-note">피크가 다른 예시예요. 자세 목록을 옮기지 말고, 자세마다 이유를 붙이는 방식과 쉬는 곳, 묶는 방식을 비교해 보세요.</p>
-          <span class="t">웜업</span><p>찬드라 나마스카라(몸 앞면 열기) → 전사&nbsp;1·2·3(둔근·하체 힘) → 아쉬와&nbsp;산찰라나(허벅지~가슴&nbsp;앞면 풀기) → 견상</p>
-          <span class="t">척추·어깨 깨우기</span><p>테이블 → 소·고양이(척추 분절) → 엉덩이 든 고양이 자세(양손 만세, 팔꿈치 열리지 않게 어깨 인지)</p>
-          <span class="t">피크 준비</span><ul>
-            <li>비라아사나 → 고무카아사나 (팔꿈치 모으고 어깨 뒤로·아래로, 앞가슴 열기)</li>
-            <li>숩타 비라아사나에서 만세 (팔꿈치 벌리지 않게 연결 연습)</li>
-            <li>세투 반다 → 우르드바 다누라아사나 준비 자세</li></ul>
-          <span class="t">피크</span><p><mark class="y">우르드바 다누라아사나</mark></p>
-          <span class="t">쿨다운</span><ul>
-            <li>앉는 자세 → 사바아사나로 잠시 휴식</li>
-            <li>받다코나아사나: 앞면을 열었으니 전굴로 회복. 꼬리뼈를 말아 등을 둥글게, 등 뒤로 호흡</li>
-            <li>파스치모타나아사나: 깊게 가지 않기. 무릎을 많이 구부리고 등을 회복한다는 느낌으로 호흡 유도</li>
-            <li>마리치아사나(비틀기): 척추 마디 사이 공간을 만들어 중립으로</li>
-            <li>할라아사나 → 사바아사나</li></ul>
-          <p class="hb-note">수업에서는 찬드라 나마스카라를 깊은 후굴 피크포즈일 때 쓰는 편이라고 하셨어요.</p>
-        </div>
-      </details>
 
       <div class="hb-sec sq-work"><h3>직접 짜기</h3>
         <details class="sq-q"><summary>막히면 볼 질문</summary><ul>
@@ -2157,48 +2241,6 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
         <h4>숨 쉬는 고래 대표 배열 <span class="an-s">56~57쪽</span></h4>
         <div class="hb-steps"><span>웜업 + 수리야 나마스카라 A <small>전신 가열</small></span><i>→</i><span>골반 정면 + 비틀기 <small>로우런지 중심 낮은 흐름</small></span><i>→</i><span>열린 골반 <small>전사 2 중심 선 자세 비넷</small></span><i>→</i><span>한 발 균형 <small>전사 3, 집중력·하체</small></span><i>→</i><span>쿨다운 <small>회복·보상 자세</small></span></div>
       </div>
-
-      <div class="hb-sec"><h3>교재 예시 · 피크 에카 파다 코운딘야아사나 <span class="an-s">57~58쪽</span></h3>
-        <p class="hb-note">전략: 피크포즈의 '골반 방향'과 '필요 근육'을 고려해 3~4개 동작을 하나의 비넷으로 묶어 배치</p>
-        <div class="hb-tw nw"><table>
-          <tbody>
-            <tr><td>웜업</td><td>수리야 나마스카라 A/B로 전체적인 열기</td></tr>
-            <tr><td>골반 정면 묶음 1</td><td>로우런지 - 플랭크 - 무릎 대고 차투랑가 <small>손목 예열, 코어 및 전거근 활성화</small></td></tr>
-            <tr><td>골반 정면 묶음 2</td><td>하이런지 - 전사 3 - 런지 트위스트 <small>하체 안정성 확보, 척추 회전 준비</small></td></tr>
-            <tr><td>열린 골반 묶음</td><td>전사 2 - 측면 각도 자세 - 리자드 포즈 <small>고관절 외회전, 깊은 열기</small></td></tr>
-            <tr><td>도전 자세</td><td><mark class="y">에카 파다 코운딘야아사나</mark> <small>앞선 비넷들의 모든 요소 통합</small></td></tr>
-          </tbody></table></div>
-      </div>
-
-      <div class="hb-sec"><h3>교재 대표 시퀀스 · 빈야사0 60분 <span class="an-s">68쪽</span></h3>
-        <p class="hb-note">교재의 큰 순서와 "설명세트" 흐름이에요. 카운트는 뺐어요.</p>
-        <ol class="sq-seq">
-          <li><b>인사 및 자기소개, 센터링</b></li>
-          <li><b>웜업</b>: 현자세 기울기(5) → 테이블 자세(전환) → 소·고양이 자세(5회 반복)</li>
-          <li><b>수리야나마스카라</b> 3세트</li>
-          <li><b>설명세트</b>: 견상 스플릿(수리야나마스카라 A의 세 번째 견상에서 연결) → 무릎 가슴 당기기 → 로우런지 → 로우런지 비틀기 → 하이런지 → 전사 2 → 역전사 → 전사 2 → 삼각 자세 → 파르스보타나아사나 → 욷타나아사나 → 의자 자세 → 한 다리 균형 자세 → <mark class="y">전사 3</mark> → 견상 (오른쪽 후 플랭크-차투랑가-부장가아사나-견상, 왼쪽 들어감)</li>
-          <li><b>플로우세트</b>: 설명세트의 왼쪽 마무리 후 플랭크-차투랑가-부장가아사나-견상 뒤 연결. 같은 순서를 다시 이어 감</li>
-          <li><b>쿨다운</b>: 아기 자세 → 누운 비틀기 → 행복한 아기 자세</li>
-          <li><b>이완</b></li>
-          <li><b>일으키기</b></li>
-        </ol>
-        <p class="hb-note">71~72쪽 60~90분 버전은 웜업에 테이블 변형 자세, 설명세트 처음에 타다아사나 → 브륵샤·가루다아사나, 쿨다운에 받다코나아사나가 더해지고, 이 자세들의 이유에 전사 3을 "피크포즈(전사3)"라고 적어 둠</p>
-      </div>
-
-      <details class="sq-ex"><summary>다른 피크포즈 예시 · 선생님 빈야사 (우르드바 다누라아사나, 11/22): 직접 짠 뒤 열어서 비교하기</summary>
-        <div class="hb-card">
-          <p class="hb-note">피크가 다른 예시예요. 자세 목록을 옮기지 말고, 자세마다 이유를 붙이는 방식과 묶는 방식을 비교해 보세요.</p>
-          <span class="t">웜업</span><p>호흡 → 테이블 → 소·고양이(척추 분절) → 견상 → 수리야 나마스카라 3~5세트(수업 길이에 따라) → 견상</p>
-          <span class="t">흐름 <span class="hb-pill">끊지 않고 이어 감, 한 번 더 반복해도 됨</span></span><ul>
-            <li>오른 다리를 뒷벽으로 뻗어 올리기(에카 파다 견상) → 아쉬와&nbsp;산찰라나</li>
-            <li>올라와서 고무카아사나 팔(호흡 카운트) → 손 풀고 하이런지, 등&nbsp;뒤&nbsp;깍지(카운트)</li>
-            <li>전사 2(열린 골반, 카운트) → 역전사 → 풍차 돌리듯 내려와 빈야사&nbsp;→&nbsp;견상</li>
-            <li>다리 차 올려 매트 앞으로, 전사 1 → 전사 3 → 견상 → 반대쪽</li></ul>
-          <span class="t">피크 <span class="hb-pill">흐름이 끝난 뒤 따로</span></span><p>숩타 비라아사나로 몸 열기 → 세투 반다 → <mark class="y">우르드바 다누라아사나</mark></p>
-          <p class="hb-note">도전 자세는 흐름 안에 넣을 필요 없음. 하타처럼 끊어 가도 됨</p>
-          <span class="t">마무리</span><p>비틀기 → 할라아사나 → 사바아사나</p>
-        </div>
-      </details>
 
       <div class="hb-sec sq-work"><h3>직접 짜기</h3>
         <details class="sq-q"><summary>막히면 볼 질문</summary><ul>
@@ -2302,7 +2344,7 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
     <span class="ey">교재 18~50쪽 · 아사나 전체</span>
     <h2>동작·뜻 사전</h2>
     <p>교재 아사나 페이지의 63개 자세를 교재 그림과 함께 모았어요. 이름을 단어로 나눠 뜻을 붙였어요. 그림을 누르면 크게 보여요. 11월&nbsp;22일 과제(한국어 이름이 있는 33개 암기)는 "암기 과제&nbsp;33"을 누르고 가리기로 연습해요.</p>
-    <div class="hb-actions"><a class="dl" href="file/1122-sanskrit.pdf" download="요가TTC_아사나_산스크리트어_암기.pdf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.8 7.6 8 10.8l3.2-3.2M3 13.5h10"/></svg>암기 과제 인쇄용 PDF (A4 3쪽)</a><a class="dl" href="https://aro-deeply.github.io/yoga/app/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2.5h4v4M13.5 2.5 7.5 8.5M12 9.5v3a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3"/></svg>카드 연습 앱 열기</a></div>
+    <div class="hb-actions"><a class="dl" href="file/asana-63.pdf" download="요가TTC_아사나63개_그림.pdf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.8 7.6 8 10.8l3.2-3.2M3 13.5h10"/></svg>63개 그림 인쇄용 PDF (A4 8쪽)</a><a class="dl" href="file/1122-sanskrit.pdf" download="요가TTC_아사나_산스크리트어_암기.pdf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.8 7.6 8 10.8l3.2-3.2M3 13.5h10"/></svg>암기 과제 인쇄용 PDF (A4 3쪽)</a><a class="dl" href="https://aro-deeply.github.io/yoga/app/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2.5h4v4M13.5 2.5 7.5 8.5M12 9.5v3a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3"/></svg>카드 연습 앱 열기</a></div>
   </div>
   <div class="dc-root">
     <div class="dc-leg"><span class="w"><b>단어</b> 교재 52쪽 뜻</span><span class="w ref"><b>단어</b> <i>참고(교재 밖) 뜻</i></span><p>이름 끝 <b>아사나</b>는 "자세"라는 뜻이에요.<br>(참고: 원래 뜻은 "앉는 자리")<br>단어 읽기는 자세 제목 표기를 따라서<br>52쪽 어휘표 읽기와 조금 다를 수 있어요.</p></div>
@@ -5001,7 +5043,7 @@ btns.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;btn
   };
   function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
   function grow(t){t.style.height='auto';t.style.height=(t.scrollHeight+2)+'px';}
-  function label(el){var f=el.closest('.sq-f,label');var s=f&&f.querySelector('span');if(!s)return el.getAttribute('data-k');var c=s.cloneNode(true);var sm=c.querySelector('small');if(sm)sm.remove();return c.textContent.replace(/\s+/g,' ').trim();}
+  function label(el){var pr=el.closest('.sq-pair');if(pr){var pl=pr.querySelector('.sq-pl').cloneNode(true),sm=pl.querySelector('small');if(sm)sm.remove();return pl.textContent.trim()+' · '+(el.getAttribute('data-v')==='v'?'빈야사':'하타');}var f=el.closest('.sq-f,label');var s=f&&f.querySelector('span');if(!s)return el.getAttribute('data-k');var c=s.cloneNode(true);var sm=c.querySelector('small');if(sm)sm.remove();return c.textContent.replace(/\s+/g,' ').trim();}
   function filled(n){var s=steps[n-1];return [].some.call(s.querySelectorAll('[data-k]'),function(el){var x=st.f[el.getAttribute('data-k')];return el.type==='checkbox'?!!x:!!(x&&String(x).trim());});}
   function marks(){bar.forEach(function(b){b.classList.toggle('done',filled(+b.getAttribute('data-step')));});}
   function text(){
@@ -5019,12 +5061,20 @@ btns.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;btn
     return out.join('\n').replace(/\n{3,}/g,'\n\n').trim();
   }
   function refreshAll(){var t=text();all.textContent=t.split('\n').length>2?t:'아직 적은 답이 없어요.';}
+  var exw=v.querySelector('.sq-exwrap'),mine=v.querySelector('.sq-mine'),mineB=v.querySelector('.sq-mine-b');
+  function tab(k){[].forEach.call(exw.querySelectorAll('.sq-tabs button'),function(b){b.setAttribute('aria-selected',b.getAttribute('data-ex')===k?'true':'false');});[].forEach.call(exw.querySelectorAll('.sq-pane'),function(p){p.hidden=p.getAttribute('data-ex')!==k;});}
+  function esc(t){return String(t).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function renderMine(n){var h='';for(var i=0;i<n-1;i++){var rows='';[].forEach.call(steps[i].querySelectorAll('textarea[data-k]'),function(el){var dv=el.getAttribute('data-v');if(dv&&((n===3&&dv!=='h')||(n===4&&dv!=='v')))return;var x=st.f[el.getAttribute('data-k')];if(x&&String(x).trim())rows+='<dt>'+esc(label(el))+'</dt><dd>'+esc(String(x).replace(/\s+$/,''))+'</dd>';});if(rows)h+='<h5>Step '+(i+1)+'. '+NAMES[i+1]+'</h5><dl>'+rows+'</dl>';}
+    mineB.innerHTML=h||'<p class="empty">아직 앞 단계에 적은 내용이 없어요.</p>';}
   function go(n,scroll){
     n=Math.max(1,Math.min(5,n));st.step=n;save();
     steps.forEach(function(s,i){s.hidden=i!==n-1;});
     bar.forEach(function(b){if(+b.getAttribute('data-step')===n)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});
     prev.disabled=n===1;next.disabled=n===5;pos.textContent=n+' / 5';
     if(n===5)refreshAll();
+    var mid=n>=2&&n<=4;exw.hidden=!mid;mine.hidden=!mid;
+    if(mid){var st0=steps[n-1].querySelector('.hb-sec');st0.parentNode.insertBefore(exw,st0.nextSibling);tab(n===4?'v68':'h63');
+      var wk=steps[n-1].querySelector('.sq-work');wk.insertBefore(mine,wk.querySelector('h3').nextSibling);renderMine(n);}
     steps[n-1].querySelectorAll('textarea').forEach(grow);
     if(scroll){var y=root.getBoundingClientRect().top+window.scrollY-70;if(window.scrollY>y)window.scrollTo(0,y);}
   }
@@ -5033,6 +5083,8 @@ btns.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;btn
     else{el.value=st.f[k]||'';el.addEventListener('input',function(){st.f[k]=el.value;save();grow(el);marks();});}
   });
   v.addEventListener('click',function(e){
+    if(e.target.closest('[data-copyhv]')){var c=0;[].forEach.call(v.querySelectorAll('textarea[data-v="v"]'),function(t){var h=v.querySelector('textarea[data-k="'+t.getAttribute('data-k').replace('s3v_','s3_')+'"]');if(!t.value.trim()&&h.value.trim()){t.value=h.value;st.f[t.getAttribute('data-k')]=t.value;grow(t);c++;}});save();marks();var b2=e.target.closest('[data-copyhv]'),em=b2.parentNode.querySelector('em')||b2.parentNode.appendChild(document.createElement('em'));em.textContent=c?c+'칸을 복사했어요. 빈야사에 맞게 고쳐 보세요.':'복사할 빈 칸이 없어요.';return;}
+    var tb=e.target.closest('.sq-tabs button');if(tb){tab(tb.getAttribute('data-ex'));return;}
     var b=e.target.closest('[data-step]');if(b&&v.contains(b)){go(+b.getAttribute('data-step'),true);return;}
     var sk=e.target.closest('[data-skel]');
     if(sk){var k=sk.getAttribute('data-skel'),ta=v.querySelector('textarea[data-k="'+k+'"]'),em=sk.parentNode.querySelector('em');

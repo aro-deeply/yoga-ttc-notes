@@ -585,6 +585,22 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
 /* PC에서는 묶음 버튼을 줄바꿈해서 모두 보이게, 묶음 제목은 한 줄 전체 */
 @media (min-width:601px){.dc-root .dc-f{flex-wrap:wrap;overflow:visible}}
 .dc-root .dc-sh{grid-column:1/-1}
+/* 자료 전체에서 찾기 */
+.find{margin:0 0 -8px}
+.find-box{position:relative;display:flex;align-items:center}
+.find-box svg{position:absolute;left:11px;width:15px;height:15px;color:var(--muted);pointer-events:none}
+.find-box input{width:100%;height:38px;border:1px solid var(--line-2);border-radius:10px;padding:0 34px 0 33px;font:inherit;font-size:14.5px;background:var(--bg);color:var(--ink);-webkit-appearance:none;appearance:none}
+.find-box input::-webkit-search-cancel-button{display:none}
+.find-box input:focus{outline:2px solid var(--ink);outline-offset:0;border-color:transparent}
+.side .find-x{position:absolute;right:4px;width:30px;height:30px;padding:0;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--muted);border-radius:8px}
+.find-res{margin-top:10px}
+.find-res .fr-n{margin:0 4px 8px;font-size:12.5px;color:var(--muted)}
+.side .find-res button{display:block;width:100%;padding:8px 10px;margin-bottom:2px}
+.find-res .fr-v{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:2px}
+.find-res .fr-t{display:block;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.find-res b{font-weight:700;color:var(--ink);background:var(--mark-y,#FDEB9C);border-radius:3px;padding:0 1px}
+.side.finding .grp:not(.find-keep){display:none}
+mark.hb-find{background:#FDEB9C;color:inherit;border-radius:3px;box-shadow:0 0 0 3px #FDEB9C;scroll-margin:120px}
 /* 동작·뜻 사전: 가리고 연습하기 */
 .dc-root .dc-hd{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:10px}
 .dc-root .dc-hd span{font-size:13px;font-weight:600;color:var(--ink-2);margin-right:2px}
@@ -625,6 +641,10 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
 
 <div class="layout">
   <nav class="side" id="side" aria-label="자료 목록">
+    <div class="find" role="search">
+      <div class="find-box"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14"/></svg><input type="search" id="find-q" placeholder="자료 전체에서 찾기" aria-label="자료 전체에서 찾기" autocomplete="off"><button type="button" class="find-x" id="find-x" aria-label="지우기" hidden>×</button></div>
+      <div class="find-res" id="find-res" hidden></div>
+    </div>
     <div class="grp">
       <p class="grp-h">10월 11일 일</p>
       <button type="button" data-view="d1011">아사나 단어장</button>
@@ -4389,6 +4409,70 @@ btns.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;btn
   each('.dc-hd button',function(b){b.setAttribute('aria-pressed','false');b.addEventListener('click',function(){var k=b.getAttribute('data-h');on[k]=!on[k];b.classList.toggle('on',on[k]);b.setAttribute('aria-pressed',on[k]?'true':'false');apply();});});
   root.addEventListener('click',function(e){var m=e.target.closest&&e.target.closest('.mask');if(!m)return;e.preventDefault();e.stopPropagation();m.classList.remove('mask');
     if(m.classList.contains('dc-sk')){var c=m.closest('.dc-card');[].forEach.call(c.querySelectorAll('.gone'),function(x){x.classList.remove('gone');});}},true);
+})();
+</script>
+<script>
+/* 자료 전체에서 찾기: 띄어쓰기와 대소문자는 무시하고 찾음 */
+(function(){
+  var side=document.getElementById('side'),q=document.getElementById('find-q'),res=document.getElementById('find-res'),x=document.getElementById('find-x');
+  if(!q)return;
+  var SKIP={SCRIPT:1,STYLE:1,TEMPLATE:1,NOSCRIPT:1,svg:1,SVG:1,BUTTON:0};
+  var views=[].slice.call(document.querySelectorAll('.hb-view'));
+  function label(id){var b=side.querySelector('button[data-view="'+id+'"]');if(!b)return id;var g=b.closest('.grp'),h=g&&g.querySelector('.grp-h');var d=h?h.childNodes[0].textContent.trim():'';return (d?d+' · ':'')+b.textContent.trim();}
+  function texts(root){var out=[],w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){for(var e=n.parentNode;e&&e!==root;e=e.parentNode){if(SKIP[e.nodeName]||e.nodeName==='NAV'||e.classList&&(e.classList.contains('hb-pager')||e.classList.contains('otp')||/(^|[ -])toc/.test(e.className)||(e.hidden&&!e.classList.contains('dc-card')&&!e.classList.contains('dc-sh'))))return NodeFilter.FILTER_REJECT;}return n.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_SKIP;}});var n;while((n=w.nextNode()))out.push(n);return out;}
+  function norm(t){return t.replace(/\s+/g,'').toLowerCase();}
+  /* 한 화면 안에서 찾은 곳들: [{node,off,endNode,endOff}] */
+  function matches(view,needle){
+    var ns=texts(view),flat='',map=[];
+    ns.forEach(function(n,i){var v=n.nodeValue;for(var k=0;k<v.length;k++){if(!/\s/.test(v[k])){flat+=v[k].toLowerCase();map.push([i,k]);}}});
+    var out=[],from=0,at;
+    while((at=flat.indexOf(needle,from))>-1){var a=map[at],b=map[at+needle.length-1];out.push({sn:ns[a[0]],so:a[1],en:ns[b[0]],eo:b[1]+1});from=at+needle.length;}
+    return out;
+  }
+  function esc(t){return t.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function snippet(m,needle){
+    var blk=m.sn.parentNode.closest('p,li,td,th,h2,h3,h4,h5,figcaption,dd,dt,.w,.hb-card,div')||m.sn.parentNode;
+    var cl=blk.cloneNode(true);[].forEach.call(cl.querySelectorAll('td,th,li,p,div,br,h3,h4,h5,.hb-pill,em,small,.w'),function(e){e.parentNode.insertBefore(document.createTextNode(' '),e.nextSibling);e.parentNode.insertBefore(document.createTextNode(' '),e);});
+    var t=cl.textContent.replace(/\s+/g,' ').trim();
+    /* 띄어쓰기 무시 매칭을 원문 위치로 되돌림 */
+    var re=new RegExp(needle.split('').map(function(c){return c.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}).join('\\s*'),'i');
+    var r=re.exec(t);if(!r)return esc(t.slice(0,70));
+    var s0=Math.max(0,r.index-26),e0=Math.min(t.length,r.index+r[0].length+34);
+    return (s0>0?'…':'')+esc(t.slice(s0,r.index))+'<b>'+esc(r[0])+'</b>'+esc(t.slice(r.index+r[0].length,e0))+(e0<t.length?'…':'');
+  }
+  var tm=null;
+  function run(){
+    var raw=q.value,needle=norm(raw);x.hidden=!raw;
+    if(needle.length<2){res.hidden=true;res.innerHTML='';side.classList.remove('finding');return;}
+    side.classList.add('finding');res.hidden=false;
+    var html='',total=0;
+    views.forEach(function(v){var id=v.getAttribute('data-view-id');if(!side.querySelector('button[data-view="'+id+'"]'))return;var ms=matches(v,needle);if(!ms.length)return;total+=ms.length;
+      ms.slice(0,4).forEach(function(m,k){html+='<button type="button" data-fv="'+id+'" data-fk="'+k+'"><span class="fr-v">'+esc(label(id))+(k===0&&ms.length>4?' · '+ms.length+'곳':'')+'</span><span class="fr-t">'+snippet(m,needle)+'</span></button>';});});
+    res.innerHTML='<p class="fr-n">'+(total?total+'곳에서 찾았어요':'찾는 말이 없어요. 다른 말로 찾아보세요')+'</p>'+html;
+  }
+  q.addEventListener('input',function(){clearTimeout(tm);tm=setTimeout(run,180);});
+  x.addEventListener('click',function(){q.value='';run();q.focus();});
+  function clearMarks(){[].forEach.call(document.querySelectorAll('mark.hb-find'),function(m){var p=m.parentNode;while(m.firstChild)p.insertBefore(m.firstChild,m);p.removeChild(m);p.normalize();});}
+  res.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-fv]');if(!b)return;
+    var id=b.getAttribute('data-fv'),k=+b.getAttribute('data-fk'),needle=norm(q.value);
+    clearMarks();
+    var nav=side.querySelector('.grp button[data-view="'+id+'"]');if(nav)nav.click();
+    setTimeout(function(){
+      var v=document.querySelector('.hb-view[data-view-id="'+id+'"]'),m=matches(v,needle)[k];if(!m)return;
+      /* 사전에서 묶음·검색·가리기로 숨은 카드면 풀어 줌 */
+      var hid=m.sn.parentNode.closest('[hidden]');
+      if(hid&&v.contains(hid)){var dr=v.querySelector('.dc-root');if(dr){var dq=dr.querySelector('.dc-q');if(dq&&dq.value){dq.value='';dq.dispatchEvent(new Event('input',{bubbles:true}));}var all=dr.querySelector('.dc-f button[data-f="all"]');if(all)all.click();}m=matches(v,needle)[k];}
+      var mk=m.sn.parentNode.closest('.mask');if(mk)mk.classList.remove('mask');
+      var mark=document.createElement('mark');mark.className='hb-find';
+      try{var r=document.createRange();r.setStart(m.sn,m.so);r.setEnd(m.sn===m.en?m.sn:m.sn,m.sn===m.en?m.eo:m.sn.nodeValue.length);r.surroundContents(mark);}catch(err){}
+      var tgt=mark.parentNode?mark:m.sn.parentNode;
+      var d=tgt.closest&&tgt.closest('details');if(d)d.open=true;
+      tgt.scrollIntoView({block:'center'});
+      /* 그림이 늦게 뜨면서 자리가 밀리면 한 번 더 맞춤 */
+      [450,1000,1800].forEach(function(t){setTimeout(function(){var r=tgt.getBoundingClientRect();if(r.top<60||r.bottom>innerHeight)tgt.scrollIntoView({block:'center'});},t);});
+    },260);
+  });
 })();
 </script>
 </body>

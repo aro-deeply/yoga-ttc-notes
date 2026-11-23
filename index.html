@@ -582,6 +582,9 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
 .inst-how b{color:var(--ink)}
 .inst-how p{margin:0}
 .inst-how p+p{margin-top:8px}
+/* PC에서는 묶음 버튼을 줄바꿈해서 모두 보이게, 묶음 제목은 한 줄 전체 */
+@media (min-width:601px){.dc-root .dc-f{flex-wrap:wrap;overflow:visible}}
+.dc-root .dc-sh{grid-column:1/-1}
 /* 동작·뜻 사전: 가리고 연습하기 */
 .dc-root .dc-hd{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:10px}
 .dc-root .dc-hd span{font-size:13px;font-weight:600;color:var(--ink-2);margin-right:2px}

@@ -640,7 +640,7 @@ mark.hb-find{background:#FDEB9C;color:inherit;border-radius:3px;box-shadow:0 0 0
 .hb-vhead p.sq-priv{font-size:14px;margin-top:0}
 .sq-msg{font-size:13px;color:var(--muted);align-self:center;margin-left:4px}
 .sq-root{display:flex;flex-direction:column;gap:32px}
-.sq-bar{list-style:none;margin:0;padding:10px 0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;position:sticky;top:var(--top-h);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.sq-bar{list-style:none;margin:0;padding:10px 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;position:sticky;top:var(--top-h);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
 .sq-bar button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 6px;border-radius:10px;background:var(--surface);color:var(--muted);font-size:14px;font-weight:600;line-height:1.35;word-break:keep-all}
 .sq-bar button b{font-size:13px;font-weight:700;color:var(--faint)}
 .sq-bar button.done b::after{content:" ✓";color:var(--ink-2)}
@@ -1884,11 +1884,10 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
   <div class="sq-root">
     <ol class="sq-bar" aria-label="단계">
       <li><button type="button" data-step="1"><b>1</b><span>피크포즈</span></button></li>
-      <li><button type="button" data-step="2"><b>2</b><span>주제</span></button></li>
-      <li><button type="button" data-step="3"><b>3</b><span>재료</span></button></li>
-      <li><button type="button" data-step="4"><b>4</b><span>하타</span></button></li>
-      <li><button type="button" data-step="5"><b>5</b><span>빈야사</span></button></li>
-      <li><button type="button" data-step="6"><b>6</b><span>점검</span></button></li>
+      <li><button type="button" data-step="2"><b>2</b><span>재료</span></button></li>
+      <li><button type="button" data-step="3"><b>3</b><span>하타</span></button></li>
+      <li><button type="button" data-step="4"><b>4</b><span>빈야사</span></button></li>
+      <li><button type="button" data-step="5"><b>5</b><span>점검</span></button></li>
     </ol>
 
     <!-- STEP 1 -->
@@ -1977,7 +1976,7 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
           <li><b>뒤로 접어 올리는 다리</b>: 무릎을 굽혀 뒤로 들면 허벅지 앞쪽과 골반 앞쪽은 늘어나나요, 줄어드나요? 반대로 그 다리를 들어 올리고 손을 밀어내는 힘은 어디서 나올까요?</li>
           <li><b>어깨</b>: 피크를 어느 단계(발 잡기까지 / 어깨 회전까지)로 둘까요? 그 단계에서 어깨와 가슴에는 무엇이 필요할까요?</li>
           <li><b>몸통</b>: "무릎이 바깥으로 열리면 허리가 눌림", "상체를 숙이지 않기"라면, 몸통에서 젖혀져야 하는 곳과 지켜야 하는 곳은 각각 어디일까요?</li>
-          <li><b>골반 방향</b>: 이 자세에서 골반은 매트의 어느 면을 보나요? (Step 5에서 묶음을 고를 때 다시 써요)</li>
+          <li><b>골반 방향</b>: 이 자세에서 골반은 매트의 어느 면을 보나요? (Step 4에서 묶음을 고를 때 다시 써요)</li>
           <li><b>균형</b>: 힘과 유연성 말고 이 자세에 무엇이 더 필요할까요?</li></ul></details>
         <label class="sq-f"><span>열어 줄 곳 <small>풀기 · 부위와 이유</small></span><textarea data-k="s1_open" rows="3"></textarea></label>
         <label class="sq-f"><span>강화할 곳 <small>버티기 · 부위와 이유</small></span><textarea data-k="s1_strong" rows="3"></textarea></label>
@@ -1987,44 +1986,10 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
 
     <!-- STEP 2 -->
     <div class="sq-step hb-doc" data-step-id="2" hidden>
-      <div class="hb-sec"><h3>Step 2. 주제 정하기</h3>
-        <div class="hb-key">
-          <strong>주제는 Step 1에서 <mark class="y">가장 중요하다고 본 것</mark>에서 나와요</strong>
-          <p>같은 피크포즈라도 무엇에 무게를 두느냐에 따라 수업의 색이 달라져요. 한 줄로 적어 보세요.</p>
-        </div>
-      </div>
-      <div class="hb-sec"><h3>교재 <span class="an-s">53~55쪽</span></h3>
-        <div class="hb-two">
-          <div class="hb-card"><span class="t">53쪽 · 시퀀싱 원칙 1</span><h4>피크 포즈를 선정한다</h4><ul>
-            <li>시퀀싱은 하나의 중심 아사나, 피크 포즈를 정하는 것에서 시작됨</li>
-            <li>피크 포즈는 단순히 가장 어려운 동작이 아니라 <mark class="g">수업의 방향성과 목적</mark>을 보여 주는 핵심 자세</li>
-            <li>지도자는 피크 포즈를 중심으로 흐름을 설계하고, 수련자가 자연스럽게 접근하도록 준비 과정을 구성함</li></ul></div>
-          <div class="hb-card"><span class="t">54쪽 · 수업 구성 1</span><h4>센터링</h4><ul>
-            <li>몸과 호흡을 인식하며 현재의 순간에 집중하도록 안내함</li>
-            <li>지도자는 <b>수업의 주제와 의도</b>를 전달하고, 수련자의 에너지 상태와 집중도를 확인함</li>
-            <li>호흡을 통해 신경계를 안정시키고 수련을 위한 준비 상태를 만듦</li></ul></div>
-          <div class="hb-card"><span class="t">54쪽 · 수업 구성 4</span><h4>피크 포즈</h4><ul>
-            <li>수련 중 가장 높은 수준의 힘, 유연성, 균형, 집중이 요구됨</li>
-            <li>단순한 신체적 도전뿐 아니라 수련자가 <mark class="g">집중, 두려움, 성취감</mark> 등 다양한 내면의 경험을 마주하는 과정이 되기도 함</li></ul></div>
-        </div>
-        <p><button type="button" class="hb-link" data-goto="centering">일반 센터링 스크립트 보기</button></p>
-      </div>
-      <div class="hb-sec sq-work"><h3>직접 적기</h3>
-        <details class="sq-q"><summary>막히면 볼 질문</summary><ul>
-          <li>Step 1의 세 칸(열어 줄 곳, 강화할 곳, 활성화할 곳) 중 이 수업에서 가장 공들이고 싶은 칸은 어디인가요?</li>
-          <li>수련생이 수업을 마치고 몸으로 무엇을 느끼고 가면 좋을까요?</li>
-          <li>몸의 주제와 마음의 주제를 연결할 수 있나요? 예를 들어 균형 자세의 특징(교재 59쪽)이 마음의 주제가 될 수 있을지 생각해 보세요.</li></ul></details>
-        <label class="sq-f"><span>주제 <small>한 줄</small></span><textarea data-k="s2_theme" rows="2"></textarea></label>
-        <label class="sq-f"><span>센터링에서 전할 의도 <small>한두 문장</small></span><textarea data-k="s2_intent" rows="3"></textarea></label>
-      </div>
-    </div>
-
-    <!-- STEP 3 -->
-    <div class="sq-step hb-doc" data-step-id="3" hidden>
-      <div class="hb-sec"><h3>Step 3. 재료 고르기</h3>
+      <div class="hb-sec"><h3>Step 2. 재료 고르기</h3>
         <div class="hb-key">
           <strong>Step 1의 칸마다 <mark class="y">후보 자세와 고른 이유</mark>를 적어요</strong>
-          <p>수업에서 "아사나(재료)는 같고, 묶는 방식이 다르다"고 했어요. 교재 57쪽도 두 수련 모두 피크포즈에 필요한 <b>열기, 강화, 유연성, 인지</b>를 단계별로 배치하되, 하타는 개별 아사나(부품)로 준비하고 빈야사는 비넷(덩어리) 안에 녹여 낸다고 해요. 여기서 고른 재료로 Step 4(하타)와 Step 5(빈야사)를 각각 엮어요.</p>
+          <p>수업에서 "아사나(재료)는 같고, 묶는 방식이 다르다"고 했어요. 교재 57쪽도 두 수련 모두 피크포즈에 필요한 <b>열기, 강화, 유연성, 인지</b>를 단계별로 배치하되, 하타는 개별 아사나(부품)로 준비하고 빈야사는 비넷(덩어리) 안에 녹여 낸다고 해요. 여기서 고른 재료로 Step 3(하타)와 Step 4(빈야사)를 각각 엮어요.</p>
         </div>
       </div>
 
@@ -2032,7 +1997,7 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
         <div class="hb-tw nw"><table>
           <thead><tr><th>단계</th><th>하는 일</th><th>교재 예시</th></tr></thead>
           <tbody>
-            <tr><td>1. 센터링</td><td>주제와 의도 전달, 에너지 상태 확인, 호흡으로 신경계 안정</td><td>주제·의도 전달, 호흡 안내</td></tr>
+            <tr><td>1. 센터링</td><td>몸과 호흡 인식, 수업의 주제와 의도 전달, 에너지 상태 확인, 호흡으로 신경계 안정</td><td>주제·의도 전달, 호흡 안내</td></tr>
             <tr><td>2. 웜업</td><td>큰 관절과 큰 근육 중심으로 부드럽게 움직여 체온을 높임. 가동 범위를 넓히고 긴장을 완화해 부상 위험을 줄임. <b>피크 포즈에 필요한 움직임을 미리 준비함</b></td><td>소·고양이, 아기 자세, 앉은 비틀기, 측굴, 어깨와 골반을 풀어 주는 동작</td></tr>
             <tr><td>3. 선 자세</td><td>가장 활동적인 단계. 큰 근육 활성화, 전신의 열, 안정성과 힘 강화. 자세 간 연결성과 흐름을 고려해 배치. <b>간단한 동작 → 복잡한 동작 → 피크 포즈</b></td><td>태양경배 A·B, 태양경배 변형, 선자세, 균형 자세</td></tr>
             <tr><td>4. 피크 포즈</td><td>수업의 중심. 충분한 준비 동작이 먼저</td><td></td></tr>
@@ -2069,7 +2034,7 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
 
       <div class="hb-sec sq-work"><h3>직접 적기</h3>
         <details class="sq-q"><summary>막히면 볼 질문</summary><ul>
-          <li>이 자세는 Step 1의 어느 칸(풀기, 강화, 인지)을 맡고 있나요?</li>
+          <li>이 자세는 Step 1의 어느 칸(열어 줄 곳, 강화할 곳, 활성화할 곳)을 맡고 있나요?</li>
           <li>이 자세를 빼면 피크포즈에서 무엇이 부족해질까요? 답이 안 나오면 빼도 되는 자세일 수 있어요.</li>
           <li>피크 전에 한 발 감각을 미리 깨워 줄 자세가 필요할까요? 필요하다면 어떤 자세일까요?</li>
           <li>고른 준비 자세에서 뒷다리 무릎은 펴져 있나요, 굽혀져 있나요? 나타라자아사나의 뒷다리와 같은 모양인가요?</li>
@@ -2082,9 +2047,9 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
       </div>
     </div>
 
-    <!-- STEP 4 -->
-    <div class="sq-step hb-doc" data-step-id="4" hidden>
-      <div class="hb-sec"><h3>Step 4. 하타 버전</h3>
+    <!-- STEP 3 -->
+    <div class="sq-step hb-doc" data-step-id="3" hidden>
+      <div class="hb-sec"><h3>Step 3. 하타 버전</h3>
         <div class="hb-key">
           <strong>재료를 <mark class="y">하나씩 놓고, 머물고, 쉬며 매듭지어요</mark></strong>
           <p>하타는 피크포즈에 필요한 조건을 개별 아사나로 하나씩 확보해 나가는 방식이에요(교재 58쪽). 하타를 먼저 짜 두면 같은 재료를 빈야사로 옮기기 편할 거예요.</p>
@@ -2170,9 +2135,9 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
       </div>
     </div>
 
-    <!-- STEP 5 -->
-    <div class="sq-step hb-doc" data-step-id="5" hidden>
-      <div class="hb-sec"><h3>Step 5. 빈야사 버전</h3>
+    <!-- STEP 4 -->
+    <div class="sq-step hb-doc" data-step-id="4" hidden>
+      <div class="hb-sec"><h3>Step 4. 빈야사 버전</h3>
         <div class="hb-key">
           <strong>같은 재료를 <mark class="y">묶음(비넷) 안에 녹여</mark> 호흡이 끊기지 않게 이어요</strong>
           <p>빈야사는 피크포즈에 필요한 요소를 흐름의 덩어리인 '묶음' 속에 자연스럽게 배치하는 방식이에요. 수련생은 흐름을 타는 동안 자신도 모르게 피크포즈에 필요한 근육을 강화하고, 열어 주고, 활성화하게 돼요(교재 57쪽).</p>
@@ -2238,7 +2203,7 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
       <div class="hb-sec sq-work"><h3>직접 짜기</h3>
         <details class="sq-q"><summary>막히면 볼 질문</summary><ul>
           <li>Step 1에서 적은 나타라자아사나의 골반 방향은 어느 묶음과 이어지기 쉬울까요?</li>
-          <li>Step 3에서 고른 재료를 골반 방향(정면, 열린 골반)이나 지지점별로 나누면 어느 묶음에 들어가나요?</li>
+          <li>Step 2에서 고른 재료를 골반 방향(정면, 열린 골반)이나 지지점별로 나누면 어느 묶음에 들어가나요?</li>
           <li>한 묶음은 몇 개 동작으로 할까요? (교재 전략: 3~4개)</li>
           <li>묶음과 묶음 사이, 오른쪽과 왼쪽 사이는 무엇으로 이어 가나요?</li>
           <li>나타라자아사나를 흐름 안의 마지막(한 발 균형 묶음)에 둘까요, 선생님 예시처럼 흐름이 끝난 뒤 따로 둘까요? 이유도 적어 보세요.</li>
@@ -2249,15 +2214,15 @@ details.sq-q ul{padding:0 16px 14px 2.2em!important}
       </div>
     </div>
 
-    <!-- STEP 6 -->
-    <div class="sq-step hb-doc" data-step-id="6" hidden>
-      <div class="hb-sec"><h3>Step 6. 점검하기</h3>
+    <!-- STEP 5 -->
+    <div class="sq-step hb-doc" data-step-id="5" hidden>
+      <div class="hb-sec"><h3>Step 5. 점검하기</h3>
         <div class="hb-key">
           <strong>교재 53쪽 <mark class="y">시퀀싱의 5가지 원칙</mark>으로 두 버전을 확인해요</strong>
           <p>빈야사 크라마는 "올바른 방향으로, 적절한 순서와 단계에 따라 수련을 발전시키는 방법"이에요(53쪽). 숨쉬는&nbsp;고래 TTC의 모든 시퀀싱은 이 원칙을 바탕으로 하며, 반드시 수련 후의 안정과 회복을 위한 적절한 회복 자세를 포함해요(56쪽). 체크한 것도 이 기기에 저장돼요.</p>
         </div>
         <ul class="sq-check">
-          <li><label><input type="checkbox" data-k="c1"><span><b>원칙 1</b> 피크 포즈를 중심으로 수업의 방향과 목적(주제)이 보인다</span></label></li>
+          <li><label><input type="checkbox" data-k="c1"><span><b>원칙 1</b> 피크 포즈를 중심으로 수업의 방향과 목적이 보인다</span></label></li>
           <li><label><input type="checkbox" data-k="c2"><span><b>원칙 2</b> 피크에 필요한 관절의 움직임, 가동성, 근 활성, 안정성을 준비했고, 간단한 동작에서 깊은 아사나로 점차 나아간다</span></label></li>
           <li><label><input type="checkbox" data-k="c9"><span><b>원칙 2</b> 피크포즈보다 더 어려운 자세가 준비 자세로 앞에 들어가지 않았다</span></label></li>
           <li><label><input type="checkbox" data-k="c3"><span><b>Step 1</b> 열어 줄 곳, 강화할 곳, 활성화할 곳이 모두 어떤 자세로 준비되었다</span></label></li>
@@ -5029,10 +4994,10 @@ btns.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;btn
   var steps=[].slice.call(v.querySelectorAll('.sq-step')),bar=[].slice.call(v.querySelectorAll('.sq-bar button')),root=v.querySelector('.sq-root');
   var prev=v.querySelector('.sq-prev'),next=v.querySelector('.sq-next'),pos=v.querySelector('.sq-pos'),msg=v.querySelector('.sq-msg'),all=v.querySelector('.sq-all');
   var fields=[].slice.call(v.querySelectorAll('[data-k]'));
-  var NAMES={'1':'피크포즈 살펴보기','2':'주제 정하기','3':'재료 고르기','4':'하타 버전','5':'빈야사 버전','6':'점검하기'};
+  var NAMES={'1':'피크포즈 살펴보기','2':'재료 고르기','3':'하타 버전','4':'빈야사 버전','5':'점검하기'};
   var SKEL={
-    s4_seq:'1. 센터링 (주제: )\n2. 웜업\n3. 시바난다 수리야 나마스카라\n4. 선 자세\n5. 피크포즈 준비\n6. 피크포즈: 나타라자아사나 (오른쪽, 왼쪽)\n7. 쿨다운·회복\n8. 이완 및 일으키기',
-    s5_seq:'1. 센터링 (주제: )\n2. 웜업\n3. 수리야 나마스카라\n4. 흐름 (묶음마다 한 줄)\n   묶음 1: \n   묶음 2: \n   묶음 3: (필요하면)\n5. 피크포즈: 나타라자아사나 (흐름 안 / 따로 중 선택)\n6. 쿨다운\n7. 이완 및 일으키기'
+    s4_seq:'1. 센터링\n2. 웜업\n3. 시바난다 수리야 나마스카라\n4. 선 자세\n5. 피크포즈 준비\n6. 피크포즈: 나타라자아사나 (오른쪽, 왼쪽)\n7. 쿨다운·회복\n8. 이완 및 일으키기',
+    s5_seq:'1. 센터링\n2. 웜업\n3. 수리야 나마스카라\n4. 흐름 (묶음마다 한 줄)\n   묶음 1: \n   묶음 2: \n   묶음 3: (필요하면)\n5. 피크포즈: 나타라자아사나 (흐름 안 / 따로 중 선택)\n6. 쿨다운\n7. 이완 및 일으키기'
   };
   function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
   function grow(t){t.style.height='auto';t.style.height=(t.scrollHeight+2)+'px';}
@@ -5047,7 +5012,7 @@ btns.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;btn
         if(el.type==='checkbox'){lines.push((x?'[v] ':'[ ] ')+el.parentNode.textContent.replace(/\s+/g,' ').trim());}
         else if(x&&String(x).trim()){lines.push('■ '+label(el));lines.push(String(x).replace(/\s+$/,''));lines.push('');}
       });
-      if(n===6&&!lines.some(function(l){return l.indexOf('[v]')===0;}))return;
+      if(n===5&&!lines.some(function(l){return l.indexOf('[v]')===0;}))return;
       if(!lines.length)return;
       out.push('【Step '+n+'. '+NAMES[n]+'】');out=out.concat(lines);if(out[out.length-1]!=='')out.push('');
     });
@@ -5055,11 +5020,11 @@ btns.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;btn
   }
   function refreshAll(){var t=text();all.textContent=t.split('\n').length>2?t:'아직 적은 답이 없어요.';}
   function go(n,scroll){
-    n=Math.max(1,Math.min(6,n));st.step=n;save();
+    n=Math.max(1,Math.min(5,n));st.step=n;save();
     steps.forEach(function(s,i){s.hidden=i!==n-1;});
     bar.forEach(function(b){if(+b.getAttribute('data-step')===n)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});
-    prev.disabled=n===1;next.disabled=n===6;pos.textContent=n+' / 6';
-    if(n===6)refreshAll();
+    prev.disabled=n===1;next.disabled=n===5;pos.textContent=n+' / 5';
+    if(n===5)refreshAll();
     steps[n-1].querySelectorAll('textarea').forEach(grow);
     if(scroll){var y=root.getBoundingClientRect().top+window.scrollY-70;if(window.scrollY>y)window.scrollTo(0,y);}
   }
@@ -5078,7 +5043,7 @@ btns.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;btn
     var a=e.target.closest('[data-sq]');if(!a)return;
     if(a.getAttribute('data-sq')==='copy'){
       var t=text();if(t.split('\n').length<3){say('아직 적은 답이 없어요.');return;}
-      function fallback(){var x=document.createElement('textarea');x.value=t;x.style.position='fixed';x.style.opacity='0';document.body.appendChild(x);x.select();var ok=false;try{ok=document.execCommand('copy');}catch(e){}x.remove();say(ok?'복사했어요.':'복사가 안 돼요. 6단계의 답 모아 보기에서 직접 선택해 복사해 주세요.');}
+      function fallback(){var x=document.createElement('textarea');x.value=t;x.style.position='fixed';x.style.opacity='0';document.body.appendChild(x);x.select();var ok=false;try{ok=document.execCommand('copy');}catch(e){}x.remove();say(ok?'복사했어요.':'복사가 안 돼요. 5단계의 답 모아 보기에서 직접 선택해 복사해 주세요.');}
       if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){say('복사했어요.');},fallback);}else fallback();
     }else{
       if(!a.classList.contains('arm')){a.classList.add('arm');a.textContent='한 번 더 누르면 지워져요';setTimeout(function(){a.classList.remove('arm');a.textContent='모두 지우기';},3500);return;}

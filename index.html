@@ -11,6 +11,14 @@
 <meta property="og:image" content="https://aro-deeply.github.io/yoga-ttc-notes/img/og.png">
 <meta property="og:type" content="website">
 <link rel="icon" href="img/logo.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="TTC 노트">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191817" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 /* 핸즈온 원본 토큰 (아래에서 다시 덮음) */
@@ -579,6 +587,13 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
 .hb-ho footer{color:var(--muted)}
 .hb-ho .hb-goto{align-self:flex-start;margin-top:2px}
 @container (max-width:760px){ .hb-ho .plate{border-right:0;border-bottom:1px solid var(--line)} }
+/* 앱 설치 안내 */
+.side .inst{border:1px solid var(--line-2);display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink)}
+.side .inst svg{width:16px;height:16px;flex:none}
+.inst-how{margin:8px 2px 0;padding:12px 14px;border-radius:10px;background:var(--surface);font-size:13.5px;line-height:1.65;color:var(--ink-2)}
+.inst-how b{color:var(--ink)}
+.inst-how p{margin:0}
+.inst-how p+p{margin-top:8px}
 </style>
 </head>
 <body>
@@ -652,6 +667,14 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
       <button type="button" data-view="d1122a">아사나 수업 정리</button>
       <button type="button" data-view="d1122s">산스크리트어 암기 과제</button>
       <button type="button" data-view="d1122d">동작·뜻 사전</button>
+    </div>
+    <div class="grp inst-grp" id="inst-grp" hidden>
+      <button type="button" class="inst" id="inst-btn" aria-expanded="false" aria-controls="inst-how"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v7.5M5 7l3 3 3-3M3 12.5h10"/></svg>앱으로 설치하기</button>
+      <div class="inst-how" id="inst-how" hidden>
+        <p><b>아이폰</b>: Safari로 연 뒤 아래쪽 공유 버튼을 누르고 "홈&nbsp;화면에&nbsp;추가"를 눌러 주세요. 카톡에서 열었다면 먼저 "Safari로&nbsp;열기"를 눌러 주세요.</p>
+        <p><b>안드로이드</b>: Chrome으로 연 뒤 오른쪽&nbsp;위&nbsp;⋮&nbsp;메뉴에서 "앱&nbsp;설치" 또는 "홈&nbsp;화면에&nbsp;추가"를 눌러 주세요.</p>
+        <p>설치한 앱에서는 비밀번호를 한 번 더 넣어야 할 수 있어요.</p>
+      </div>
     </div>
     <div class="side-foot">
       <b>Breathing Whale Yoga TTC</b>Teacher Training Class Notes
@@ -4320,5 +4343,21 @@ function hbAnimLoader(stageId,tabsSel,anims){
 <script>(function(){var root=document.querySelector('.dc-root');if(!root)return;var q=root.querySelector('.dc-q'),btns=[].slice.call(root.querySelectorAll('.dc-f button')),cards=[].slice.call(root.querySelectorAll('.dc-card')),heads=[].slice.call(root.querySelectorAll('.dc-sh')),cnt=root.querySelector('.dc-cnt'),f='all';
 function apply(){var t=(q.value||'').trim().toLowerCase().replace(/\s+/g,''),n=0,secs={};cards.forEach(function(c){var ok=(f==='all'||(f==='memo'?c.dataset.memo==='1':c.dataset.sec===f))&&(!t||c.dataset.q.replace(/\s+/g,'').indexOf(t)>-1||c.textContent.replace(/\s+/g,'').toLowerCase().indexOf(t)>-1);c.hidden=!ok;if(ok){n++;secs[c.dataset.sec]=1}});heads.forEach(function(h){h.hidden=!secs[h.dataset.sec]});cnt.textContent=n+'개 자세';}
 btns.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;btns.forEach(function(x){x.classList.toggle('on',x===b)});apply()})});q.addEventListener('input',apply);apply();})();</script>
+<script>
+/* 설치형 앱 */
+(function(){
+  if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}
+  var standalone=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true;
+  var grp=document.getElementById('inst-grp'),btn=document.getElementById('inst-btn'),how=document.getElementById('inst-how'),dp=null;
+  if(!grp||standalone)return;
+  grp.hidden=false;
+  window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e;});
+  window.addEventListener('appinstalled',function(){grp.hidden=true;});
+  btn.addEventListener('click',function(){
+    if(dp){dp.prompt();dp.userChoice.then(function(){dp=null;});return;}
+    var open=how.hidden;how.hidden=!open;btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+})();
+</script>
 </body>
 </html>

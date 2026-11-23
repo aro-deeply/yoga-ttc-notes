@@ -576,6 +576,19 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
 .inst-how b{color:var(--ink)}
 .inst-how p{margin:0}
 .inst-how p+p{margin-top:8px}
+/* 동작·뜻 사전: 가리고 연습하기 */
+.dc-root .dc-hd{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:10px}
+.dc-root .dc-hd span{font-size:13px;font-weight:600;color:var(--ink-2);margin-right:2px}
+.dc-root .dc-hd button{height:32px;padding:0 12px;border:1px solid var(--line-2);border-radius:999px;background:var(--bg);color:var(--ink);font:inherit;font-size:13.5px;cursor:pointer}
+.dc-root .dc-hd button.on{background:var(--ink);color:var(--bg);border:1px solid var(--ink);font-weight:600}
+.dc-root .mask{position:relative;cursor:pointer;color:transparent!important;background:var(--surface-2);border-radius:6px;user-select:none}
+.dc-root .mask *{visibility:hidden}
+.dc-root .gone{display:none!important}
+.dc-root .dc-hint{margin:8px 2px 0;font-size:12.5px;color:var(--muted)}
+.dc-root .dc-ph.mask{background:var(--surface-2);border-color:var(--surface-2)}
+.dc-root .dc-ph.mask img{visibility:hidden}
+.dc-root .dc-ph.mask::after{content:"눌러서 보기";position:absolute;font-size:12.5px;color:var(--muted);visibility:visible}
+.dc-root .dc-ph{position:relative}
 </style>
 </head>
 <body>
@@ -647,7 +660,6 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
       <p class="grp-h">11월 22일 일 <span>TTC 오프라인</span></p>
       <button type="button" data-view="d1122">수업 정리</button>
       <button type="button" data-view="d1122a">아사나 수업 정리</button>
-      <button type="button" data-view="d1122s">산스크리트어 암기 과제</button>
       <button type="button" data-view="d1122d">동작·뜻 사전</button>
     </div>
     <div class="grp inst-grp" id="inst-grp" hidden>
@@ -1700,11 +1712,12 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
   <div class="hb-vhead">
     <span class="ey">교재 18~50쪽 · 아사나 전체</span>
     <h2>동작·뜻 사전</h2>
-    <p>교재 아사나 페이지의 63개 자세를 교재 그림과 함께 모았어요. 이름을 단어로 나눠 뜻을 붙였어요. 그림을 누르면 크게 보여요.</p>
+    <p>교재 아사나 페이지의 63개 자세를 교재 그림과 함께 모았어요. 이름을 단어로 나눠 뜻을 붙였어요. 그림을 누르면 크게 보여요. 11월&nbsp;22일 과제(한국어 이름이 있는 33개 암기)는 "암기 과제&nbsp;33"을 누르고 가리기로 연습해요.</p>
+    <div class="hb-actions"><a class="dl" href="file/1122-sanskrit.pdf" download="요가TTC_아사나_산스크리트어_암기.pdf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.8 7.6 8 10.8l3.2-3.2M3 13.5h10"/></svg>암기 과제 인쇄용 PDF (A4 3쪽)</a><a class="dl" href="https://aro-deeply.github.io/yoga/app/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2.5h4v4M13.5 2.5 7.5 8.5M12 9.5v3a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3"/></svg>카드 연습 앱 열기</a></div>
   </div>
   <div class="dc-root">
     <div class="dc-leg"><span class="w"><b>단어</b> 교재 52쪽 뜻</span><span class="w ref"><b>단어</b> <i>참고(교재 밖) 뜻</i></span><p>이름 끝 <b>아사나</b>는 "자세"라는 뜻이에요.<br>(참고: 원래 뜻은 "앉는 자리")<br>단어 읽기는 자세 제목 표기를 따라서<br>52쪽 어휘표 읽기와 조금 다를 수 있어요.</p></div>
-    <div class="dc-tools"><input type="search" class="dc-q" placeholder="이름으로 찾기 (예: 트리코나, 낙타)" aria-label="이름으로 찾기"><div class="dc-f"><button type="button" data-f="all" class="on">전체 63</button><button type="button" data-f="0">선자세와 균형자세</button><button type="button" data-f="1">앉은자세, 전굴, 골반열기</button><button type="button" data-f="2">역자세</button><button type="button" data-f="3">후굴자세</button><button type="button" data-f="4">손 균형자세</button><button type="button" data-f="5">기타자세, 웜업자세</button><button type="button" data-f="memo">암기 과제 33</button></div><p class="dc-cnt"></p></div>
+    <div class="dc-tools"><input type="search" class="dc-q" placeholder="이름으로 찾기 (예: 트리코나, 낙타)" aria-label="이름으로 찾기"><div class="dc-f"><button type="button" data-f="all" class="on">전체 63</button><button type="button" data-f="0">선자세와 균형자세</button><button type="button" data-f="1">앉은자세, 전굴, 골반열기</button><button type="button" data-f="2">역자세</button><button type="button" data-f="3">후굴자세</button><button type="button" data-f="4">손 균형자세</button><button type="button" data-f="5">기타자세, 웜업자세</button><button type="button" data-f="memo">암기 과제 33</button></div><div class="dc-hd"><span>가리고 연습하기</span><button type="button" data-h="s">산스크리트어</button><button type="button" data-h="k">한국어</button><button type="button" data-h="p">그림</button></div><p class="dc-cnt"></p></div>
     <div class="dc-list">
 <h3 class="dc-sh" data-sec="0">선자세와 균형자세 <span>18~27쪽</span></h3>
 <article class="dc-card" data-sec="0" data-memo="1" data-q="타다아사나 산자세 tāḍāsana"><div class="dc-ph"><img loading="lazy" src="img/dict/01.png" alt="타다아사나 교재 그림" data-zoom></div><div class="dc-body"><p class="dc-meta"><span class="dc-no">1</span>교재 18쪽 · <em>암기 과제</em></p><h4 class="dc-sk">타다아사나</h4><p class="dc-ko">산자세</p><p class="dc-ro">Tāḍāsana</p><div class="dc-ws"><span class="w ref"><b>타다</b> <i>산</i></span></div></div></article>
@@ -1777,41 +1790,6 @@ mark.y{background:var(--mark-y)} mark.g{background:var(--mark-g)}
 <article class="dc-card" data-sec="5" data-memo="0" data-q="사바아사나  śavāsana"><div class="dc-ph"><img loading="lazy" src="img/dict/63.png" alt="사바아사나 교재 그림" data-zoom></div><div class="dc-body"><p class="dc-meta"><span class="dc-no">63</span>교재 50쪽</p><h4 class="dc-sk">사바아사나</h4><p class="dc-ko none">한국어 이름 없음</p><p class="dc-ro">Śavāsana</p><div class="dc-ws"><span class="w ref"><b>사바</b> <i>시체</i></span></div></div></article>
     </div>
     <p class="dc-src">참고(교재 밖) 뜻 출처: Mr. Yoga Sanskrit Glossary (mryoga.com), 산톨라나는 kavaalya.com, 안자네야는 위키백과 Anjaneyasana 항목</p>
-  </div>
-</section>
-<section class="hb-view" id="v-d1122s" data-view-id="d1122s" hidden>
-  <div class="hb-vhead">
-    <span class="ey">11월 22일 일 · 과제</span>
-    <h2>아사나 산스크리트어 암기</h2>
-    <p>교재 18~39쪽(타다아사나부터 머리서기 2까지, 후굴&nbsp;앞까지)에서 한국어 이름이 있는 33개 동작이에요. 산스크리트어를 들으면 한국어로, 한국어를 들으면 산스크리트어로 답할 수 있게 외워요.</p>
-    <div class="hb-actions"><a class="dl" href="file/1122-sanskrit.pdf" download="요가TTC_아사나_산스크리트어_암기.pdf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.8 7.6 8 10.8l3.2-3.2M3 13.5h10"/></svg>인쇄용 PDF 받기 (A4 3쪽)</a><a class="dl" href="https://aro-deeply.github.io/yoga/app/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2.5h4v4M13.5 2.5 7.5 8.5M12 9.5v3a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3"/></svg>카드 연습 앱 열기</a></div>
-  </div>
-  <div class="hb-doc">
-    <div class="hb-sec"><h3>외우는 방법</h3>
-      <div class="hb-key">
-        <strong>산스크리트어 <mark class="y">↔</mark> 한국어, 양쪽으로 답하기</strong>
-        <ul>
-          <li>아래 버튼으로 한쪽 이름을 가리고, 가린 칸을 눌러 정답 확인</li>
-          <li>카드 연습 앱: 한 장씩 넘기며 외우고, 헷갈린 것만 다시 보기 (폰 홈 화면에 추가 가능)</li>
-          <li>인쇄용 PDF: 1쪽 전체 목록, 2쪽 한국어 쓰기, 3쪽 산스크리트어 쓰기</li>
-        </ul>
-      </div>
-      <div class="sk-tools"><button type="button" data-skhide="s">산스크리트어 가리기</button><button type="button" data-skhide="k">한국어 가리기</button></div>
-    </div>
-
-    <div class="hb-sec"><h3>선자세와 균형자세 <span class="an-s">18~27p</span></h3>
-      <div class="hb-tw sk-tb"><table><thead><tr><th>번호</th><th>산스크리트어</th><th>한국어</th><th>쪽</th></tr></thead><tbody><tr><td class="sk-n">1</td><td class="sk-s">타다아사나</td><td class="sk-k">산자세</td><td class="sk-p">18</td></tr><tr><td class="sk-n">2</td><td class="sk-s">우르드바하스타아사나</td><td class="sk-k">손 끝 하늘 자세</td><td class="sk-p">18</td></tr><tr><td class="sk-n">3</td><td class="sk-s">욷타나아사나</td><td class="sk-k">상체 숙인 자세</td><td class="sk-p">19</td></tr><tr><td class="sk-n">4</td><td class="sk-s">욷카타아사나</td><td class="sk-k">의자자세</td><td class="sk-p">19</td></tr><tr><td class="sk-n">5</td><td class="sk-s">비라바드라아사나 1</td><td class="sk-k">전사 1 자세</td><td class="sk-p">20</td></tr><tr><td class="sk-n">6</td><td class="sk-s">비라바드라아사나 2</td><td class="sk-k">전사 2 자세</td><td class="sk-p">20</td></tr><tr><td class="sk-n">7</td><td class="sk-s">비라바드라아사나 3</td><td class="sk-k">전사 3 자세</td><td class="sk-p">21</td></tr><tr><td class="sk-n">8</td><td class="sk-s">비파리타 비라바드라아사나</td><td class="sk-k">역전사자세</td><td class="sk-p">21</td></tr><tr><td class="sk-n">9</td><td class="sk-s">우티타 트리코나아사나</td><td class="sk-k">삼각 자세</td><td class="sk-p">22</td></tr><tr><td class="sk-n">10</td><td class="sk-s">파르스보타나아사나</td><td class="sk-k">피라미드 자세</td><td class="sk-p">22</td></tr><tr><td class="sk-n">11</td><td class="sk-s">파리브리타 트리코나아사나</td><td class="sk-k">비튼 삼각 자세</td><td class="sk-p">23</td></tr><tr><td class="sk-n">12</td><td class="sk-s">우티타 파르스바코나아사나</td><td class="sk-k">측각도 자세</td><td class="sk-p">23</td></tr><tr><td class="sk-n">13</td><td class="sk-s">파리브리타 파르스바코나아사나</td><td class="sk-k">비튼 측각도 자세</td><td class="sk-p">24</td></tr><tr><td class="sk-n">14</td><td class="sk-s">프라사리타 파도타나아사나</td><td class="sk-k">다리 넓힌 전굴 자세</td><td class="sk-p">24</td></tr><tr><td class="sk-n">15</td><td class="sk-s">나타라자아사나</td><td class="sk-k">댄서포즈</td><td class="sk-p">25</td></tr><tr><td class="sk-n">16</td><td class="sk-s">브륵샤아사나</td><td class="sk-k">나무 자세</td><td class="sk-p">26</td></tr><tr><td class="sk-n">17</td><td class="sk-s">가루다아사나</td><td class="sk-k">독수리 자세</td><td class="sk-p">27</td></tr><tr><td class="sk-n">18</td><td class="sk-s">아르다찬드라아사나</td><td class="sk-k">반달 자세</td><td class="sk-p">27</td></tr></tbody></table></div>
-    </div>
-
-    <div class="hb-sec"><h3>앉은자세, 전굴, 골반열기 <span class="an-s">28~36p</span></h3>
-      <div class="hb-tw sk-tb"><table><thead><tr><th>번호</th><th>산스크리트어</th><th>한국어</th><th>쪽</th></tr></thead><tbody><tr><td class="sk-n">19</td><td class="sk-s">파드마아사나</td><td class="sk-k">연꽃자세</td><td class="sk-p">28</td></tr><tr><td class="sk-n">20</td><td class="sk-s">바즈라아사나</td><td class="sk-k">번개자세</td><td class="sk-p">28</td></tr><tr><td class="sk-n">21</td><td class="sk-s">비라아사나</td><td class="sk-k">영웅자세</td><td class="sk-p">29</td></tr><tr><td class="sk-n">22</td><td class="sk-s">발라아사나</td><td class="sk-k">아기 자세</td><td class="sk-p">29</td></tr><tr><td class="sk-n">23</td><td class="sk-s">수카아사나</td><td class="sk-k">편안한 자세</td><td class="sk-p">30</td></tr><tr><td class="sk-n">24</td><td class="sk-s">받다코나아사나</td><td class="sk-k">나비 자세</td><td class="sk-p">30</td></tr><tr><td class="sk-n">25</td><td class="sk-s">단다아사나</td><td class="sk-k">막대기 자세</td><td class="sk-p">32</td></tr><tr><td class="sk-n">26</td><td class="sk-s">말라아사나</td><td class="sk-k">화환자세</td><td class="sk-p">34</td></tr><tr><td class="sk-n">27</td><td class="sk-s">하누만아사나</td><td class="sk-k">원숭이 자세</td><td class="sk-p">35</td></tr><tr><td class="sk-n">28</td><td class="sk-s">나바아사나</td><td class="sk-k">배(보트) 자세</td><td class="sk-p">36</td></tr></tbody></table></div>
-    </div>
-
-    <div class="hb-sec"><h3>역자세 <span class="an-s">37~39p</span></h3>
-      <div class="hb-tw sk-tb"><table><thead><tr><th>번호</th><th>산스크리트어</th><th>한국어</th><th>쪽</th></tr></thead><tbody><tr><td class="sk-n">29</td><td class="sk-s">아도무카 스바나아사나</td><td class="sk-k">견상 자세 (다운독)</td><td class="sk-p">37</td></tr><tr><td class="sk-n">30</td><td class="sk-s">할라아사나</td><td class="sk-k">쟁기자세</td><td class="sk-p">37</td></tr><tr><td class="sk-n">31</td><td class="sk-s">살람바사르방가아사나</td><td class="sk-k">어깨서기</td><td class="sk-p">38</td></tr><tr><td class="sk-n">32</td><td class="sk-s">살람바 시르사아사나</td><td class="sk-k">머리서기 자세</td><td class="sk-p">38</td></tr><tr><td class="sk-n">33</td><td class="sk-s">살람바 시르사아사나 2</td><td class="sk-k">머리서기 자세 2</td><td class="sk-p">39</td></tr></tbody></table></div>
-    </div>
-
-    <p class="hb-note">한국어 이름이 없는 동작 9개(교재 25~26, 31~35쪽)는 뺐어요.</p>
   </div>
 </section>
 <section class="hb-view" id="v-d1101" data-view-id="d1101" hidden>
@@ -4226,7 +4204,7 @@ function hbAnimLoader(stageId,tabsSel,anims){
   });
 
   /* 보기 전환 */
-  var ORDER=['d1024','cue','centering','handson','anim','anatomy','d1031','d1101','d1101hn','d1101h','d1101p','cue2','d1107','d1108','d1114','anatomy3','d1122','d1122a','d1122s','d1122d'];
+  var ORDER=['d1024','cue','centering','handson','anim','anatomy','d1031','d1101','d1101hn','d1101h','d1101p','cue2','d1107','d1108','d1114','anatomy3','d1122','d1122a','d1122d'];
   var LABEL={d1024:'10월 24일 수업 정리',d1122:'11월 22일 수업 정리',d1122a:'11월 22일 아사나 수업 정리',d1122s:'11월 22일 산스크리트어 암기',d1122d:'동작·뜻 사전',d1114:'11월 14일 수업 정리',d1107:'11월 7일 수업 정리',d1108:'11월 8일 수업 정리',d1031:'10월 31일 수업 정리',d1101:'11월 1일 수업 정리',d1101hn:'11월 1일 핸즈온 정리',d1101h:'핸즈온 애니메이션',d1101p:'프라나야마',cue2:'전사 2 묶음 큐잉',cue:'런지 묶음 큐잉',centering:'일반 센터링',handson:'핸즈온 정리',anim:'핸즈온 애니메이션',anatomy:'해부학 2회차',anatomy3:'해부학 3회차'};
   var views={};[].forEach.call(document.querySelectorAll('.hb-view'),function(v){views[v.getAttribute('data-view-id')]=v;});
   var navBtns=[].slice.call(document.querySelectorAll('.side button[data-view]'));
@@ -4236,7 +4214,7 @@ function hbAnimLoader(stageId,tabsSel,anims){
 
   function sectionsFor(id){
     var v=views[id],out=[];
-    if(id==='d1024'||id==='d1031'||id==='d1101'||id==='d1101p'||id==='d1107'||id==='d1108'||id==='d1114'||id==='d1122'||id==='d1122a'||id==='d1122s'){
+    if(id==='d1024'||id==='d1031'||id==='d1101'||id==='d1101p'||id==='d1107'||id==='d1108'||id==='d1114'||id==='d1122'||id==='d1122a'){
       [].forEach.call(v.querySelectorAll('.hb-sec'),function(s,i){if(!s.id)s.id=id+'-'+i;var h=s.querySelector('h3');out.push({id:s.id,t:h?h.textContent.replace(/\s*\(.*?\)\s*$/,''):''});});
     }else if(id==='anatomy'||id==='anatomy3'){
       [].forEach.call(v.querySelectorAll('.an-toc button'),function(b){var t=b.textContent.replace(/^\d+/,function(n){return n+' ';});out.push({id:b.getAttribute('data-jump'),t:t});});
@@ -4295,7 +4273,7 @@ function hbAnimLoader(stageId,tabsSel,anims){
     var a=e.target.closest('a[href^="#"]');
     if(a){var el=document.getElementById(a.getAttribute('href').slice(1));if(el&&!views[a.getAttribute('href').slice(1)]){e.preventDefault();el.scrollIntoView({block:'start'});var d=a.closest('details');if(d)d.open=false;}}
   });
-  var h=(location.hash||'').replace('#','');
+  var h=(location.hash||'').replace('#','');if(h==='d1122s')h='d1122d';if(h&&!views[h])h='';
   window.__hbRefresh=function(){show(current||h||ORDER[0],{keepScroll:true});};
   window.addEventListener('hashchange',function(){var x=(location.hash||'').replace('#','');if(views[x]&&x!==current)show(x);});
   if(ok){unlock();}else{try{pw.focus();}catch(e){}}
@@ -4336,6 +4314,22 @@ btns.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;btn
     if(dp){dp.prompt();dp.userChoice.then(function(){dp=null;});return;}
     var open=how.hidden;how.hidden=!open;btn.setAttribute('aria-expanded',open?'true':'false');
   });
+})();
+</script>
+<script>
+/* 동작·뜻 사전: 가리고 연습하기 (가린 칸을 누르면 그 칸만 보임) */
+(function(){var root=document.querySelector('#v-d1122d .dc-root');if(!root)return;
+  var on={s:false,k:false,p:false},hd=root.querySelector('.dc-hd'),hint=document.createElement('p');
+  hint.className='dc-hint';hint.textContent='회색 칸을 누르면 그 자세만 보여요.';hint.hidden=true;hd.parentNode.insertBefore(hint,hd.nextSibling);
+  function each(sel,fn){[].forEach.call(root.querySelectorAll(sel),fn);}
+  function apply(){each('.mask',function(x){x.classList.remove('mask');});each('.gone',function(x){x.classList.remove('gone');});
+    if(on.s){each('.dc-card .dc-sk',function(x){x.classList.add('mask');});each('.dc-card .dc-tb,.dc-card .dc-ro,.dc-card .dc-ws',function(x){x.classList.add('gone');});}
+    if(on.k)each('.dc-card .dc-ko',function(x){x.classList.add('mask');});
+    if(on.p)each('.dc-card .dc-ph',function(x){x.classList.add('mask');});
+    hint.hidden=!(on.s||on.k||on.p);}
+  each('.dc-hd button',function(b){b.setAttribute('aria-pressed','false');b.addEventListener('click',function(){var k=b.getAttribute('data-h');on[k]=!on[k];b.classList.toggle('on',on[k]);b.setAttribute('aria-pressed',on[k]?'true':'false');apply();});});
+  root.addEventListener('click',function(e){var m=e.target.closest&&e.target.closest('.mask');if(!m)return;e.preventDefault();e.stopPropagation();m.classList.remove('mask');
+    if(m.classList.contains('dc-sk')){var c=m.closest('.dc-card');[].forEach.call(c.querySelectorAll('.gone'),function(x){x.classList.remove('gone');});}},true);
 })();
 </script>
 </body>
